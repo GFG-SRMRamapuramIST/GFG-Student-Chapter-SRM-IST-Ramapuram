@@ -1,4 +1,4 @@
-import { Header, AlumaniWorkAt, PresidentTestimonial } from "./Components";
+import { Header, AlumaniWorkAt, PresidentTestimonial } from "../Components";
 
 const Home = () => {
   return (

@@ -50,7 +50,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <button className="main_menu_links">Events</button>
+                <button className="main_menu_links">Our Team</button>
               </li>
             </ul>
             <ul className="user_nav">
