@@ -155,12 +155,17 @@ const Footer = () => {
               >
                 <FaLinkedinIn size={24} />
               </a>
-              <a
-                href="https://www.linkedin.com/company/geeksforgeeks-srm-rmp/"
-                className="text-white hover:text-gray-400 transition duration-300"
-              >
-                <MdEmail size={24} />
-              </a>
+              <div className="relative group">
+                <a
+                  href="mailto:your_email@example.com" // Optional, makes the icon a mail link
+                  className="text-white hover:text-gray-400 transition duration-300"
+                >
+                  <MdEmail size={24} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs px-2 py-1 rounded">
+                  geeksforgeeks.srmistrmp@gmail.com
+                </span>
+              </div>
             </div>
           </div>
         </div>
