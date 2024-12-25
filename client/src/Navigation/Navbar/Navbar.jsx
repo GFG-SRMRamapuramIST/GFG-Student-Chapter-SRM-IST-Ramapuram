@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { FaChevronDown } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -50,7 +51,9 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <button className="main_menu_links">Our Team</button>
+                <Link className="main_menu_links" to={"/our-teams"}>
+                  Our Team
+                </Link>
               </li>
             </ul>
             <ul className="user_nav">
