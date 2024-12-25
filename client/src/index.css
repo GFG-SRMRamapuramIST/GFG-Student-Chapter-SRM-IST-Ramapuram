@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  font-family: "Inter", "Inter UI", -apple-system, system-ui, "Segoe UI", Roboto, Noto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0);
+  letter-spacing: 0;
+  outline: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  min-height: 100vh;
+}
