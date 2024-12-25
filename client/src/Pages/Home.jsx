@@ -1,11 +1,19 @@
-import { Header, AlumaniWorkAt, PresidentTestimonial } from "../Components";
+import {
+  Header,
+  AlumaniWorkAt,
+  PresidentTestimonial,
+  SubHeading,
+  GFGIntro,
+} from "../Components";
 
 const Home = () => {
   return (
     <>
       <Header />
       <AlumaniWorkAt />
+      <SubHeading />
       <PresidentTestimonial />
+      <GFGIntro />
     </>
   );
 };
