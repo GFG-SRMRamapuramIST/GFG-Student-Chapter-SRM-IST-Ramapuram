@@ -31,9 +31,9 @@ const Footer = () => {
               <h2 className="text-md md:text-lg font-semibold">Developers</h2>
               <ul className="text-sm md:text-md mt-4 space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Vishal Kumar Y</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Amisha Kumari</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Jeyasurya U R</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Dev 3</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Dev 4</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Sai Prashanth</a></li>
               </ul>
             </div>
           </div>
