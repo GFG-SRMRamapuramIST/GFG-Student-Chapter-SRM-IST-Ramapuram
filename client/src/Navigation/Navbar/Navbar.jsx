@@ -3,15 +3,17 @@ import styled from "styled-components";
 import { FaChevronDown } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { GfgSCLogo, GfgSrmRmpLogo } from "../../assets";
 
 const Navbar = () => {
   return (
     <NavbarStyle>
       <div className="main_navbar_header">
-        <div className="main_navbar">
-          <div className="main_navbar_logo">
-            <img src="./img.png" alt="GFG Logo" />
-            SRM Ramapuram
+        <div className="main_navbar ">
+          <div className="relative flex flex-col items-center justify-center">
+            <img src={GfgSCLogo.url} alt="GFG Logo" className="max-w-24" />
+            <span className="text-xs">SRM RMP</span>
+            {/* <img src={GfgSrmRmpLogo.url} alt="GFG Logo" className="max-w-24" /> */}
           </div>
           <nav className="main_nav">
             <ul className="main_menu">
@@ -104,12 +106,6 @@ const NavbarStyle = styled.section`
     min-height: 40px;
   }
 
-  .main_navbar_logo {
-    display: block;
-    position: relative;
-    line-height: 1;
-    fill: #fa5320;
-  }
 
   .main_nav {
     flex: 1;
