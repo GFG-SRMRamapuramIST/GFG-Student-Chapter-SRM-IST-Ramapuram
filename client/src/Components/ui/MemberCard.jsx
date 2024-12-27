@@ -16,8 +16,8 @@ const MemberCard = ({ member, index, style }) => {
           <div className="text-lg font-semibold text-gray-900">
             {member.name}
           </div>
-          <p className="text-blue-500 hover:text-blue-700 transition duration-300">
-            {"Member Caption"}
+          <p className="text-green-500 hover:text-green-700 transition duration-300">
+            {member.caption}
           </p>
         </div>
         <div className="flex space-x-4 justify-end w-4/12">
@@ -58,6 +58,7 @@ MemberCard.propTypes = {
       codolio: PropTypes.string,
     }),
   }).isRequired,
+  caption: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   style: PropTypes.object,
 };
