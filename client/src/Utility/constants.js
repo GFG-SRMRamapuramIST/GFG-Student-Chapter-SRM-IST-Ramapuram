@@ -51,6 +51,7 @@ export const CoreTeam24 = {
 export const members = [
   {
     name: "Member 1",
+    caption: "Caption 1",
     socials: {
       linkedin: "https://linkedin.com",
       codolio: "https://codolio.com/aakash_ky",
@@ -58,6 +59,7 @@ export const members = [
   },
   {
     name: "Member 2",
+    caption: "Caption 2",
     socials: {
       linkedin: "https://linkedin.com",
       codolio: "https://codolio.com/aakash_ky",
@@ -65,6 +67,7 @@ export const members = [
   },
   {
     name: "Member 3",
+    caption: "Caption 3",
     socials: {
       linkedin: "https://linkedin.com",
       codolio: "https://codolio.com/aakash_ky",
@@ -72,6 +75,7 @@ export const members = [
   },
   {
     name: "Member 4",
+    caption: "Caption 4",
     socials: {
       linkedin: "https://linkedin.com",
       codolio: "https://codolio.com/aakash_ky",
@@ -79,6 +83,7 @@ export const members = [
   },
   {
     name: "Member 5",
+    caption: "Caption 5",
     socials: {
       linkedin: "https://linkedin.com",
       codolio: "https://codolio.com/aakash_ky",
