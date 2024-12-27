@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { abtGfg } from "../../assets";
+import { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
+
+import { abtGfg } from "../../assets";
 import { GridBackdropDiv2 } from "../ui";
 
 const GFGIntro = () => {
@@ -61,7 +62,7 @@ const GFGIntro = () => {
         </div>
       </GridBackdropDiv2>
     </div>
-  )
+  );
 };
 
 export default GFGIntro;

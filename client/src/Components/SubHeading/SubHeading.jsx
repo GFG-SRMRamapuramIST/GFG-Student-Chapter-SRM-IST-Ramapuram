@@ -2,7 +2,7 @@ import React from "react";
 
 const SubHeading = () => {
   return (
-    <div className="my-40 p-6 bg-white">
+    <div className="my-5 px-2 py-5 bg-white">
       <h1 className="text-2xl md:text-3xl font-semibold text-center">
         Identify relevant leads and find their contact details.{" "}
         <span className="text-green-600">In seconds.</span>
