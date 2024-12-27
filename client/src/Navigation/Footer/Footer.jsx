@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center mt-8">
           <div className="flex flex-col md:flex-row items-center md:items-start">
-            <div className="flex space-x-4 mt-4 md:mt-0 md:ml-4 md:pr-4 md:border-r-2">
+            <div className="flex space-x-4 mt-4 md:mt-0 md:pr-4 md:border-r-2">
               <p className="text-gray-400">Contact Us</p>
             </div>
             <div className="flex space-x-4 mt-4 md:mt-0 md:pl-4">

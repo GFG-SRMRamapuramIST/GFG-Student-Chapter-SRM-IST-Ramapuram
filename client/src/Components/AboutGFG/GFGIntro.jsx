@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import abtgfg from "../../assets/imgs/abtgfg.jpg";
+import { abtGfg } from "../../assets";
 import { FaArrowRight } from "react-icons/fa";
+import { GridBackdropDiv2 } from "../ui";
 
 const GFGIntro = () => {
   const [isActive, setIsActive] = useState(false);
@@ -11,7 +12,7 @@ const GFGIntro = () => {
   };
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768); 
+      setIsSmallScreen(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
@@ -21,98 +22,46 @@ const GFGIntro = () => {
   }, []);
 
   return (
-    <div className="py-[5rem] w-full flex justify-center px-[20px]">
-  <div
-    className="bg-white flex justify-between w-full h-[500px] shadow-lg rounded-lg border border-gray-300"
-    style={{
-      gap: "20px",
-    }}
-  >
-        <div
-          className="flex-1 py-12 px-5 flex justify-center items-center"
-          style={{
-            padding: "10px",
-            paddingTop: "0px",
-            marginLeft: "60px",
-          }}
-        >
-          <div className="mb-8" style={{ textAlign: "center", padding: "5px" }}>
-            <p
-              className="text-gray-700 text-base"
-              style={{
-                fontSize: "clamp(1rem, 2.5vw, 1.8rem)", 
-                lineHeight: "clamp(1.5rem, 3vw, 2.5rem)", 
-                overflowWrap: "break-word", 
-              }}
-            >
-              "<span style={{ color: "green" }}>GeeksforGeeks</span> is a premier
-              platform offering coding resources, challenges, and interview
-              preparation for programmers and tech enthusiasts.{" "}
-              <span
-                style={{
-                  backgroundColor: "rgba(144, 238, 144, 0.8)",
-                }}
+    <div className="py-20 w-full flex justify-center px-12">
+      <GridBackdropDiv2 className="flex flex-col lg:flex-row justify-between w-full p-8 gap-10 lg:gap-20 shadow-lg rounded-lg border border-gray-300">
+        <div className="md:w-1/2 md:py-12 md:px-16 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+          <p className="text-gray-700 text-base lg:text-2xl font-medium  leading-relaxed">
+            <span className="text-green-600">GeeksforGeeks</span> is a premier
+            platform offering coding resources, challenges, and interview
+            preparation for programmers and tech enthusiasts.{" "}
+            <span className="bg-green-200 px-1 rounded">
+              Trusted by 12M+ users
+            </span>
+            , it provides tutorials, practice problems, and courses across
+            diverse domains.
+          </p>
+          {!isSmallScreen && (
+            <div className="mt-5 text-left">
+              <p
+                onClick={handleClick}
+                className={`inline-flex items-center text-2xl text-green-600 cursor-pointer transition-transform duration-300 ${
+                  isActive ? "transform -translate-y-1" : ""
+                }`}
+                onMouseEnter={handleClick}
+                onMouseLeave={() => setIsActive(false)}
               >
-              Trusted by 12M+ users</span>, it provides tutorials, practice problems, and courses across
-              diverse domains."
-            </p>
-            {!isSmallScreen && (
-              <div
-                style={{
-                  textAlign: "left",
-                  marginTop: "20px",
-                }}
-                className="responsive-div"
-              >
-                <p
-                  onClick={handleClick}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    fontSize: "1.8rem",
-                    color: "green",
-                    cursor: "pointer",
-                    transition: "transform 0.3s ease",
-                    transform: isActive ? "translateY(-5px)" : "none",
-                  }}
-                  onMouseEnter={handleClick}
-                  onMouseLeave={() => setIsActive(false)}
-                >
-                  Explore the integrations
-                  <FaArrowRight style={{ marginLeft: "8px" }} />
-                  <span
-                    style={{
-                      content: "''",
-                      position: "absolute",
-                      bottom: "-2px",
-                      left: "0",
-                      width: isActive ? "100%" : "0",
-                      height: "2px",
-                      backgroundColor: "green",
-                      transition: "width 0.3s ease",
-                    }}
-                  ></span>
-                </p>
-              </div>
-            )}
-          </div>
+                Explore the integrations
+                <FaArrowRight className="ml-2" />
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-green-600 transition-width duration-300 ${
+                    isActive ? "w-full" : "w-0"
+                  }`}
+                ></span>
+              </p>
+            </div>
+          )}
         </div>
-        <div
-          className="flex-1"
-          style={{
-            backgroundImage: `url(${abtgfg})`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            width: "100%",
-            height: "100%",
-            borderRadius: "0 10px 10px 0",
-            marginLeft: "100px",
-          }}
-        ></div>
-      </div>
+        <div className="flex md:w-1/2 bg-cover justify-center items-center">
+          <img src={abtGfg} className="max-w-xs md:max-w-sm" />
+        </div>
+      </GridBackdropDiv2>
     </div>
-  );
+  )
 };
 
 export default GFGIntro;
