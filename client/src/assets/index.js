@@ -1,7 +1,9 @@
+const defaulfHash = "L00000fQfQfQfQfQfQfQfQfQfQfQ";
+
+// **************** Gfg Student Chapter Assets ****************
 import GfgSrmRmp from "./imgs/gfgSrmRmpLogo.png";
 import GfgSC from "./imgs/gfgscLogo.png";
 
-const defaulfHash = "L00000fQfQfQfQfQfQfQfQfQfQfQ";
 
 export const GfgSrmRmpLogo = {
   url: GfgSrmRmp,
@@ -14,6 +16,8 @@ export const GfgSCLogo = {
   hashCode: defaulfHash, //TODO: Change this hash
   alt: "GfG Student Chapter",
 };
+
+// ***********************************************************************
 
 // *************** Core Team Profile Pics ************************
 import AakashPfp from "./imgs/people/AakashPfp.png";
@@ -77,3 +81,9 @@ export const AlumaniCompanyLogo = [
   },
 ];
 // *****************************************************************************
+
+// ********* Other Designs and Imgs **********
+import gridBackdrop from './grid-backdrop.svg';
+import abtGfg from './imgs/abtgfg.png';
+
+export { gridBackdrop, abtGfg };

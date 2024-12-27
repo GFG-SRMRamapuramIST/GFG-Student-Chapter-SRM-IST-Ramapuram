@@ -4,6 +4,6 @@ import AlumaniWorkAt from "./AlumaniWorkAtComponent/AlumaniWorkAt";
 import PresidentTestimonial from "./Testimonial/PresidentTestimonial";
 import SubHeading from "./SubHeading/SubHeading";
 import GFGIntro from "./AboutGFG/GFGIntro";
-import LeadCard from "./LeadCard/LeadCard";
+import MembersSection from "./MembersSection/MembersSection";
 
-export { Header, AlumaniWorkAt, PresidentTestimonial, SubHeading, GFGIntro, LeadCard };
+export { Header, AlumaniWorkAt, PresidentTestimonial, SubHeading, GFGIntro, MembersSection };
