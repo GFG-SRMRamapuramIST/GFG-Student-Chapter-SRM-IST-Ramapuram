@@ -10,11 +10,11 @@ const Navbar = () => {
     <NavbarStyle>
       <div className="main_navbar_header">
         <div className="main_navbar ">
-          <div className="relative flex flex-col items-center justify-center">
+          <Link to={"/"} className="relative flex flex-col items-center justify-center">
             <img src={GfgSCLogo.url} alt="GFG Logo" className="max-w-24" />
             <span className="text-xs">SRM RMP</span>
             {/* <img src={GfgSrmRmpLogo.url} alt="GFG Logo" className="max-w-24" /> */}
-          </div>
+          </Link>
           <nav className="main_nav">
             <ul className="main_menu">
               <li>

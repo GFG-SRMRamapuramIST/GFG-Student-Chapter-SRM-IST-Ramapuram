@@ -16,7 +16,7 @@ const OurTeams = () => {
       {year === 24 ? (
         <div className="mt-16 mb-8">
           <div className="flex flex-col sm:flex-row justify-center items-center sm:items-end ">
-            <div className="hidden md:flex flex-col ">
+            <div className="hidden lg:flex flex-col ">
               <h3 className="text-xl text-center font-bold text-gray-700 py-2">
                 {roles.TechHead}
               </h3>
@@ -39,7 +39,7 @@ const OurTeams = () => {
               <LeadCard lead={CoreTeam24[roles.VicePresident]} />
             </div>
 
-            <div className="hidden md:flex flex-col">
+            <div className="hidden lg:flex flex-col">
               <h3 className="text-xl text-center font-bold text-gray-700 py-2">
                 {roles.OpsHead}
               </h3>
@@ -48,7 +48,7 @@ const OurTeams = () => {
           </div>
 
           {/* Only for Mobile View */}
-          <div className="hidden max-md:flex flex-col sm:flex-row justify-center items-center sm:items-end ">
+          <div className="lg:hidden flex flex-col sm:flex-row justify-center items-center sm:items-end ">
             <div className="flex flex-col mx-0 px-0">
               <h3 className="text-lg text-center font-bold text-gray-700 pt-4 pb-1">
                 {roles.OpsHead}

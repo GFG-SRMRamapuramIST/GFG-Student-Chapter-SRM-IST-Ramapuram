@@ -1,19 +1,21 @@
 import {
-  Header,
+  Hero,
   AlumaniWorkAt,
   PresidentTestimonial,
   SubHeading,
   GFGIntro,
+  GFGCourses,
 } from "../Components";
 
 const Home = () => {
   return (
     <>
-      <Header />
+      <Hero />
       <AlumaniWorkAt />
       <SubHeading />
       <PresidentTestimonial />
       <GFGIntro />
+      <GFGCourses />
     </>
   );
 };
