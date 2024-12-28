@@ -70,3 +70,9 @@ import abtGfg from './imgs/abtgfg.png';
 import boxBackdrop from './box-backdrop.png';
 
 export { gridBackdrop, abtGfg, boxBackdrop };
+// ***************************************************
+
+// ******************** BLOGS Img *****************************
+import templateImg from "./imgs/Blogs/templateIMG.jpg";
+
+export { templateImg };
