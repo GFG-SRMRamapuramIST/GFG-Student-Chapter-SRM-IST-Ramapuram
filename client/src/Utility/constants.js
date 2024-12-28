@@ -15,7 +15,7 @@ export const CoreTeam24 = {
     socials: {
       linkedin: "https://www.linkedin.com/in/aakash-kumar-yadav/",
       codolio: "https://codolio.com/aakash_ky",
-      twitter: "https://twitter.com/aakash_ky",
+      // twitter: "https://twitter.com/aakash_ky",
       // instagram: "https://www.instagram.com/aakash_ky/",
     },
   },
@@ -36,6 +36,9 @@ export const CoreTeam24 = {
     image: RachitPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/rachit-dhaka/",
+      codolio: "https://codolio.com/rachit_dhaka",
+      // twitter: "https://twitter.com/rachit_dhaka",
+      // instagram: "https://www.instagram.com/rachit_dhaka/",
     },
   },
   [roles.TechHead]: {
@@ -44,6 +47,9 @@ export const CoreTeam24 = {
     image: AbhishekPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/abhishek-newase/",
+      codolio: "https://codolio.com/abhishek_newase",
+      // twitter: "https://twitter.com/abhishek_newase",
+      // instagram: "https://www.instagram.com/abhishek_newase/",
     },
   },
 };
@@ -99,19 +105,19 @@ export const members = [
 export const courses = [
   {
     title: "Complete DSA Preparation",
-    rating: 4,
+    rating: 4.2,
     description: "Master Data Structures & Algorithms with hands-on practice",
     image: "https://placehold.co/240x160"
   },
   {
     title: "System Design Expert",
-    rating: 3.5,
+    rating: 3.7,
     description: "Learn to design scalable systems from industry experts",
     image: "https://placehold.co/240x160"
   },
   {
     title: "Full Stack Development",
-    rating: 4.5,
+    rating: 4.6,
     description: "Become a full stack developer with MERN stack",
     image: "https://placehold.co/240x160"
   }
