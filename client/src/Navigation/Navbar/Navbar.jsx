@@ -21,17 +21,20 @@ const Navbar = () => {
           <nav className="main_nav">
             <ul className="main_menu">
               <li>
-                <button className="main_menu_links text-[#4c555e]">
+                <Link to={"/blogs"} className="main_menu_links text-[#4c555e]">
                   Blogs
                   <span className="main_menu_dropdown_icon text-[#a1a7ad]">
                     <FaChevronDown />
                   </span>
-                </button>
+                </Link>
                 <div className="main_menu_dropdown">
                   <div className="main_menu_dropdown_primary">
-                    <strong className="main_menu_dropdown_title text-[#00895e]">
+                    <Link
+                      to={"/blogs"}
+                      className="main_menu_dropdown_title text-[#00895e]"
+                    >
                       Blogs
-                    </strong>
+                    </Link>
                     <a className="main_menu_dropdown_options">
                       <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Website Launch
@@ -84,7 +87,7 @@ const Navbar = () => {
                   target="_blank"
                   className="main_menu_links text-[#434b52]"
                 >
-                  GFG Official Web
+                  GFG Official Page
                   <span className="user_nav_dropdown_icon">
                     <CiGlobe />
                   </span>
