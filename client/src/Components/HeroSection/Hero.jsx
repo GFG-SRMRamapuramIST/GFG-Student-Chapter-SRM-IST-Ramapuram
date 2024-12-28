@@ -1,4 +1,4 @@
-const Header = () => {
+const Hero = () => {
   return (
     <div style={{ height: "40vh", backgroundColor: "antiquewhite" }}>
       Header
@@ -6,4 +6,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Hero;
