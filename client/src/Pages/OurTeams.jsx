@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { CoreTeam24, roles, members } from "../Utility/constants";
-import { GridBackdropDiv, LeadCard, YearSelector } from "../Components/ui";
+import { LeadCard, YearSelector } from "../Components/ui";
 import { MembersSection } from "../Components";
 
 const OurTeams = () => {
   const [year, setYear] = useState(24);
 
   return (
-    <div className="pb-16 pt-24 sm:pb-8 sm:pt-24 relative">
-      <h1 className="text-[64px] text-center font-bold uppercase text-gray-700 pd-8">
+    <div className="pb-16 pt-32  sm:pb-8  relative">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold lg:font-black uppercase text-gray-700 pd-8">
         Our Team
       </h1>
       <YearSelector year={year} setYear={setYear} />

@@ -125,9 +125,14 @@ const NavbarStyle = styled.section`
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 4.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transform: translateX(-50%);
     z-index: 1001;
     transition: box-shadow 500ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
   }
 
   .main_navbar {
