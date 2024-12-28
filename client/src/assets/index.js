@@ -66,5 +66,7 @@ export const AlumaniCompanyLogo = [
 // ********* Other Designs and Imgs **********
 import gridBackdrop from './grid-backdrop.svg';
 import abtGfg from './imgs/abtgfg.png';
+// import boxBackdropSvg from './box-backdrop.svg';
+import boxBackdrop from './box-backdrop.png';
 
-export { gridBackdrop, abtGfg };
+export { gridBackdrop, abtGfg, boxBackdrop };
