@@ -1,0 +1,11 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="code-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <g fill="none" fillRule="evenodd">
+        <path d="M0 0h40v40H0z"/>
+        <path d="M10 10h20v20H10z" stroke="#E5E5E5" strokeOpacity=".1"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="40" height="40" fill="url(#code-grid)"/>
+</svg>

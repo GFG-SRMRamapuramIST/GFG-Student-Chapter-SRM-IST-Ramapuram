@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import ImageLoaderComponent from "../../Utility/ImageLoaderComponent";
-import { codolioBWIcon, codolioIcon } from "../../assets/icons";
+import { codolioIcon } from "../../assets/icons";
 
 const LeadCard = ({ lead }) => {
   return (
