@@ -1,3 +1,4 @@
 import ImageLoaderComponent from "./ImageLoaderComponent";
+import ScrollToTop from "./ScrollToTop";
 
-export { ImageLoaderComponent };
+export { ImageLoaderComponent, ScrollToTop };
