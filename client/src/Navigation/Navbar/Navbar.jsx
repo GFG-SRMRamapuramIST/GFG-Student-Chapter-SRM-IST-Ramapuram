@@ -35,7 +35,10 @@ const Navbar = () => {
                     >
                       Blogs
                     </Link>
-                    <a className="main_menu_dropdown_options">
+                    <Link
+                      to={"/blogs/website-launch"}
+                      className="main_menu_dropdown_options"
+                    >
                       <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Website Launch
                         <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
@@ -45,8 +48,11 @@ const Navbar = () => {
                       <span className="main_menu_dropdown_options_desc text-[#4c555e]">
                         1st January 2025
                       </span>
-                    </a>
-                    <a className="main_menu_dropdown_options">
+                    </Link>
+                    <Link
+                      to={"/blogs/halloween-hangout"}
+                      className="main_menu_dropdown_options"
+                    >
                       <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Halloween Hangout
                         <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
@@ -56,8 +62,11 @@ const Navbar = () => {
                       <span className="main_menu_dropdown_options_desc text-[#4c555e]">
                         31st October 2024
                       </span>
-                    </a>
-                    <a className="main_menu_dropdown_options">
+                    </Link>
+                    <Link
+                      to={"/blogs/onboarding-meet"}
+                      className="main_menu_dropdown_options"
+                    >
                       <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Onboarding Meet
                         <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
@@ -67,7 +76,7 @@ const Navbar = () => {
                       <span className="main_menu_dropdown_options_desc text-[#4c555e]">
                         19th October 2024
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </li>
