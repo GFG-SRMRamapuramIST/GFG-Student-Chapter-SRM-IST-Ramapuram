@@ -9,10 +9,12 @@ import {
   OurTeams,
   WebsiteLaunch,
 } from "./Pages";
+import { ScrollToTop } from "./Utility";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
