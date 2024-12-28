@@ -11,6 +11,7 @@ const GFGIntro = () => {
   const handleClick = () => {
     setIsActive(!isActive);
   };
+
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
@@ -23,14 +24,14 @@ const GFGIntro = () => {
   }, []);
 
   return (
-    <div className="py-20 w-full flex justify-center px-12">
-      <GridBackdropDiv2 className="flex flex-col lg:flex-row justify-between w-full p-8 gap-10 lg:gap-20 shadow-lg rounded-lg border border-gray-300">
+    <div className="py-10 w-full flex justify-center px-0 sm:px-2 md:px-4 lg:px-12 bg-white">
+    <GridBackdropDiv2 className="flex flex-col lg:flex-row justify-between w-full p-6 gap-6 lg:gap-12 shadow-sm rounded-lg border border-gray-200 min-h-full bg-white">
         <div className="md:w-1/2 md:py-12 md:px-16 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-          <p className="text-gray-700 text-base lg:text-2xl font-medium  leading-relaxed">
+          <p className="text-gray-700 text-base lg:text-xl xl:text-2xl font-medium leading-relaxed whitespace-normal break-words">
             <span className="text-green-600">GeeksforGeeks</span> is a premier
             platform offering coding resources, challenges, and interview
             preparation for programmers and tech enthusiasts.{" "}
-            <span className="bg-green-200 px-1 rounded">
+            <span className="bg-green-300 rounded">
               Trusted by 12M+ users
             </span>
             , it provides tutorials, practice problems, and courses across
@@ -51,14 +52,22 @@ const GFGIntro = () => {
                 <span
                   className={`absolute bottom-0 left-0 h-0.5 bg-green-600 transition-width duration-300 ${
                     isActive ? "w-full" : "w-0"
-                  }`}
-                ></span>
+                  }`}></span>
               </p>
             </div>
           )}
         </div>
         <div className="flex md:w-1/2 bg-cover justify-center items-center">
-          <img src={abtGfg} className="max-w-xs md:max-w-sm" />
+          <img
+            src={abtGfg}
+            alt="GeeksforGeeks"
+            className={`max-w-xs md:max-w-sm ${
+              isSmallScreen ? "w-full max-w-xs" : "w-auto"
+            }`}
+            style={{
+              maxHeight: isSmallScreen ? "80vh" : "auto", 
+            }}
+          />
         </div>
       </GridBackdropDiv2>
     </div>
