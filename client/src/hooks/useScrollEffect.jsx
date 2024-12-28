@@ -4,11 +4,21 @@ const useScrollEffect = (containerRef, members) => {
   useEffect(() => {
     const loopedMembers = [members[members.length - 1], ...members, members[0]];
 
+    const getCardHeight = () => {
+      if (window.innerWidth < 640) {
+        return 85; // Small screens
+      } else if (window.innerWidth < 1024) {
+        return 93; // Medium screens
+      } else {
+        return 100; // Large screens
+      }
+    };
+
     const handleScroll = () => {
       const container = containerRef.current;
       if (container) {
         const scrollTop = container.scrollTop;
-        const cardHeight = 100; // Adjust based on your card height
+        const cardHeight = getCardHeight();
         const blurAmount = 5; // Adjust based on your desired blur amount
 
         // Manually style for first card
