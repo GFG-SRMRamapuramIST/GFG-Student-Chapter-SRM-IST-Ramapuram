@@ -22,12 +22,12 @@ const Footer = () => {
               <h2 className="text-md md:text-lg font-semibold">Quick Links</h2>
               <ul className="text-sm md:text-md mt-4 space-y-2">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to={"/blogs"}
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Blogs
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -38,12 +38,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to={"/our-teams"}
+                  <a
+                    href='https://forms.gle/YgJeDFs564iiY33L6'
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Join Us
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
