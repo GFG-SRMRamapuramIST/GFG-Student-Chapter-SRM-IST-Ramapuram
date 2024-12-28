@@ -1,24 +1,5 @@
 const defaulfHash = "L00000fQfQfQfQfQfQfQfQfQfQfQ";
 
-// **************** Gfg Student Chapter Assets ****************
-import GfgSrmRmp from "./imgs/gfgSrmRmpLogo.png";
-import GfgSC from "./imgs/gfgscLogo.png";
-
-
-export const GfgSrmRmpLogo = {
-  url: GfgSrmRmp,
-  hashCode: defaulfHash, //TODO: Change this hash
-  alt: "GfG SRM RMP",
-};
-
-export const GfgSCLogo = {
-  url: GfgSC,
-  hashCode: defaulfHash, //TODO: Change this hash
-  alt: "GfG Student Chapter",
-};
-
-// ***********************************************************************
-
 // *************** Core Team Profile Pics ************************
 import AakashPfp from "./imgs/people/AakashPfp.png";
 import SanjanaPfp from "./imgs/people/SanjanaPfp.png";
