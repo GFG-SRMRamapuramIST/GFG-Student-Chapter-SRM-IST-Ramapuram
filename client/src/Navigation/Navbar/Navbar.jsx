@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import { FaChevronDown } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { CiGlobe } from "react-icons/ci";
 
-import { GfgSCLogo } from "../../assets";
+import { logo } from "../../assets/icons";
 
 const Navbar = () => {
   return (
@@ -15,10 +16,7 @@ const Navbar = () => {
             to={"/"}
             className="relative flex flex-row items-center justify-center cursor-pointer"
           >
-            <img src={GfgSCLogo.url} alt="GFG Logo" className="max-w-24" />
-            <span className="text-xl text-[#00895e] font-semibold">
-              SRM RMP
-            </span>
+            <img src={logo} alt="GFG Logo" className="max-w-[9rem]" />
           </Link>
           <nav className="main_nav">
             <ul className="main_menu">
@@ -31,7 +29,7 @@ const Navbar = () => {
                 </button>
                 <div className="main_menu_dropdown">
                   <div className="main_menu_dropdown_primary">
-                    <strong className="main_menu_dropdown_title text-[#0578d6]">
+                    <strong className="main_menu_dropdown_title text-[#00895e]">
                       Blogs
                     </strong>
                     <a className="main_menu_dropdown_options">
@@ -47,13 +45,24 @@ const Navbar = () => {
                     </a>
                     <a className="main_menu_dropdown_options">
                       <strong className="main_menu_dropdown_options_title text-[#28323b]">
-                        Website Launch
+                        Halloween Hangout
                         <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
                           <FaArrowRightLong />
                         </span>
                       </strong>
                       <span className="main_menu_dropdown_options_desc text-[#4c555e]">
-                        1st January 2025
+                        31st October 2024
+                      </span>
+                    </a>
+                    <a className="main_menu_dropdown_options">
+                      <strong className="main_menu_dropdown_options_title text-[#28323b]">
+                        Onboarding Meet
+                        <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
+                          <FaArrowRightLong />
+                        </span>
+                      </strong>
+                      <span className="main_menu_dropdown_options_desc text-[#4c555e]">
+                        19th October 2024
                       </span>
                     </a>
                   </div>
@@ -70,20 +79,28 @@ const Navbar = () => {
             </ul>
             <ul className="user_nav">
               <li>
-                <a className="main_menu_links text-[#4c555e]">
-                  Create an account
+                <a
+                  href="https://www.geeksforgeeks.org/"
+                  target="_blank"
+                  className="main_menu_links text-[#434b52]"
+                >
+                  GFG Official Web
+                  <span className="user_nav_dropdown_icon">
+                    <CiGlobe />
+                  </span>
                 </a>
               </li>
               <li>
-                <Link
+                <a
                   className="main_menu_links text-[#00895e]"
-                  to={"/join-us"}
+                  href="https://forms.gle/YgJeDFs564iiY33L6"
+                  target="_blank"
                 >
                   Join Us
                   <span className="user_nav_dropdown_icon">
                     <FaArrowRightLong />
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
@@ -140,9 +157,8 @@ const NavbarStyle = styled.section`
     .main_menu_dropdown {
       visibility: hidden;
       position: absolute;
-      margin-left: -10px;
       top: 100%;
-      margin-top: 4px;
+      margin-top: 1px;
       opacity: 0;
       transform: scale(0.98) translateY(2%);
       z-index: 101;
@@ -169,11 +185,27 @@ const NavbarStyle = styled.section`
           display: flex;
           padding: 8px 16px;
           border-radius: 0.4rem;
-          transition: background-color 200ms ease-in;
+          transition: background-color 200ms ease-in, opacity 1000ms ease-in; /* Added opacity transition */
           text-decoration-color: transparent;
           position: relative;
           flex-direction: column;
-          gap: 8px;
+
+          .main_menu_dropdown_options_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+          }
+
+          .main_menu_dropdown_options_arrow {
+            opacity: 0;
+            transition: opacity 200ms ease-in;
+          }
+
+          .main_menu_dropdown_options_desc {
+            font-size: 0.8rem;
+            color: #4c555e;
+          }
         }
 
         .main_menu_dropdown_options:hover {
@@ -221,19 +253,25 @@ const NavbarStyle = styled.section`
     transition: all 200ms ease-in-out 0s, visibility 0s linear;
   }
 
-  .user_nav .main_menu_links:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 8px;
-    color: inherit;
-  }
-
   .user_nav {
     display: flex;
     align-items: center;
     gap: 24px;
     margin-bottom: 0;
     padding-left: 0;
+  }
+
+  .user_nav .main_menu_links {
+    transition: all 200ms ease-in-out;
+  }
+
+  .user_nav .main_menu_links:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
+    color: inherit;
+    border-radius: 24px;
+    background-color: #f7f9fa;
   }
 `;
 
