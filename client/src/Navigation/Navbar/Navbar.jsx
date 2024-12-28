@@ -3,49 +3,56 @@ import styled from "styled-components";
 import { FaChevronDown } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { GfgSCLogo, GfgSrmRmpLogo } from "../../assets";
+
+import { GfgSCLogo } from "../../assets";
 
 const Navbar = () => {
   return (
     <NavbarStyle>
       <div className="main_navbar_header">
-        <div className="main_navbar ">
-          <Link to={"/"} className="relative flex flex-col items-center justify-center">
+        <div className="main_navbar">
+          <Link
+            to={"/"}
+            className="relative flex flex-row items-center justify-center cursor-pointer"
+          >
             <img src={GfgSCLogo.url} alt="GFG Logo" className="max-w-24" />
-            <span className="text-xs">SRM RMP</span>
-            {/* <img src={GfgSrmRmpLogo.url} alt="GFG Logo" className="max-w-24" /> */}
+            <span className="text-xl text-[#00895e] font-semibold">
+              SRM RMP
+            </span>
           </Link>
           <nav className="main_nav">
             <ul className="main_menu">
               <li>
-                <button className="main_menu_links">
-                  Blogs{" "}
-                  <span className="main_menu_dropdown_icon">
+                <button className="main_menu_links text-[#4c555e]">
+                  Blogs
+                  <span className="main_menu_dropdown_icon text-[#a1a7ad]">
                     <FaChevronDown />
                   </span>
                 </button>
                 <div className="main_menu_dropdown">
                   <div className="main_menu_dropdown_primary">
-                    <strong className="main_menu_dropdown_title">Blogs</strong>
+                    <strong className="main_menu_dropdown_title text-[#0578d6]">
+                      Blogs
+                    </strong>
                     <a className="main_menu_dropdown_options">
-                      <strong className="main_menu_dropdown_options_title">
+                      <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Website Launch
-                        <span className="main_menu_dropdown_options_arrow">
+                        <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
                           <FaArrowRightLong />
                         </span>
                       </strong>
-                      <span className="main_menu_dropdown_options_desc">
+                      <span className="main_menu_dropdown_options_desc text-[#4c555e]">
                         1st January 2025
                       </span>
                     </a>
                     <a className="main_menu_dropdown_options">
-                      <strong className="main_menu_dropdown_options_title">
+                      <strong className="main_menu_dropdown_options_title text-[#28323b]">
                         Website Launch
-                        <span className="main_menu_dropdown_options_arrow">
+                        <span className="main_menu_dropdown_options_arrow text-[#4c555e]">
                           <FaArrowRightLong />
                         </span>
                       </strong>
-                      <span className="main_menu_dropdown_options_desc">
+                      <span className="main_menu_dropdown_options_desc text-[#4c555e]">
                         1st January 2025
                       </span>
                     </a>
@@ -53,27 +60,30 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <Link className="main_menu_links" to={"/our-teams"}>
+                <Link
+                  className="main_menu_links text-[#4c555e]"
+                  to={"/our-teams"}
+                >
                   Our Team
                 </Link>
               </li>
             </ul>
             <ul className="user_nav">
               <li>
-                <a className="main_menu_links">Create an account</a>
+                <a className="main_menu_links text-[#4c555e]">
+                  Create an account
+                </a>
               </li>
               <li>
-                <a
-                  className="main_menu_links"
-                  style={{
-                    color: "#fa5320",
-                  }}
+                <Link
+                  className="main_menu_links text-[#00895e]"
+                  to={"/join-us"}
                 >
-                  Join Us{" "}
+                  Join Us
                   <span className="user_nav_dropdown_icon">
                     <FaArrowRightLong />
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -105,7 +115,6 @@ const NavbarStyle = styled.section`
     align-items: center;
     min-height: 40px;
   }
-
 
   .main_nav {
     flex: 1;
@@ -151,17 +160,6 @@ const NavbarStyle = styled.section`
         background-color: transparent;
         border-radius: 0.4rem;
 
-        .main_menu_dropdown_title {
-          display: block;
-          margin-left: 16px;
-          color: #0578d6;
-          font-weight: 500;
-          font-size: 0.9rem;
-          line-height: 2;
-          text-transform: uppercase;
-          letter-spacing: 0.1rem;
-        }
-
         .main_menu_dropdown_title:hover {
           cursor: pointer;
         }
@@ -176,31 +174,6 @@ const NavbarStyle = styled.section`
           position: relative;
           flex-direction: column;
           gap: 8px;
-
-          .main_menu_dropdown_options_title {
-            gap: 8px;
-            color: #28323b;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1.2;
-
-            .main_menu_dropdown_options_arrow {
-              opacity: 0;
-              color: #4c555e;
-              font-size: 0.5rem;
-              transition: all 0.3s ease-in-out;
-            }
-          }
-
-          .main_menu_dropdown_options_desc {
-            color: #4c555e;
-            font-size: 0.9rem;
-            line-height: 1.2;
-            transition: color 0.1s ease-in-out;
-            white-space: nowrap;
-          }
         }
 
         .main_menu_dropdown_options:hover {
@@ -223,19 +196,12 @@ const NavbarStyle = styled.section`
     }
   }
 
-  .main_menu_dropdown_icon {
-    font-size: 0.9rem;
-    color: #a1a7ad;
-    transition: color 0.1s ease-in-out;
-  }
-
   .main_menu_links {
     display: flex;
     align-items: center;
     gap: 4px;
     padding: 8px 12px;
     transition: all 0.1s ease-in-out;
-    color: #4c555e;
     border: 0;
     border-radius: 2rem;
     background-color: transparent;
@@ -246,7 +212,6 @@ const NavbarStyle = styled.section`
   .main_menu .main_menu_links:hover {
     border-radius: 24px;
     background-color: #f7f9fa;
-    color: #333;
   }
 
   .main_menu .main_menu_links:hover + .main_menu_dropdown {
@@ -254,10 +219,6 @@ const NavbarStyle = styled.section`
     opacity: 1;
     transform: scale(1) translateY(0);
     transition: all 200ms ease-in-out 0s, visibility 0s linear;
-  }
-
-  .user_nav .main_menu_links {
-    transition: all 0.3s ease-in-out;
   }
 
   .user_nav .main_menu_links:hover {
@@ -273,12 +234,6 @@ const NavbarStyle = styled.section`
     gap: 24px;
     margin-bottom: 0;
     padding-left: 0;
-    color: #4c555e;
-  }
-
-  .user_nav_dropdown_icon {
-    font-size: 0.8rem;
-    color: "#fa5320";
   }
 `;
 
