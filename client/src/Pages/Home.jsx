@@ -1,10 +1,10 @@
 import {
   Hero,
   AlumaniWorkAt,
-  PresidentTestimonial,
   SubHeading,
   GFGIntro,
   GFGCourses,
+  Testimonials,
 } from "../Components";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
       <Hero />
       <AlumaniWorkAt />
       <SubHeading />
-      <PresidentTestimonial />
+      <Testimonials />
       <GFGIntro />
       <GFGCourses />
     </>

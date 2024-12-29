@@ -2,11 +2,21 @@ import { motion } from "framer-motion";
 
 import { ImageLoaderComponent } from "../../Utility";
 import { templateImg } from "../../assets";
+import HeikiBackground from "../../Components/ui/HeikiBackground";
 
 function OnboardingMeet() {
   return (
-    <div className="py-14 md:py-5 px-2 sm:px-5 min-h-screen">
-      <div className="pt-[45px] sm:pt-[30px] md:pt-[50px]">
+    <div className="py-14 md:py-5 px-2 sm:px-5 min-h-screen relative">
+      
+      <HeikiBackground
+        primaryColor="#00895e"
+        secondaryColor="#2f8d46"
+        pattern="grid"
+        density="dense"
+        opacity={0.2}
+      />
+
+      <div className="pt-[45px] sm:pt-[30px] md:pt-[50px] relative">
         <div className="max-w-4xl mx-auto bg-white p-3 md:p-8 mb-10 rounded-lg shadow-md">
           <motion.div
             className="mb-6"
