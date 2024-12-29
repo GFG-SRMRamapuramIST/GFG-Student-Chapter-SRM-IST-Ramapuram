@@ -4,6 +4,7 @@ import AlumaniWorkAt from "./AlumaniWorkAtComponent/AlumaniWorkAt";
 import Testimonials from "./Testimonial/Testimonials";
 import SubHeading from "./SubHeading/SubHeading";
 import GFGIntro from "./AboutGFG/GFGIntro";
+import GFGDomain from "./AboutGFG/GFGDomain";
 import GFGCourses from "./AboutGFG/GFGCourses";
 import MembersSection from "./MembersSection/MembersSection";
 
@@ -13,6 +14,7 @@ export {
   Testimonials,
   SubHeading,
   GFGIntro,
+  GFGDomain,
   GFGCourses,
   MembersSection,
 };
