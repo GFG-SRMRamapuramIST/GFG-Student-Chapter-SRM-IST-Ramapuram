@@ -7,6 +7,7 @@ import {
   Home,
   OnboardingMeet,
   OurTeams,
+  PageNotFound,
   WebsiteLaunch,
 } from "./Pages";
 import { ScrollToTop } from "./Utility";
@@ -26,6 +27,8 @@ const App = () => {
         <Route path="/blogs/halloween-hangout" element={<HalloweenHangout />} />
         <Route path="/blogs/onboarding-meet" element={<OnboardingMeet />} />
         {/* ************************************************************** */}
+
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>
