@@ -7,6 +7,7 @@ export const roles = {
   TechHead: "Technical Head",
 };
 
+// ***** CORE TEAM *****
 export const CoreTeam24 = {
   [roles.President]: {
     name: "Aakash Kumar Yadav",
@@ -54,7 +55,8 @@ export const CoreTeam24 = {
   },
 };
 
-export const members = [
+// ***** MEMBERS *****
+export const Members24 = [
   {
     name: "Member 1",
     caption: "Caption 1",
@@ -102,6 +104,7 @@ export const members = [
   },
 ];
 
+// ***** COURSES *****
 export const courses = [
   {
     title: "Complete DSA Preparation",
@@ -121,4 +124,35 @@ export const courses = [
     description: "Become a full stack developer with MERN stack",
     image: "https://placehold.co/240x160"
   }
+];
+
+// ***** TESTIMONIALS *****
+export const testimonials = [
+  {
+    quote:
+      "Hunter is a great tool for saving time and building pipelines and prospecting. Before we had Hunter in place, I was spending a long time guessing emails and using up valuable time every day. The email verifier is also a game changer for our team.",
+    author: "Aakash Kumar Yadav",
+    position: "President at GeeksforGeeks Student Chapter SRM RMP",
+    image: AakashPic,
+    highlightedPhrases: [
+      "saving time and building pipelines and prospecting",
+      "game changer for our team",
+    ],
+  },
+  {
+    quote:
+      "The integration capabilities and ease of use make this platform stand out. Our team's productivity has increased significantly since we started using it.",
+    author: "Sarah Chen",
+    position: "Technical Lead, Innovation Labs",
+    image: AakashPic,
+    highlightedPhrases: ["integration capabilities", "increased significantly"],
+  },
+  {
+    quote:
+      "What impressed me most was the attention to detail and the responsive support team. They've truly created something exceptional here.",
+    author: "Marcus Rodriguez",
+    position: "Head of Operations, TechFlow",
+    image: AakashPic,
+    highlightedPhrases: ["attention to detail", "responsive support team"],
+  },
 ];

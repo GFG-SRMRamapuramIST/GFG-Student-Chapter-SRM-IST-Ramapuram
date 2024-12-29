@@ -17,8 +17,15 @@ const Hero = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  const handleLearnMoreClick = () => {
+    const subHeadingElement = document.getElementById("SubHeading");
+    if (subHeadingElement) {
+      subHeadingElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="min-h-screen w-full flex items-center justify-center overflow-hidden relative bg-gradient-to-bl from-hover-gray via-green-50 to-green-200 ">
+    <div className="min-h-screen w-full flex items-center justify-center overflow-hidden relative bg-gradient-to-bl from-hover-gray via-green-50 to-gfgsc-green-200 ">
       <div className="h-full w-full flex flex-col md:flex-row items-center justify-center px-8 sm:px-6 md:px-8 lg:px-16 pt-16 pb-8 md:pt-24 md:pb-16 gap-8 md:gap-12">
         {/* Left Section */}
         <motion.div
@@ -31,8 +38,8 @@ const Hero = () => {
             variants={itemVariants}
             className="flex items-center space-x-2"
           >
-            <SiGeeksforgeeks className="text-green-600 w-8 h-8 sm:w-10 sm:h-10" />
-            <span className="text-md md:text-lg lg:text-xl font-semibold text-green-600">
+            <SiGeeksforgeeks className="text-gfgsc-green w-8 h-8 sm:w-10 sm:h-10" />
+            <span className="text-md md:text-lg lg:text-xl font-semibold text-gfgsc-green">
               Student Chapter SRM RMP
             </span>
           </motion.div>
@@ -42,7 +49,7 @@ const Hero = () => {
             className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold md:font-black text-gray-800 leading-tight"
           >
             Where Code Meets
-            <span className="text-green-600"> Community</span>
+            <span className="text-gfgsc-green"> Community</span>
           </motion.h1>
 
           <motion.p
@@ -53,10 +60,13 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-2 sm:gap-4">
-            <button className="px-4 sm:px-8 py-2.5 sm:py-3 bg-green-600 text-white rounded-lg font-semibold shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all text-sm sm:text-base">
+            <button className="px-4 sm:px-8 py-2.5 sm:py-3 bg-gfgsc-green text-white rounded-lg font-semibold shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition-all text-sm sm:text-base">
               Join Chapter
             </button>
-            <button className="px-4 sm:px-8 py-2.5 sm:py-3 border-2 border-green-600 text-green-600 rounded-lg font-semibold hover:bg-green-50 transform hover:scale-105 transition-all text-sm sm:text-base">
+            <button 
+              className="px-4 sm:px-8 py-2.5 sm:py-3 border-2 border-gfgsc-green text-gfgsc-green rounded-lg font-semibold hover:bg-green-50 transform hover:scale-105 transition-all text-sm sm:text-base"
+              onClick={handleLearnMoreClick}
+            >
               Learn More
             </button>
           </motion.div>
@@ -72,7 +82,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex items-center space-x-2"
               >
-                <item.icon className="text-green-600 w-4 h-4 sm:w-5 sm:h-5" />
+                <item.icon className="text-gfgsc-green w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-xs sm:text-sm font-medium text-gray-600">
                   {item.text}
                 </span>
@@ -109,7 +119,7 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-0 left-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+              className="absolute top-0 left-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-gfgsc-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             />
             <motion.div
               animate={{
@@ -121,7 +131,7 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-gfgsc-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             />
 
             {/* Code Pattern Overlay */}

@@ -55,7 +55,7 @@ const GFGCourses = () => {
 
   // Component Markup
   return (
-    <div className="flex max-w-[100vw] overflow-hidden flex-col md:flex-row w-full min-h-[600px]">
+    <div className="flex max-w-screen overflow-x-hidden flex-col md:flex-row w-full min-h-[600px]">
       {/* Left Section */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}

@@ -4,7 +4,7 @@ const YearSelector = ({ year, setYear }) => {
       "hover:bg-hover-gray px-4 py-2 rounded-full cursor-pointer ";
     classNames +=
       year === selectedYear
-        ? "text-2xl text-[#0DCB4A] "
+        ? "text-2xl text-gfgsc-green font-semibold "
         : "text-lg text-gray-500 ";
     return classNames;
   };
