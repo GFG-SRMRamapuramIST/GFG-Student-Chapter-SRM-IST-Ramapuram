@@ -2,6 +2,7 @@ import {
   Hero,
   AlumaniWorkAt,
   SubHeading,
+  GFGDomain,
   GFGIntro,
   GFGCourses,
   Testimonials,
@@ -15,6 +16,7 @@ const Home = () => {
       <SubHeading />
       <Testimonials />
       <GFGIntro />
+      <GFGDomain/>
       <GFGCourses />
     </>
   );
