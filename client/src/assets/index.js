@@ -1,10 +1,10 @@
 const defaulfHash = "L00000fQfQfQfQfQfQfQfQfQfQfQ";
 
-// *************** Core Team Profile Pics ************************
-import AakashPfp from "./imgs/people/AakashPfp.png";
-import SanjanaPfp from "./imgs/people/SanjanaPfp.png";
-import RachitPfp from "./imgs/people/RachitPfp.png";
-import AbhishekPfp from "./imgs/people/AbhishekPfp.png";
+// *************** 2024-25 Core Team Profile Pics ************************
+import AakashPfp from "./imgs/people/2024-25CoreTeam/AakashPfp.png";
+import SanjanaPfp from "./imgs/people/2024-25CoreTeam/SanjanaPfp.png";
+import RachitPfp from "./imgs/people/2024-25CoreTeam/RachitPfp.png";
+import AbhishekPfp from "./imgs/people/2024-25CoreTeam/AbhishekPfp.png";
 
 const AakashPic = {
   url: AakashPfp,
@@ -31,6 +31,10 @@ const AbhishekPic = {
 };
 
 export { AakashPic, SanjanaPic, RachitPic, AbhishekPic };
+// *****************************************************************************
+
+// *************** 2024-25 Members Profile Pics *******************************
+
 // *****************************************************************************
 
 // ************************** Alumani's Company Logo ***************************

@@ -135,7 +135,7 @@ const Navbar = () => {
                       <div className="p-4">
                         <Link
                           to="/blogs"
-                          className="text-gfgsc-green hover:underline mb-2 inline-block"
+                          className="text-gfgsc-green mb-2 inline-block"
                         >
                           Blogs
                         </Link>
