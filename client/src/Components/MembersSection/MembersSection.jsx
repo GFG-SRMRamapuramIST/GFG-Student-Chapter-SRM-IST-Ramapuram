@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import { useRef, useMemo } from "react";
 import { GridBackdropDiv, MemberCard } from "../ui";
 import { useScrollEffect } from "../../hooks";
 
@@ -36,16 +36,9 @@ const MembersSection = ({ title, caption, description, members }) => {
           index={membersMemo.length - 1}
         />
         {membersMemo.map((member, index) => (
-          <MemberCard
-            key={index}
-            member={member}
-            index={index}
-          />
+          <MemberCard key={index} member={member} index={index} />
         ))}
-        <MemberCard
-          member={membersMemo[0]}
-          index={0}
-        />
+        <MemberCard member={membersMemo[0]} index={0} />
       </div>
     </GridBackdropDiv>
   );
