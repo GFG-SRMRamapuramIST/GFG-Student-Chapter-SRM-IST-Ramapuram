@@ -141,11 +141,13 @@ const GFGCourses = () => {
                     : "w-40 md:w-44 lg:w-48 top-2 translate-x-0 opacity-60 scale-85"
                 }`}
               >
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full object-cover rounded-t-lg"
-                />
+                <div className="relative w-full pb-[66.67%] overflow-hidden rounded-t-lg">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                  />
+                </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-sm truncate">
                     {course.title}

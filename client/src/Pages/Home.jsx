@@ -14,9 +14,9 @@ const Home = () => {
       <Hero />
       <AlumaniWorkAt />
       <SubHeading />
+      <GFGDomain/>
       <Testimonials />
       <GFGIntro />
-      <GFGDomain/>
       <GFGCourses />
     </>
   );

@@ -20,7 +20,14 @@ const Hero = () => {
   const handleLearnMoreClick = () => {
     const subHeadingElement = document.getElementById("SubHeading");
     if (subHeadingElement) {
-      subHeadingElement.scrollIntoView({ behavior: "smooth" });
+      const offset = 32; // Adjust this value to change the offset
+      const elementPosition = subHeadingElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 

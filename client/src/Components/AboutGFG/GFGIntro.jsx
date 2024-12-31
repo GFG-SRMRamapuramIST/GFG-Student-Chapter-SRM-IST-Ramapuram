@@ -21,10 +21,10 @@ const GFGIntro = () => {
       <GridBackdropDiv2 className="flex flex-col lg:flex-row justify-between w-full p-6 gap-6 lg:gap-12 shadow-sm rounded-lg border border-gray-200 min-h-full bg-white">
         <div className="md:w-1/2 md:py-12 md:px-16 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           <p className="text-gray-700 text-base lg:text-xl xl:text-2xl font-medium leading-relaxed whitespace-normal break-words">
-            <span className="text-green-600">GeeksforGeeks</span> is a premier
+            <span className="text-gfgsc-green">GeeksforGeeks</span> is a premier
             platform offering coding resources, challenges, and interview
             preparation for programmers and tech enthusiasts.{" "}
-            <span className="bg-green-300 rounded">
+            <span className="bg-gfgsc-green-200 rounded px-1">
               Trusted by 12M+ users
             </span>
             , it provides tutorials, practice problems, and courses across
@@ -32,13 +32,13 @@ const GFGIntro = () => {
           </p>
           {!isSmallScreen && (
             <div className="mt-5 text-left group relative">
-              <p className="inline-flex items-center text-2xl text-green-600 cursor-pointer transition-transform duration-300">
+              <p className="inline-flex items-center text-2xl text-gfgsc-green cursor-pointer transition-transform duration-300">
                 Explore the integrations
                 <FaArrowRight className="ml-2" />
               </p>
               {/* Green line under text */}
               <span
-                className="absolute bottom-0 left-0 h-0.5 bg-green-600 w-0 group-hover:w-full transition-all duration-300"
+                className="absolute bottom-0 left-0 h-0.5 bg-gfgsc-green w-0 group-hover:w-full transition-all duration-300"
               />
             </div>
           )}
