@@ -1,13 +1,22 @@
-import { useRef, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 import { GridBackdropDiv, MemberCard } from "../ui";
-import { useScrollEffect } from "../../hooks";
 
 const MembersSection = ({ title, caption, description, members }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef(null);
 
-  const membersMemo = useMemo(() => members, [members]);
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => {
+        // Move to next index, or back to 0 if at end
+        return prevIndex === members.length - 1 ? 0 : prevIndex + 1;
+      });
+    }, 2000); // Change member every 2 seconds
 
-  useScrollEffect(containerRef, membersMemo);
+    return () => clearInterval(interval);
+  }, [members.length, isPaused]);
 
   return (
     <GridBackdropDiv className="flex flex-col md:flex-row justify-center items-center mt-12 mx-8 lg:mx-24 px-3 sm:px-6 md:px-12 max-md:py-8 border-2 rounded-lg bg-[#FCFCFD] text-black gap-1 lg:gap-4 relative">
@@ -25,20 +34,29 @@ const MembersSection = ({ title, caption, description, members }) => {
           {description}
         </p>
       </div>
-      <div
-        className="relative flex max-md:w-full flex-col pb-2 md:pb-4 lg:pt-4 overflow-y-scroll no-scrollbar md:w-1/2 max-h-64 md:max-h-80"
-        // className="relative flex sm:flex-col max-md:w-full flex-row pb-2 md:pb-4 overflow-y-scroll no-scrollbar md:w-1/2  md:max-h-80"
 
+      <div
         ref={containerRef}
+        className="relative w-full md:w-1/2 overflow-hidden h-64 md:h-80 "
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
-        <MemberCard
-          member={membersMemo[membersMemo.length - 1]}
-          index={membersMemo.length - 1}
-        />
-        {membersMemo.map((member, index) => (
-          <MemberCard key={index} member={member} index={index} />
-        ))}
-        <MemberCard member={membersMemo[0]} index={0} />
+        <div className="absolute w-full pt-16 md:pt-24">
+          {members.map((member, index) => (
+            <div
+              key={index}
+              className="transition-all duration-1000 ease-in-out absolute w-full"
+              style={{
+                transform: `translateY(${(index - activeIndex) * 100}%)`,
+                opacity: index === activeIndex ? 1 : 0.5,
+                scale: index === activeIndex ? "1" : "0.9",
+                filter: index === activeIndex ? "none" : "blur(1px)",
+              }}
+            >
+              <MemberCard member={member} index={index} />
+            </div>
+          ))}
+        </div>
       </div>
     </GridBackdropDiv>
   );

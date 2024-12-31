@@ -15,7 +15,7 @@ const MemberCard = ({ member, index, style }) => {
             url={member.image.url}
             hashCode={member.image.hashCode}
             alt={member.image.alt}
-            className="rounded-full bg-hover-gray "
+            className="rounded-full bg-hover-gray aspect-square object-cover object-top"
             blurWidth={"32px"}
             blurHeight={"32px"}
             rounded
