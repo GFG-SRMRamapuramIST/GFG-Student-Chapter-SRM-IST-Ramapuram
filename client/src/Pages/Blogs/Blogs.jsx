@@ -19,6 +19,7 @@ const Blogs = () => {
       about: "Spooky Games and Stories: A Night of Virtual Thrills",
       details:
         "On October 31st, 2024, the GeeksforGeeks SRM RMP members cametogether for a virtual 'Halloween Hangout' on Google Meet. Starting at 10:00 PM, the night was alive with spooky fun, beginning with the thrilling game of 'Among Us.' Members played as crewmates and imposters, working to complete tasks while identifying the hidden saboteur. The suspense, dramatic accusations, and surprising reveals kept everyone entertained. Following this, we switched to the 'Scribble Game', where participants sk",
+      route: "halloween-hangout",
     },
     {
       url: OnboardingMeetingPic,
@@ -29,6 +30,7 @@ const Blogs = () => {
         " Connecting Minds and Building Goals. A Blend of Virtual and In-Person Interactions to Unite Members",
       details:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
+      route: "onboarding-meet",
     },
   ];
 
@@ -129,7 +131,7 @@ const Blogs = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <Link to={`/blogs/${blog.details}`}>
+              <Link to={`/blogs/${blog.route}`}>
                 <AllBlogsCard
                   url={blog.url}
                   hashCode={blog.hashCode}
