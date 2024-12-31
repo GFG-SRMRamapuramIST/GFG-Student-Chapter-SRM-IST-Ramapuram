@@ -34,7 +34,7 @@ const GFGCourses = () => {
 
   const impactStats = [
     { Icon: HiOutlineUserGroup, count: "2M+", label: "Students" },
-    { Icon: HiOutlineBookOpen, count: "500+", label: "Courses" },
+    { Icon: HiOutlineBookOpen, count: "100+", label: "Courses" },
     { Icon: HiOutlineTrophy, count: "98%", label: "Success Rate" },
   ];
 

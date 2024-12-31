@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ImageLoaderComponent } from "../../Utility";
 import { BsChevronLeft, BsChevronRight, BsQuote } from "react-icons/bs";
+
+import { ImageLoaderComponent } from "../../Utility";
 import { testimonials } from "../../Utility/constants";
 
 const Testimonials = () => {
@@ -118,7 +119,7 @@ const Testimonials = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="w-full h-full rounded-2xl sm:rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+                    <div className="w-full h-full rounded-2xl sm:rounded-lg overflow-hidden shadow-xl">
                       <ImageLoaderComponent
                         url={testimonials[currentIndex].image.url}
                         alt={testimonials[currentIndex].image.alt}

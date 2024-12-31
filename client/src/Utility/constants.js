@@ -108,51 +108,46 @@ export const Members24 = [
 export const courses = [
   {
     title: "Complete DSA Preparation",
-    rating: 4.2,
+    rating: 4.7,
     description: "Master Data Structures & Algorithms with hands-on practice",
-    image: "https://placehold.co/240x160"
+    image: "https://placehold.co/240x160",
   },
   {
-    title: "System Design Expert",
-    rating: 3.7,
-    description: "Learn to design scalable systems from industry experts",
-    image: "https://placehold.co/240x160"
+    title: "ML / Data Science",
+    rating: 4.7,
+    description: "Learn to design scalable models and analyze data",
+    image: "https://placehold.co/240x160",
   },
   {
     title: "Full Stack Development",
-    rating: 4.6,
+    rating: 4.7,
     description: "Become a full stack developer with MERN stack",
-    image: "https://placehold.co/240x160"
-  }
+    image: "https://placehold.co/240x160",
+  },
 ];
 
 // ***** TESTIMONIALS *****
 export const testimonials = [
   {
     quote:
-      "Hunter is a great tool for saving time and building pipelines and prospecting. Before we had Hunter in place, I was spending a long time guessing emails and using up valuable time every day. The email verifier is also a game changer for our team.",
+      "As President of the GeeksforGeeks Student Chapter, I gained leadership skills and further cultivated my passion for competitive programming. Organizing contests and mentoring peers enhanced my problem-solving abilities while fostering a collaborative community of coders. This experience sharpened both my technical expertise and strategic thinking of mine.",
     author: "Aakash Kumar Yadav",
-    position: "President at GeeksforGeeks Student Chapter SRM RMP",
+    position: "President 2024-25",
     image: AakashPic,
     highlightedPhrases: [
-      "saving time and building pipelines and prospecting",
-      "game changer for our team",
+      "gained leadership skills",
+      "enhanced my problem-solving abilities",
     ],
   },
   {
     quote:
-      "The integration capabilities and ease of use make this platform stand out. Our team's productivity has increased significantly since we started using it.",
-    author: "Sarah Chen",
-    position: "Technical Lead, Innovation Labs",
-    image: AakashPic,
-    highlightedPhrases: ["integration capabilities", "increased significantly"],
-  },
-  {
-    quote:
-      "What impressed me most was the attention to detail and the responsive support team. They've truly created something exceptional here.",
-    author: "Marcus Rodriguez",
-    position: "Head of Operations, TechFlow",
-    image: AakashPic,
-    highlightedPhrases: ["attention to detail", "responsive support team"],
+      "Being the Vice President of GeeksforGeeks Student Chapter has polished my leadership, team management and organizational skills. Regular opportunities to network, mentor others and develop my knowledge of coding and development.",
+    author: "Sanjana Jaldu",
+    position: "Vice-President 2024-25",
+    image: SanjanaPic,
+    highlightedPhrases: [
+      "leadership, team management and organizational skills",
+      "opportunities to network, mentor others",
+    ],
   },
 ];
