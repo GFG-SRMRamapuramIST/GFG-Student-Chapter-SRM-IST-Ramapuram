@@ -18,7 +18,7 @@ const MemberCard = ({ member, index, style }) => {
             className="rounded-full bg-hover-gray "
             blurWidth={"32px"}
             blurHeight={"32px"}
-            rounded
+            rounded={true}
           />
         </div>
         <div className="flex flex-col w-6/12 md:w-[53%] p-2">

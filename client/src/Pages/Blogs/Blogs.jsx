@@ -1,27 +1,34 @@
 import { Link } from "react-router-dom";
 import { ImageLoaderComponent } from "../../Utility";
 import AllBlogsCard from "../../Components/BlogsCard/AllBlogsCard";
-import { templateImg } from "../../assets";
+import {
+  HalloweenHangoutPic,
+  OnboardingMeetingPic,
+  templateImg,
+} from "../../assets";
 import { motion } from "framer-motion";
 import { boxBackdrop } from "../../assets";
 
 const Blogs = () => {
   const allBlogs = [
     {
-      url: templateImg,
-      hashCode: "LCF~Kjii-:I=yNs%NKt5??.7xvRO",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
+      url: HalloweenHangoutPic,
+      hashCode: "LEMQn$$%9ZXU_4NIxHrq-.RP.8Sg",
+      title: "Halloween Hangout",
       date: "Tuesday, 31 October 2025",
-      about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
+      about: "Spooky Games and Stories: A Night of Virtual Thrills",
+      details:
+        "On October 31st, 2024, the GeeksforGeeks SRM RMP members cametogether for a virtual 'Halloween Hangout' on Google Meet. Starting at 10:00 PM, the night was alive with spooky fun, beginning with the thrilling game of 'Among Us.' Members played as crewmates and imposters, working to complete tasks while identifying the hidden saboteur. The suspense, dramatic accusations, and surprising reveals kept everyone entertained. Following this, we switched to the 'Scribble Game', where participants sk",
     },
     {
-      url: templateImg,
-      hashCode: "LCF~Kjii-:I=yNs%NKt5??.7xvRO",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
-      date: "Friday, 10 November 2025",
-      about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
+      url: OnboardingMeetingPic,
+      hashCode: "L5Eo**F2EA,t.ASaI7xX-MNq9vtR",
+      title: "Onboarding Meeting",
+      date: "Saturday, 19 October 2024",
+      about:
+        " Connecting Minds and Building Goals. A Blend of Virtual and In-Person Interactions to Unite Members",
+      details:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.",
     },
   ];
 
@@ -52,7 +59,10 @@ const Blogs = () => {
         </h2>
 
         {/* Blog Card */}
-        <Link to={`/blogs/website-launch`} className="flex flex-col max-w-4xl mx-auto">
+        <Link
+          to={`/blogs/website-launch`}
+          className="flex flex-col max-w-4xl mx-auto"
+        >
           <motion.div
             className="bg-white p-4 md:p-8 mb-10 rounded-lg shadow-md mt-4 flex flex-col sm:flex-row relative z-[1] cursor-pointer"
             whileHover={{ scale: 1.02 }}
@@ -75,7 +85,7 @@ const Blogs = () => {
                 id="heading"
                 className="text-gray-700 text-lg sm:text-2xl font-bold mb-2 capitalize whitespace-nowrap leading-tight"
               >
-                {shortTitle("Exploring the Tech World Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sint repudiandae dolorum maxime ratione sapiente.")}
+                {shortTitle("Website Launch")}
               </h4>
             </div>
 
@@ -85,13 +95,17 @@ const Blogs = () => {
                 id="subheading"
                 className="text-gray-700 text-[14px] sm:text-[20px] font-bold mb-4 capitalize"
               >
-                {shortTitle("Exploring the Tech World Lorem ipsum dolor sit amet consectetur adipisicing elit.")}
+                {shortTitle(
+                  "Launching the Official Website of GFG Student Chapter SRM IST Ramapuram"
+                )}
               </h5>
               <p
                 id="about"
                 className="text-gray-500 text-sm py-8 sm:text-md font-semibold mb-6"
               >
-                {shortDesc("Dive into the latest advancements in technology and how they are shaping our future. Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.")}
+                {shortDesc(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea."
+                )}
               </p>
               <div className="text-left absolute bottom-0 w-full">
                 <span className="bg-white text-green-400 py-2 px-0 hover:text-gfgsc-green transition text-center">
@@ -137,9 +151,9 @@ const shortTitle = (title) =>
   title.length > 30 ? `${title.substring(0, 30)}...` : title;
 
 const shortAbout = (about) =>
-  about.length > 20 ? `${about.substring(0,80)}...` : about;
+  about.length > 20 ? `${about.substring(0, 80)}...` : about;
 
 const shortDesc = (about) =>
-  about.length > 150 ? `${about.substring(0, 350)}...` : about;
+  about.length > 150 ? `${about.substring(0, 600)}...` : about;
 
 export default Blogs;

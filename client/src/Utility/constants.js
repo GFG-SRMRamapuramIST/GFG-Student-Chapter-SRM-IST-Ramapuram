@@ -1,4 +1,17 @@
-import { AakashPic, AbhishekPic, RachitPic, SanjanaPic } from "../assets";
+import {
+  AakashPic,
+  AbhishekPic,
+  DevaprabhaPic,
+  DSA,
+  FSD,
+  JustinPic,
+  MLDS,
+  RachitPic,
+  RevanPic,
+  SanjanaPic,
+  Shreya_Rahul_JainPic,
+  Yamini_ShankariPic,
+} from "../assets";
 
 export const roles = {
   President: "President",
@@ -58,48 +71,50 @@ export const CoreTeam24 = {
 // ***** MEMBERS *****
 export const Members24 = [
   {
-    name: "Member 1",
-    caption: "Caption 1",
-    image: AakashPic,
+    name: "Justin Juby",
+    caption: "CSE - AIML, 1st Year",
+    image: JustinPic,
     socials: {
-      linkedin: "https://linkedin.com",
-      codolio: "https://codolio.com/aakash_ky",
+      linkedin: "https://www.linkedin.com/in/justinjuby/",
+      codolio: "https://codolio.com/profile/JustinJuby",
     },
   },
   {
-    name: "Member 2",
-    caption: "Caption 2",
-    image: AakashPic,
+    name: "Yamini Shankari AJ",
+    caption: "CSE- Core, 2nd Year",
+    image: Yamini_ShankariPic,
     socials: {
-      linkedin: "https://linkedin.com",
-      codolio: "https://codolio.com/aakash_ky",
+      linkedin: "https://www.linkedin.com/in/yamini-shankari-aj-8135842a4/",
+      codolio: "https://codolio.com/profile/Yams08y",
     },
   },
   {
-    name: "Member 3",
-    caption: "Caption 3",
-    image: AakashPic,
+    name: "Shreya Rahul Jain  ",
+    caption: "CSE- Core, 2nd Year",
+    image: Shreya_Rahul_JainPic,
     socials: {
-      linkedin: "https://linkedin.com",
-      codolio: "https://codolio.com/aakash_ky",
+      linkedin:
+        "https://www.linkedin.com/in/shreyarahuljain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/Shreya%20Rahul%20Jain",
     },
   },
   {
-    name: "Member 4",
-    caption: "Caption 4",
-    image: AakashPic,
+    name: "VR REVAN",
+    caption: "CSE - IOT, 1st Year",
+    image: RevanPic,
     socials: {
-      linkedin: "https://linkedin.com",
-      codolio: "https://codolio.com/aakash_ky",
+      linkedin:
+        "https://www.linkedin.com/in/revan-vr-427640310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/REVAN",
     },
   },
   {
-    name: "Member 5",
-    caption: "Caption 5",
-    image: AakashPic,
+    name: "Devaprabha Anup",
+    caption: "CSE - IOT, 1st Year",
+    image: DevaprabhaPic,
     socials: {
-      linkedin: "https://linkedin.com",
-      codolio: "https://codolio.com/aakash_ky",
+      linkedin: "https://www.linkedin.com/in/devaprabha-anup-b94183330",
+      codolio: "https://codolio.com/profile/Deva06",
     },
   },
 ];
@@ -110,19 +125,19 @@ export const courses = [
     title: "Complete DSA Preparation",
     rating: 4.7,
     description: "Master Data Structures & Algorithms with hands-on practice",
-    image: "https://placehold.co/240x160",
+    image: DSA,
   },
   {
     title: "ML / Data Science",
     rating: 4.7,
     description: "Learn to design scalable models and analyze data",
-    image: "https://placehold.co/240x160",
+    image: MLDS,
   },
   {
     title: "Full Stack Development",
     rating: 4.7,
     description: "Become a full stack developer with MERN stack",
-    image: "https://placehold.co/240x160",
+    image: FSD,
   },
 ];
 
