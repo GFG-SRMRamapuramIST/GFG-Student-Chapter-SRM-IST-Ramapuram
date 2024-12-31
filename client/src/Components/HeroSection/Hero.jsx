@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaCode, FaLaptopCode, FaUserFriends } from "react-icons/fa";
 import { SiGeeksforgeeks } from "react-icons/si";
+
 import { boxBackdrop } from "../../assets";
 
 const Hero = () => {
@@ -56,14 +57,19 @@ const Hero = () => {
             variants={itemVariants}
             className="text-base sm:text-lg text-gray-600 py-2"
           >
-            {"Join SRM Ramapuram's premier coding community. Learn, grow, and build together with fellow tech enthusiasts guided by GeeksforGeeks."}
+            {
+              "Join SRM Ramapuram's premier coding community. Learn, grow, and build together with fellow tech enthusiasts guided by GeeksforGeeks."
+            }
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 sm:gap-4">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-2 sm:gap-4"
+          >
             <button className="px-4 sm:px-8 py-2.5 sm:py-3 bg-gfgsc-green text-white rounded-lg font-semibold shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition-all text-sm sm:text-base">
               Join Chapter
             </button>
-            <button 
+            <button
               className="px-4 sm:px-8 py-2.5 sm:py-3 border-2 border-gfgsc-green text-gfgsc-green rounded-lg font-semibold hover:bg-green-50 transform hover:scale-105 transition-all text-sm sm:text-base"
               onClick={handleLearnMoreClick}
             >
@@ -71,11 +77,14 @@ const Hero = () => {
             </button>
           </motion.div>
 
-          <motion.div variants={containerVariants} className="flex flex-wrap items-center max-md:justify-center gap-2 md:gap-4 sm:gap-8 pt-4">
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-wrap items-center max-md:justify-center gap-2 md:gap-4 sm:gap-8 pt-4"
+          >
             {[
-              { icon: FaUserFriends, text: "50+ Members" },
-              { icon: FaLaptopCode, text: "20+ Events" },
-              { icon: FaCode, text: "100+ Contests" },
+              { icon: FaUserFriends, text: "40+ Members" },
+              { icon: FaLaptopCode, text: "5+ Events" },
+              { icon: FaCode, text: "Regular Contests" },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -92,12 +101,12 @@ const Hero = () => {
 
           {/* Code Pattern Overlay */}
           <div
-              className="hidden  max-md:flex absolute inset-0 text-black opacity-40 bg-repeat z-[-1]"
-              style={{
-                backgroundImage: `url(${boxBackdrop})`,
-                backgroundSize: "30px sm:40px",
-              }}
-            />
+            className="hidden  max-md:flex absolute inset-0 text-black opacity-40 bg-repeat z-[-1]"
+            style={{
+              backgroundImage: `url(${boxBackdrop})`,
+              backgroundSize: "30px sm:40px",
+            }}
+          />
         </motion.div>
 
         {/* Right Section */}

@@ -1,52 +1,53 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGraduationCap, FaCode, FaUsers } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaCode, FaUsers } from "react-icons/fa";
 
 const SubHeading = () => {
   const features = [
     {
       icon: <FaGraduationCap className="text-gfgsc-green" size={28} />,
       title: "Learn",
-      description: "Access curated DSA content and hands-on coding workshops"
+      description:
+        "Hone your competitive programming skills through contests and solution discussions.",
     },
     {
       icon: <FaCode className="text-gfgsc-green" size={28} />,
       title: "Build",
-      description: "Work on real projects and enhance your development skills"
+      description:
+        "Work on real-world projects and enhance your development skills.",
     },
     {
       icon: <FaUsers className="text-gfgsc-green" size={28} />,
       title: "Connect",
-      description: "Join a community of passionate student developers"
-    }
+      description: "Join a community of passionate student developers",
+    },
   ];
 
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section id='SubHeading' className="bg-white py-8">
+    <section id="SubHeading" className="bg-white py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Subheading */}
         <div className="text-center mb-16">
@@ -61,15 +62,16 @@ const SubHeading = () => {
             </h2>
             <div className="w-20 md:w-32 h-1 md:h-1.5 bg-gfgsc-green mx-auto rounded-full mb-6" />
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Sub Heading Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              
+              The GeeksforGeeks Student Chapter provides structured
+              opportunities for individuals to enhance their skills across
+              various domains, fostering professional growth and preparing them
+              for successful careers by joining top multinational companies.
             </p>
           </motion.div>
         </div>
 
         {/* Feature Cards */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -87,9 +89,7 @@ const SubHeading = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">
-                {feature.description}
-              </p>
+              <p className="text-gray-600">{feature.description}</p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gfgsc-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-sm" />
             </motion.div>
           ))}
