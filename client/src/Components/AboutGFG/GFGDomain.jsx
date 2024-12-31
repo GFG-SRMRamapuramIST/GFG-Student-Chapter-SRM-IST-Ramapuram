@@ -1,57 +1,171 @@
-import { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import gfgdomainImage from "../../assets/imgs/gfgdomain.jpeg"; 
+import React from "react";
+import { motion } from "framer-motion";
+import { BiCode, BiCodeBlock, BiRightArrowAlt } from "react-icons/bi";
+import { 
+  SiWebpack, 
+  SiTableau, 
+  SiTensorflow, 
+  SiFigma 
+} from "react-icons/si";
+
+const domains = [
+  {
+    name: "Competitive Programming",
+    icon: BiCodeBlock,
+    color: "text-blue-500",
+    bgColor: "bg-blue-50",
+    tags: ["DSA", "DP", "Problem Solving", "Algorithms"]
+  },
+  {
+    name: "Web Development",
+    icon: SiWebpack,
+    color: "text-green-500",
+    bgColor: "bg-green-50",
+    tags: ["Frontend", "Backend", "Full Stack", "DevOps"]
+  },
+  {
+    name: "Data Analytics",
+    icon: SiTableau,
+    color: "text-purple-500",
+    bgColor: "bg-purple-50",
+    tags: ["Statistics", "SQL", "Tableau", "Data Visualization"]
+  },
+  {
+    name: "Machine Learning",
+    icon: SiTensorflow,
+    color: "text-red-500",
+    bgColor: "bg-red-50",
+    tags: ["Deep Learning", "Neural Networks", "TensorFlow", "NLP"]
+  },
+  {
+    name: "Design",
+    icon: SiFigma,
+    color: "text-yellow-500",
+    bgColor: "bg-yellow-50",
+    tags: ["UI/UX", "Graphic Design", "Figma", "Prototyping"]
+  }
+];
+
+const TextReveal = ({ children, delay = 0 }) => (
+  <motion.span
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay, duration: 0.5 }}
+    className="inline-block"
+  >
+    {children}
+  </motion.span>
+);
 
 const GFGDomain = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div className="py-10 w-full flex justify-center px-0 sm:px-2 md:px-4 lg:px-12 bg-white">
-      <div className="flex px-0 flex-col lg:flex-row justify-between w-full p-6 gap-6 lg:gap-12 shadow-sm rounded-lg border border-gray-200 min-h-full bg-white h-[500px]">
-        <div className="flex-1 p-6 bg-white rounded-lg flex items-center justify-center">
-          <div className="text-left">
-            <p className="text-gray-700 px-12 text-base lg:text-xl xl:text-2xl font-medium leading-relaxed whitespace-normal break-words">
-              <span className="text-green-600">Domain</span> Identify relevant leads based on your ideal customer profile.
-            </p>
-            {!isSmallScreen && (
-              <div className="mt-5 text-left">
-                <p className="inline-flex items-left text-2xl px-12 text-green-600 cursor-pointer relative group">
-                  Explore our Domains
-                  <FaArrowRight className="ml-2" />
-                  <span className="absolute bottom-0 left-0 h-0.5 bg-green-600 w-0 group-hover:w-full transition-all duration-300"></span>
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="flex md:w-1/2 bg-cover justify-center items-center">
-        <div className={`flex-1 p-6 bg-white rounded-lg relative ${isSmallScreen ? "" : "pb-0"}`}>
-          <div className="flex justify-center items-center h-full w-full px-0">
-            <img
-              src={gfgdomainImage} 
-              alt="GeeksforGeeks"
-              className={`object-contain w-full h-full rounded-lg border-t-2 border-l-2 border-gray-200 mt-12 ml-10 ${
-                isSmallScreen ? "max-w-xs" : "w-full max-w-none"
-              }`}
-              style={{
-                maxHeight: isSmallScreen ? "80vh" : "auto",
-              }}
-            />
-          </div>
-        </div>
-      </div>
+    <div className="py-6 sm:py-10 w-full flex justify-center px-4 sm:px-6 lg:px-12">
+      <div className="flex flex-col lg:flex-row w-full sm:gap-12 rounded-xl border border-gray-100 shadow-lg bg-white overflow-hidden">
+        {/* Left Section */}
+        <motion.div 
+          className="flex-1 p-8 lg:p-12 flex items-center"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="max-w-xl space-y-8">
+            <div className="space-y-4">
+              <motion.div 
+                className="text-sm uppercase tracking-widest text-gfgsc-green font-medium"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                The diversity of our club
+              </motion.div>
+              
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <TextReveal>Discover Your</TextReveal>{" "}
+                <div className="relative inline-block">
+                  <TextReveal delay={0.3}>
+                    <span className="text-gfgsc-green">Tech Path</span>
+                  </TextReveal>
+                  <motion.div 
+                    className="absolute -bottom-1 left-0 h-1 bg-green-200 w-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ delay: 0.6, duration: 0.4 }}
+                  />
+                </div>
+              </h2>
+            </div>
 
+            <motion.div 
+              className="prose prose-lg text-gray-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="leading-relaxed">
+                Join a vibrant community where innovation meets learning. 
+                Dive into multiple domains, collaborate with peers, and shape 
+                your technical journey with hands-on experience.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <motion.div
+                className="inline-flex items-center py-3 text-lg font-medium text-gfgsc-green  transition duration-300 group"
+                whileHover={{ scale: 1.02, }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore Domains
+                <BiRightArrowAlt className="ml-2 text-xl transform group-hover:translate-x-1 transition-transform" />
+              </motion.div>
+              
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Right Section */}
+        <motion.div 
+          className="flex-1 p-8 lg:p-12 bg-gray-50"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="grid gap-6 h-full">
+            {domains.map((domain, index) => (
+              <motion.div
+                key={domain.name}
+                className={`p-6 rounded-xl ${domain.bgColor} backdrop-blur-sm transition-all duration-300 hover:shadow-md`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <domain.icon className={`text-2xl ${domain.color}`} />
+                  <h3 className="font-semibold text-lg">{domain.name}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {domain.tags.map((tag, tagIndex) => (
+                    <motion.span
+                      key={tag}
+                      className="px-3 py-1 text-sm rounded-full bg-white/80 text-gray-700"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

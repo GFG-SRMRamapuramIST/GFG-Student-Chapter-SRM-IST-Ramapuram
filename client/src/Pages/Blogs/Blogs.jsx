@@ -26,10 +26,10 @@ const Blogs = () => {
   ];
 
   return (
-    <div className="pb-16 pt-32 sm:pb-8 relative bg-green-100">
+    <div className="flex flex-col justify-center px-8 items-center pb-16 pt-32 sm:pb-8 relative bg-green-100">
       {/* Background Pattern */}
       <div
-        className="absolute inset-0 bg-repeat"
+        className="absolute inset-0 opacity-60 bg-repeat"
         style={{
           backgroundImage: `url(${boxBackdrop})`,
           backgroundSize: "30px sm:40px",
@@ -47,14 +47,14 @@ const Blogs = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h2 className="pl-[400px] text-6xl sm:text-4xl md:text-2xl font-bold lg:font-black uppercase text-gfgsc-green z-[1] relative">
+        <h2 className="pl-6 text-xl sm:text-2xl md:text-3xl font-bold lg:font-black uppercase text-gfgsc-green z-[1] relative">
           Latest Blog
         </h2>
 
         {/* Blog Card */}
-        <Link to={`/blogs/website-launch`} className="block max-w-4xl mx-auto">
+        <Link to={`/blogs/website-launch`} className="flex flex-col max-w-4xl mx-auto">
           <motion.div
-            className="bg-white p-4 md:p-8 mb-10 rounded-lg shadow-md mt-8 flex flex-col sm:flex-row relative z-[1] cursor-pointer"
+            className="bg-white p-4 md:p-8 mb-10 rounded-lg shadow-md mt-4 flex flex-col sm:flex-row relative z-[1] cursor-pointer"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
