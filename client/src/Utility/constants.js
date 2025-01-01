@@ -46,7 +46,7 @@ export const CoreTeam24 = {
     image: SanjanaPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/sanjana-jaldu",
-      codolio: "https://codolio.com/sanjana_jaldu",
+      codolio: "https://codolio.com/profile/SanjanaJ",
     },
   },
   [roles.OpsHead]: {
