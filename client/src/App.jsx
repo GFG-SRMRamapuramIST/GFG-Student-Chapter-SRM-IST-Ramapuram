@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import { Navbar, Footer } from "./Navigation";
 import {
@@ -14,7 +14,7 @@ import { ScrollToTop } from "./Utility";
 
 const App = () => {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 };
 
