@@ -39,7 +39,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href='https://forms.gle/YgJeDFs564iiY33L6'
+                    href="https://forms.gle/YgJeDFs564iiY33L6"
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Join Us
@@ -97,7 +97,8 @@ const Footer = () => {
               <ul className="text-sm md:text-md mt-4 space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/vishal-kumar-yadav-8085a3232/"
+                    target="_blank"
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Vishal Kumar Yadav
@@ -105,7 +106,8 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/amisha-kumari-351ab9274/"
+                    target="_blank"
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Amisha Kumari
@@ -113,7 +115,8 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://linkedin.com/in/jeyasuryaur"
+                    target="_blank"
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Jeyasurya U R
@@ -121,7 +124,8 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/thesaiprashanth?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank"
                     className="text-gray-400 hover:text-white transition duration-300"
                   >
                     Sai Prashanth
