@@ -5,6 +5,7 @@ import {
   DSA,
   FSD,
   JustinPic,
+  Kiran_PPic,
   MLDS,
   RachitPic,
   RevanPic,
@@ -115,6 +116,16 @@ export const Members24 = [
     socials: {
       linkedin: "https://www.linkedin.com/in/devaprabha-anup-b94183330",
       codolio: "https://codolio.com/profile/Deva06",
+    },
+  },
+  {
+    name: "Kiran P",
+    caption: "CSE - Core, 2nd Year",
+    image: Kiran_PPic,
+    socials: {
+      linkedin:
+        "https://www.linkedin.com/in/kiran-p-2a74b3310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/kiran_7722",
     },
   },
 ];

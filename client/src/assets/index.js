@@ -39,6 +39,7 @@ import Yamini_Shankari from "./imgs/people/2024-25Members/Yamini_Shankari.jpg";
 import Shreya_Rahul_Jain from "./imgs/people/2024-25Members/SHREYA_RAHUL_JAIN.jpg";
 import Revan from "./imgs/people/2024-25Members/REVAN.jpg";
 import Devaprabha from "./imgs/people/2024-25Members/Devaprabha.jpg";
+import Kiran_P from "./imgs/people/2024-25Members/Kiran_P.jpg";
 
 const JustinPic = {
   url: Justin,
@@ -70,12 +71,19 @@ const DevaprabhaPic = {
   alt: "Devaprabha",
 };
 
+const Kiran_PPic = {
+  url: Kiran_P,
+  hashCode: "LQEVpXxtM_t7~Xt7xuWB^,oJRjoL",
+  alt: "Kiran P",
+};
+
 export {
   JustinPic,
   Yamini_ShankariPic,
   Shreya_Rahul_JainPic,
   RevanPic,
   DevaprabhaPic,
+  Kiran_PPic,
 };
 // *****************************************************************************
 
