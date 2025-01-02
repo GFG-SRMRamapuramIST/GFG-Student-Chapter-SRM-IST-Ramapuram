@@ -51,8 +51,14 @@ import B_HRITHIKA from './imgs/people/2024-25Members/B_HRITHIKA.jpeg';
 import Anuska_Pan from './imgs/people/2024-25Members/Anuska_Pan.jpg';
 import Shamirul_Huda from './imgs/people/2024-25Members/Shamirul_Huda.jpeg';
 import AMISH_KUMAR from './imgs/people/2024-25Members/AMISH_KUMAR.jpg';
-
-
+import Shivaram_Saravanan from './imgs/people/2024-25Members/Shivaram_Saravanan.jpg';
+import Mayank from './imgs/people/2024-25Members/Mayank.png';
+import Saksham_Gupta from './imgs/people/2024-25Members/Saksham_Gupta.jpg';
+import Gaurav_Jha from './imgs/people/2024-25Members/Gaurav_Jha.jpg';
+import Nihar_Shah from './imgs/people/2024-25Members/Nihar_Shah.jpg';
+import Adisesh_Rao from './imgs/people/2024-25Members/Adisesh_Rao.png';
+import SHREYA_KANNAN from './imgs/people/2024-25Members/SHREYA_KANNAN.jpg';
+import Siddharth_Vijayakumar from './imgs/people/2024-25Members/Siddharth_Vijayakumar.jpg';
 
 const JustinPic = {
   url: Justin,
@@ -157,8 +163,54 @@ const AMISH_KUMARPPic = {
   alt: "Amish Kumar",
 };
 
+const Shivaram_SaravananPPic = {
+  url: Shivaram_Saravanan,
+  hashCode: "LfHUzst7?vbH~pof%MayIpWBRPay", 
+  alt: "Shivaram Saravanan",
+};
+
+const MayankPPic = {
+  url: Mayank,
+  hashCode: "LUNwZoDi~q?v#jM{xvt7yXx]MxR5", 
+  alt: "Mayank",
+};
+
+const Saksham_GuptaPPic = {
+  url: Saksham_Gupta,
+  hashCode: "LfHLuaxZtlR+.TWCt7of?HfSROs:", 
+  alt: "Saksham Gupta",
+};
+
+const Gaurav_JhaPPic = {
+  url: Gaurav_Jha,
+  hashCode: "L9FiA7I-TC?a-@-=8}-pISM~%L4n", 
+  alt: "Gaurav Jha",
+};
+
+const Nihar_ShahPPic = {
+  url: Nihar_Shah,
+  hashCode: "LSFh|+oft,oM_NWBt6WCI;aeVrfk", 
+  alt: "Nihar Shah",
+};
+
+const Adisesh_RaoPPic = {
+  url: Adisesh_Rao,
+  hashCode: "LCIXaC%31+tR14Io=cjF0ORO~AJ8", 
+  alt: "Adisesh Rao",
+};
+
+const SHREYA_KANNANPPIC = {
+  url: SHREYA_KANNAN,
+  hashCode: "LxQupnof.mWVTuj[%3ayV}ayV?jt", 
+  alt: "Shreya Kannan",
+};
 
 
+const Siddharth_VijayakumarPPic = {
+  url: Siddharth_Vijayakumar,
+  hashCode: "LTKnMNj]uPfk0KofxEof?vWBxCax", 
+  alt: "Siddharth Vijayakumar",
+};
 
 export {
   JustinPic,
@@ -178,6 +230,14 @@ export {
   Anuska_PanPPic,
   Shamirul_HudaPPic,
   AMISH_KUMARPPic,
+  Shivaram_SaravananPPic,
+  MayankPPic,
+  Saksham_GuptaPPic,
+  Gaurav_JhaPPic,
+  Nihar_ShahPPic,
+  Adisesh_RaoPPic,
+  SHREYA_KANNANPPIC,
+  Siddharth_VijayakumarPPic,
 };
 // *****************************************************************************
 

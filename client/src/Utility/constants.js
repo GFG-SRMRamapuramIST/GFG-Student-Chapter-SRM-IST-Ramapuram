@@ -23,6 +23,14 @@ import {
   Anuska_PanPPic,
   Shamirul_HudaPPic,
   AMISH_KUMARPPic,
+  Shivaram_SaravananPPic,
+  MayankPPic,
+  Saksham_GuptaPPic,
+  Gaurav_JhaPPic,
+  Nihar_ShahPPic,
+  Adisesh_RaoPPic,
+  SHREYA_KANNANPPIC,
+  Siddharth_VijayakumarPPic
 } from "../assets";
 
 export const roles = {
@@ -230,7 +238,78 @@ export const Members24 = [
       codolio: "https://codolio.com/profile/Amish",
     },
   },
-
+  {
+    name: "Shivaram Saravanan",
+    caption: "CSE - Core, 1st Year",
+    image:  Shivaram_SaravananPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shivaram-saravanan-1b3506324",
+      codolio: "https://codolio.com/profile/Shivaram",
+    },
+  },
+{
+    name: "Mayank",
+    caption: "CSE - Core, 1st Year",
+    image:  MayankPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/mayank-tiwari-6a6607241/",
+      codolio: "https://codolio.com/profile/Mayankmani",
+    },
+  },
+  {
+    name: "Saksham Gupta",
+    caption: "CSE - Core, 1st Year",
+    image:  Saksham_GuptaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/saksham-gupta-72680a30a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/akodo_09",
+    },
+  },
+  {
+    name: "Gaurav Jha",
+    caption: "CSE - Core, 2nd year",
+    image:  Gaurav_JhaPPic,
+    socials: {
+      linkedin: "http://linkedin.com/in/gaurav-0905-jha",
+      codolio: "http://codolio.com/profile/gaurav905",
+    },
+  },
+  {
+    name: "Nihar Shah",
+    caption: "CSE - AIML, 2nd year",
+    image:  Nihar_ShahPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/nihar-shah-104833299/",
+      codolio: "https://codolio.com/profile/Nihar%20Shah",
+    },
+  },
+  {
+    name: "Adisesh Rao",
+    caption: "CSE - AIML, 2nd year",
+    image:  Adisesh_RaoPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/adisesh-raghavendra-rao-10842528a/",
+      codolio: "https://codolio.com/profile/Adisesh_05",
+    },
+  },
+  {
+    name: "K Shreya",
+    caption: "CSE - Core, 1st year",
+    image:  SHREYA_KANNANPPIC,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shreya-kannan-458673305/",
+      codolio: "https://codolio.com/profile/shreya._.kannan",
+    },
+  },
+  {
+    name: "Siddharth Vijayakumar",
+    caption: "CSE - Core, 2nd year",
+    image:  Siddharth_VijayakumarPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-vijayakumar/",
+      codolio: "https://codolio.com/profile/siddharth06",
+    },
+  },
 ];
 
 // ***** COURSES *****
