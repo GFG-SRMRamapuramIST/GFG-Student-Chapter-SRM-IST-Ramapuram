@@ -55,15 +55,16 @@ function WebsiteLaunch() {
             website. This event marks a new chapter in our journey, providing
             members and the wider community with a centralized platform to
             explore, learn, and grow together. The website, developed under the
-            guidance of <strong>Vishal Kumar Yadav</strong> with contributions from <strong>Jeysurya</strong>,
-            <strong>Amisha Kumari</strong>, and <strong>Sai Prashant</strong>, features sections for event
-            updates, DSA learning resources, competitive programming guides, and
-            blogs designed by <strong>Adisesh</strong> and <strong>Madhav Sinha</strong>. It also showcases
-            the profiles of our leaders and core team members, along with a
-            streamlined recruitment process using Google Forms. This platform is
-            a testament to the hard work and dedication of our members, aiming
-            to foster greater connectivity and create a seamless experience for
-            all.
+            guidance of <strong>Vishal Kumar Yadav</strong> with contributions
+            from <strong>Jeysurya</strong>,<strong>Amisha Kumari</strong>, and{" "}
+            <strong>Sai Prashant</strong>, features sections for event updates,
+            DSA learning resources, competitive programming guides, and blogs
+            designed by <strong>Adisesh</strong> and{" "}
+            <strong>Madhav Sinha</strong>. It also showcases the profiles of our
+            leaders and core team members, along with a streamlined recruitment
+            process using Google Forms. This platform is a testament to the hard
+            work and dedication of our members, aiming to foster greater
+            connectivity and create a seamless experience for all.
           </div>
           {/* Paragraph 2 */}
           <div className="text-gray-500 text-sm sm:text-md leading-relaxed break-words">

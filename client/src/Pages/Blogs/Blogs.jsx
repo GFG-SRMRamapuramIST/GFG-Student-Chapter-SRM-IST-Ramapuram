@@ -1,4 +1,8 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
+
 import { ImageLoaderComponent } from "../../Utility";
 import AllBlogsCard from "../../Components/BlogsCard/AllBlogsCard";
 import {
@@ -6,10 +10,17 @@ import {
   OnboardingMeetingPic,
   templateImg,
 } from "../../assets";
-import { motion } from "framer-motion";
 import { boxBackdrop } from "../../assets";
 
 const Blogs = () => {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: "gfgsrmrmp.vercel.app/blogs",
+      title: "Blogs Page",
+    });
+  }, []);
+
   const allBlogs = [
     {
       url: HalloweenHangoutPic,

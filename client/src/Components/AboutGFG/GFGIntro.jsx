@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { BiRightArrowAlt } from "react-icons/bi"; // Added BiRightArrowAlt import
 import { motion } from "framer-motion"; // Added motion import
+
 import { abtGfg } from "../../assets";
 import { GridBackdropDiv2 } from "../ui";
-import { Link } from "react-router-dom";
 
 const GFGIntro = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -29,10 +29,12 @@ const GFGIntro = () => {
             including tutorials, coding challenges, and interview preparation
             materials.
             <span className="bg-gfgsc-green-200 rounded">
-              {" "} With over 12 million users worldwide
-            </span>, it provides courses and practice problems across various
-            domains to help programmers enhance their skills and achieve success
-            in their tech careers.
+              {" "}
+              With over 12 million users worldwide
+            </span>
+            , it provides courses and practice problems across various domains
+            to help programmers enhance their skills and achieve success in
+            their tech careers.
           </p>
           {!isSmallScreen && (
             <Link
@@ -48,7 +50,7 @@ const GFGIntro = () => {
                 Explore the integrations
                 <BiRightArrowAlt className="ml-2 text-xl transform group-hover:translate-x-1 transition-transform" />
               </motion.div>
-                    </Link>
+            </Link>
           )}
         </div>
         <div className="flex md:w-1/2 bg-cover justify-center items-center">

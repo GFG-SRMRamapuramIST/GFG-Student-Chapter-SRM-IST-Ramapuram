@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 import { Navbar, Footer } from "./Navigation";
 import {
@@ -11,6 +12,8 @@ import {
   WebsiteLaunch,
 } from "./Pages";
 import { ScrollToTop } from "./Utility";
+
+ReactGA.initialize("G-P81845BYP3");
 
 const App = () => {
   return (

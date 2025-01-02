@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
+
 import {
   Hero,
   AlumaniWorkAt,
@@ -9,12 +12,20 @@ import {
 } from "../Components";
 
 const Home = () => {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: "gfgsrmrmp.vercel.app/",
+      title: "Home Page",
+    });
+  }, []);
+
   return (
     <>
       <Hero />
       <AlumaniWorkAt />
       <SubHeading />
-      <GFGDomain/>
+      <GFGDomain />
       <Testimonials />
       <GFGIntro />
       <GFGCourses />
