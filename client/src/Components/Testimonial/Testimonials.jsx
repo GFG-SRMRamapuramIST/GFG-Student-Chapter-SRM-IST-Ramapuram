@@ -67,7 +67,7 @@ const Testimonials = () => {
     <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-screen overflow-x-hidden">
       <div className="">
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-8 md:mb-16 text-gray-800">
-          What People Say About Us
+          Testimonials
         </h2>
 
         <div className="relative">
