@@ -36,6 +36,9 @@ import {
   Ramnath_SuryaPPic,
   Vansh_GuptaPPic,
   Jeyasurya_URPPic,
+  Sagarika_MishraPPic,
+  Shubashis_MetePPic,
+  Madhav_SinhaPPic,
 } from "../assets";
 
 export const roles = {
@@ -360,6 +363,34 @@ export const Members24 = [
       codolio: "https://codolio.com/profile/jeyasuryaur",
     },
   },
+  {
+    name: "Sagarika Mishra",
+    caption: "AI, 1st year",
+    image:  Sagarika_MishraPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sagarika-mishra-12b982181/",
+      codolio: "https://codolio.com/profile/sag.m07",
+    },
+  },
+  {
+    name: "Shubashis Mete",
+    caption: "CSE - Core, 2nd year",
+    image:  Shubashis_MetePPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shubashis-mete-909253231/",
+      codolio: "https://codolio.com/profile/Suvo14979",
+    },
+  },
+  {
+    name: "Madhav Sinha",
+    caption: "CSE - Core, 2nd year",
+    image:  Madhav_SinhaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/madhav-sinha/",
+      codolio: "https://codolio.com/profile/madhavsinha",
+    },
+  },
+
 ];
 
 // ***** COURSES *****

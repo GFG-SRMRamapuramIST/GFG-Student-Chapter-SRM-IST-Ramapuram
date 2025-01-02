@@ -64,6 +64,9 @@ import Tharun_Kumar from './imgs/people/2024-25Members/Tharun_Kumar.jpg';
 import Ramnath_Surya from './imgs/people/2024-25Members/Ramnath_Surya.jpg';
 import Vansh_Gupta from './imgs/people/2024-25Members/Vansh_Gupta.jpg';
 import Jeyasurya_UR from './imgs/people/2024-25Members/Jeyasurya_UR.jpeg';
+import Sagarika_Mishra from './imgs/people/2024-25Members/Sagarika_Mishra.jpg';
+import Shubashis_Mete from './imgs/people/2024-25Members/Shubashis.jpg';
+import Madhav_Sinha from './imgs/people/2024-25Members/Madhav_Sinha.jpg';
 
 const JustinPic = {
   url: Justin,
@@ -246,6 +249,24 @@ const Jeyasurya_URPPic = {
   alt: "Jeuasurya U R",
 };
 
+const Sagarika_MishraPPic = {
+  url: Sagarika_Mishra,
+  hashCode: "LHIXEV$|_4XkS7-nyE56-;IUwg$|", 
+  alt: "Sagarika Mishra",
+};
+
+const Shubashis_MetePPic = {
+  url: Shubashis_Mete,
+  hashCode: "LcIFSiW;G^oJ0zbbozjsjJof,.ay", 
+  alt: "Shubashis Mete",
+};
+
+const Madhav_SinhaPPic = {
+  url: Madhav_Sinha,
+  hashCode: "LVIaW3e-P;oLL2kWv}aKo#aKZ#kW", 
+  alt: "Madhav Sinha",
+};
+
 
 export {
   JustinPic,
@@ -278,6 +299,9 @@ export {
   Ramnath_SuryaPPic,
   Vansh_GuptaPPic,
   Jeyasurya_URPPic,
+  Sagarika_MishraPPic,
+  Shubashis_MetePPic,
+  Madhav_SinhaPPic,
 };
 // *****************************************************************************
 
