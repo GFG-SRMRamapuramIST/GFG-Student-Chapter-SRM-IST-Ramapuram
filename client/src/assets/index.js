@@ -48,7 +48,26 @@ import Tanushri_Sai from './imgs/people/2024-25Members/Tanushri_Sai.jpg';
 import Sai_Prashanth from './imgs/people/2024-25Members/Sai_Prashanth.jpeg';
 import Athulya_Ravi from  './imgs/people/2024-25Members/Athulya_Ravi.jpeg';
 import B_HRITHIKA from './imgs/people/2024-25Members/B_HRITHIKA.jpeg';
+<<<<<<< HEAD
 
+=======
+import Anuska_Pan from './imgs/people/2024-25Members/Anuska_Pan.jpg';
+import Shamirul_Huda from './imgs/people/2024-25Members/Shamirul_Huda.jpeg';
+import AMISH_KUMAR from './imgs/people/2024-25Members/AMISH_KUMAR.jpg';
+import Shivaram_Saravanan from './imgs/people/2024-25Members/Shivaram_Saravanan.jpg';
+import Mayank from './imgs/people/2024-25Members/Mayank.png';
+import Saksham_Gupta from './imgs/people/2024-25Members/Saksham_Gupta.jpg';
+import Gaurav_Jha from './imgs/people/2024-25Members/Gaurav_Jha.jpg';
+import Nihar_Shah from './imgs/people/2024-25Members/Nihar_Shah.jpg';
+import Adisesh_Rao from './imgs/people/2024-25Members/Adisesh_Rao.png';
+import SHREYA_KANNAN from './imgs/people/2024-25Members/SHREYA_KANNAN.jpg';
+import Siddharth_Vijayakumar from './imgs/people/2024-25Members/Siddharth_Vijayakumar.jpg';
+import Samhitha_Jaldu from './imgs/people/2024-25Members/Samhitha_Jaldu.jpg';
+import Tharun_Kumar from './imgs/people/2024-25Members/Tharun_Kumar.jpg';
+import Ramnath_Surya from './imgs/people/2024-25Members/Ramnath_Surya.jpg';
+import Vansh_Gupta from './imgs/people/2024-25Members/Vansh_Gupta.jpg';
+import Jeyasurya_UR from './imgs/people/2024-25Members/Jeyasurya_UR.jpeg';
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
 
 const JustinPic = {
   url: Justin,
@@ -134,6 +153,105 @@ const B_HRITHIKAPPic = {
   alt: "B Hrithika",
 };
 
+<<<<<<< HEAD
+=======
+const Anuska_PanPPic = {
+  url: Anuska_Pan,
+  hashCode: "LNG8Got*?ZM|?@-:aekCt7RkRRj@", 
+  alt: "Anuska Pan",
+};
+
+
+const Shamirul_HudaPPic = {
+  url: Shamirul_Huda,
+  hashCode: "LLDSjz?a%zXS~nt5NsR*S^R%RPjF", 
+  alt: "Shamirul Huda",
+};
+
+const AMISH_KUMARPPic = {
+  url: AMISH_KUMAR,
+  hashCode: "LgIX%3WB.8s:~pWB%MofD*jtV?az", 
+  alt: "Amish Kumar",
+};
+
+const Shivaram_SaravananPPic = {
+  url: Shivaram_Saravanan,
+  hashCode: "LfHUzst7?vbH~pof%MayIpWBRPay", 
+  alt: "Shivaram Saravanan",
+};
+
+const MayankPPic = {
+  url: Mayank,
+  hashCode: "LUNwZoDi~q?v#jM{xvt7yXx]MxR5", 
+  alt: "Mayank",
+};
+
+const Saksham_GuptaPPic = {
+  url: Saksham_Gupta,
+  hashCode: "LfHLuaxZtlR+.TWCt7of?HfSROs:", 
+  alt: "Saksham Gupta",
+};
+
+const Gaurav_JhaPPic = {
+  url: Gaurav_Jha,
+  hashCode: "L9FiA7I-TC?a-@-=8}-pISM~%L4n", 
+  alt: "Gaurav Jha",
+};
+
+const Nihar_ShahPPic = {
+  url: Nihar_Shah,
+  hashCode: "LSFh|+oft,oM_NWBt6WCI;aeVrfk", 
+  alt: "Nihar Shah",
+};
+
+const Adisesh_RaoPPic = {
+  url: Adisesh_Rao,
+  hashCode: "LCIXaC%31+tR14Io=cjF0ORO~AJ8", 
+  alt: "Adisesh Rao",
+};
+
+const SHREYA_KANNANPPIC = {
+  url: SHREYA_KANNAN,
+  hashCode: "LxQupnof.mWVTuj[%3ayV}ayV?jt", 
+  alt: "Shreya Kannan",
+};
+
+const Siddharth_VijayakumarPPic = {
+  url: Siddharth_Vijayakumar,
+  hashCode: "LTKnMNj]uPfk0KofxEof?vWBxCax", 
+  alt: "Siddharth Vijayakumar",
+};
+
+const Samhitha_JalduPPic = {
+  url: Samhitha_Jaldu,
+  hashCode: "LsH.4v-pWnWB_NkCS1W=%gRjoKkC", 
+  alt: "Samhitha Jaldu",
+};
+
+const Tharun_KumarPPic = {
+  url: Tharun_Kumar,
+  hashCode: "LUJHp-V@~pE2^*NGIAogbaRkRj%1", 
+  alt: "Tharun Kumar J",
+};
+
+const Ramnath_SuryaPPic = {
+  url: Ramnath_Surya,
+  hashCode: "LKDI|BJC%hj]_NtS%gofx]s:%Moz", 
+  alt: "Ramnath Surya V",
+};
+
+const Vansh_GuptaPPic = {
+  url: Vansh_Gupta,
+  hashCode: "LCA9+#WU01s:%MayM|of0Lj[~BWB", 
+  alt: "Vansh Gupta",
+};
+
+const Jeyasurya_URPPic = {
+  url: Jeyasurya_UR,
+  hashCode: "LHFiom9awHIU8wV?D$-:xv~q4.%2", 
+  alt: "Jeuasurya U R",
+};
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
 
 
 export {
@@ -151,6 +269,25 @@ export {
   Sai_PrashanthPPic,
   Athulya_RaviPPic,
   B_HRITHIKAPPic,
+<<<<<<< HEAD
+=======
+  Anuska_PanPPic,
+  Shamirul_HudaPPic,
+  AMISH_KUMARPPic,
+  Shivaram_SaravananPPic,
+  MayankPPic,
+  Saksham_GuptaPPic,
+  Gaurav_JhaPPic,
+  Nihar_ShahPPic,
+  Adisesh_RaoPPic,
+  SHREYA_KANNANPPIC,
+  Siddharth_VijayakumarPPic,
+  Samhitha_JalduPPic,
+  Tharun_KumarPPic,
+  Ramnath_SuryaPPic,
+  Vansh_GuptaPPic,
+  Jeyasurya_URPPic,
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
 };
 // *****************************************************************************
 

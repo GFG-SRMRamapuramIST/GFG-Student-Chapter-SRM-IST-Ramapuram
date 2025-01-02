@@ -1,4 +1,8 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
+
 import { ImageLoaderComponent } from "../../Utility";
 import AllBlogsCard from "../../Components/BlogsCard/AllBlogsCard";
 import {
@@ -6,10 +10,17 @@ import {
   OnboardingMeetingPic,
   templateImg,
 } from "../../assets";
-import { motion } from "framer-motion";
 import { boxBackdrop } from "../../assets";
 
 const Blogs = () => {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: "gfgsrmrmp.vercel.app/blogs",
+      title: "Blogs Page",
+    });
+  }, []);
+
   const allBlogs = [
     {
       url: HalloweenHangoutPic,
@@ -81,7 +92,7 @@ const Blogs = () => {
                 blurHeight={"250px"}
               />
               <p className="text-[#666666] py-2 text-sm sm:text-md font-semibold mb-2">
-                Wednesday, 1 January 2025
+                Thursday, 2nd January 2025
               </p>
               <h4
                 id="heading"
@@ -106,7 +117,7 @@ const Blogs = () => {
                 className="text-gray-500 text-sm py-8 sm:text-md font-semibold mb-6"
               >
                 {shortDesc(
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sint tempore quaerat natus aperiam vel voluptas repellendus, quos consequuntur ratione distinctio molestiae optio harum corrupti nostrum maxime est labore ea."
+                  "The GeeksforGeeks SRM RMP club proudly achieved a significant milestone with the launch of its official website. This event marks a new chapter in our journey, providing members and the wider community with a centralized platform to explore, learn, and grow together.  "
                 )}
               </p>
               <div className="text-left absolute bottom-0 w-full">

@@ -20,6 +20,25 @@ import {
   Sai_PrashanthPPic,
   Athulya_RaviPPic,
   B_HRITHIKAPPic,
+<<<<<<< HEAD
+=======
+  Anuska_PanPPic,
+  Shamirul_HudaPPic,
+  AMISH_KUMARPPic,
+  Shivaram_SaravananPPic,
+  MayankPPic,
+  Saksham_GuptaPPic,
+  Gaurav_JhaPPic,
+  Nihar_ShahPPic,
+  Adisesh_RaoPPic,
+  SHREYA_KANNANPPIC,
+  Siddharth_VijayakumarPPic,
+  Samhitha_JalduPPic,
+  Tharun_KumarPPic,
+  Ramnath_SuryaPPic,
+  Vansh_GuptaPPic,
+  Jeyasurya_URPPic,
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
 } from "../assets";
 
 export const roles = {
@@ -46,7 +65,11 @@ export const CoreTeam24 = {
     image: SanjanaPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/sanjana-jaldu",
+<<<<<<< HEAD
       codolio: "https://codolio.com/sanjana_jaldu",
+=======
+      codolio: "https://codolio.com/profile/SanjanaJ",
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
     },
   },
   [roles.OpsHead]: {
@@ -200,7 +223,154 @@ export const Members24 = [
       codolio: "https://codolio.com/profile/Hrithika-2004",
     },
   },
+<<<<<<< HEAD
 
+=======
+  {
+    name: "Anuska Pan",
+    caption: "CSE - Core, 2nd Year",
+    image:  Anuska_PanPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/anuska-pan-141b052a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/anuskapan",
+    },
+  },
+  {
+    name: "Shamirul Huda",
+    caption: "CSE - Core, 2nd Year",
+    image:  Shamirul_HudaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shamirul-huda/",
+      codolio: "https://codolio.com/profile/notacallforhelp",
+    },
+  },
+  {
+    name: "Amish Kumar",
+    caption: "CSE - Core, 1st Year",
+    image:  AMISH_KUMARPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/amishkumarofficial",
+      codolio: "https://codolio.com/profile/Amish",
+    },
+  },
+  {
+    name: "Shivaram Saravanan",
+    caption: "CSE - Core, 1st Year",
+    image:  Shivaram_SaravananPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shivaram-saravanan-1b3506324",
+      codolio: "https://codolio.com/profile/Shivaram",
+    },
+  },
+{
+    name: "Mayank",
+    caption: "CSE - Core, 1st Year",
+    image:  MayankPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/mayank-tiwari-6a6607241/",
+      codolio: "https://codolio.com/profile/Mayankmani",
+    },
+  },
+  {
+    name: "Saksham Gupta",
+    caption: "CSE - Core, 1st Year",
+    image:  Saksham_GuptaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/saksham-gupta-72680a30a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/akodo_09",
+    },
+  },
+  {
+    name: "Gaurav Jha",
+    caption: "CSE - Core, 2nd year",
+    image:  Gaurav_JhaPPic,
+    socials: {
+      linkedin: "http://linkedin.com/in/gaurav-0905-jha",
+      codolio: "http://codolio.com/profile/gaurav905",
+    },
+  },
+  {
+    name: "Nihar Shah",
+    caption: "CSE - AIML, 2nd year",
+    image:  Nihar_ShahPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/nihar-shah-104833299/",
+      codolio: "https://codolio.com/profile/Nihar%20Shah",
+    },
+  },
+  {
+    name: "Adisesh Rao",
+    caption: "CSE - AIML, 2nd year",
+    image:  Adisesh_RaoPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/adisesh-raghavendra-rao-10842528a/",
+      codolio: "https://codolio.com/profile/Adisesh_05",
+    },
+  },
+  {
+    name: "K Shreya",
+    caption: "CSE - Core, 1st year",
+    image:  SHREYA_KANNANPPIC,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shreya-kannan-458673305/",
+      codolio: "https://codolio.com/profile/shreya._.kannan",
+    },
+  },
+  {
+    name: "Siddharth Vijayakumar",
+    caption: "CSE - Core, 2nd year",
+    image:  Siddharth_VijayakumarPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/siddharth-vijayakumar/",
+      codolio: "https://codolio.com/profile/siddharth06",
+    },
+  },
+  {
+    name: "Samhitaa Jaldu",
+    caption: "CSE - Core, 1st year",
+    image:  Samhitha_JalduPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/samhitha-jaldu-04332832b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/Samhitha",
+    },
+  },
+  {
+    name: "Tharun Kumar J",
+    caption: "CSE - Core, 2nd year",
+    image:  Tharun_KumarPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/tharun-kumar-a234b9230/",
+      codolio: "https://codolio.com/profile/Curgous",
+    },
+  },
+  {
+    name: "Ramnath Surya V",
+    caption: "CSE - Core, 1st year",
+    image:  Ramnath_SuryaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ramnath-surya-951317341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/ramnathsurya",
+    },
+  },
+  {
+    name: "Vansh Gupta",
+    caption: "CSE - Core, 2nd year",
+    image:  Vansh_GuptaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vansh-gupta-983220325/",
+      codolio: "https://codolio.com/profile/vansh-gupta",
+    },
+  },
+  {
+    name: "Jeysurya U R",
+    caption: "CSE - Core, 2nd year",
+    image:  Jeyasurya_URPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/jeyasuryaur/",
+      codolio: "https://codolio.com/profile/jeyasuryaur",
+    },
+  },
+>>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
 ];
 
 // ***** COURSES *****
