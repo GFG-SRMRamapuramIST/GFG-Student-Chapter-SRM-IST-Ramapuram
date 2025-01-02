@@ -48,6 +48,10 @@ import Tanushri_Sai from './imgs/people/2024-25Members/Tanushri_Sai.jpg';
 import Sai_Prashanth from './imgs/people/2024-25Members/Sai_Prashanth.jpeg';
 import Athulya_Ravi from  './imgs/people/2024-25Members/Athulya_Ravi.jpeg';
 import B_HRITHIKA from './imgs/people/2024-25Members/B_HRITHIKA.jpeg';
+import Anuska_Pan from './imgs/people/2024-25Members/Anuska_Pan.jpg';
+import Shamirul_Huda from './imgs/people/2024-25Members/Shamirul_Huda.jpeg';
+import AMISH_KUMAR from './imgs/people/2024-25Members/AMISH_KUMAR.jpg';
+
 
 
 const JustinPic = {
@@ -134,6 +138,26 @@ const B_HRITHIKAPPic = {
   alt: "B Hrithika",
 };
 
+const Anuska_PanPPic = {
+  url: Anuska_Pan,
+  hashCode: "LNG8Got*?ZM|?@-:aekCt7RkRRj@", 
+  alt: "Anuska Pan",
+};
+
+
+const Shamirul_HudaPPic = {
+  url: Shamirul_Huda,
+  hashCode: "LLDSjz?a%zXS~nt5NsR*S^R%RPjF", 
+  alt: "Shamirul Huda",
+};
+
+const AMISH_KUMARPPic = {
+  url: AMISH_KUMAR,
+  hashCode: "LgIX%3WB.8s:~pWB%MofD*jtV?az", 
+  alt: "Amish Kumar",
+};
+
+
 
 
 export {
@@ -151,6 +175,9 @@ export {
   Sai_PrashanthPPic,
   Athulya_RaviPPic,
   B_HRITHIKAPPic,
+  Anuska_PanPPic,
+  Shamirul_HudaPPic,
+  AMISH_KUMARPPic,
 };
 // *****************************************************************************
 
