@@ -27,6 +27,7 @@ import {
   MayankPPic,
   Saksham_GuptaPPic,
   Gaurav_JhaPPic,
+  JEY_PRANAVPPic,
   Nihar_ShahPPic,
   Adisesh_RaoPPic,
   SHREYA_KANNANPPIC,
@@ -287,6 +288,15 @@ export const Members24 = [
     socials: {
       linkedin: "http://linkedin.com/in/gaurav-0905-jha",
       codolio: "http://codolio.com/profile/gaurav905",
+    },
+  },
+  {
+    name: "Jey Pranav",
+    caption: "CSE - AIML, 1st year",
+    image: JEY_PRANAVPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+      codolio: "https://codolio.com/profile/listztomania_07",
     },
   },
   {

@@ -55,6 +55,7 @@ import Shivaram_Saravanan from './imgs/people/2024-25Members/Shivaram_Saravanan.
 import Mayank from './imgs/people/2024-25Members/Mayank.png';
 import Saksham_Gupta from './imgs/people/2024-25Members/Saksham_Gupta.jpg';
 import Gaurav_Jha from './imgs/people/2024-25Members/Gaurav_Jha.jpg';
+import JEY_PRANAV from './imgs/people/2024-25Members/JEY_PRANAV.jpg';
 import Nihar_Shah from './imgs/people/2024-25Members/Nihar_Shah.jpg';
 import Adisesh_Rao from './imgs/people/2024-25Members/Adisesh_Rao.png';
 import SHREYA_KANNAN from './imgs/people/2024-25Members/SHREYA_KANNAN.jpg';
@@ -197,6 +198,13 @@ const Gaurav_JhaPPic = {
   alt: "Gaurav Jha",
 };
 
+
+const JEY_PRANAVPPic = {
+  url: JEY_PRANAV,
+  hashCode: "L,L|y8ay.Sof~pfQx]j[9uaya0fQ",
+  alt: "Jey Pranav",
+};
+
 const Nihar_ShahPPic = {
   url: Nihar_Shah,
   hashCode: "LSFh|+oft,oM_NWBt6WCI;aeVrfk",
@@ -310,6 +318,7 @@ export {
   MayankPPic,
   Saksham_GuptaPPic,
   Gaurav_JhaPPic,
+  JEY_PRANAVPPic,
   Nihar_ShahPPic,
   Adisesh_RaoPPic,
   SHREYA_KANNANPPIC,
