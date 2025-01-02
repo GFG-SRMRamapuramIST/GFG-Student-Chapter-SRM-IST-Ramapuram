@@ -25,11 +25,7 @@ const MemberCard = ({ member, index, style }) => {
           <div className="text-sm sm:text-md md:text-lg font-semibold text-gray-900">
             {member.name}
           </div>
-<<<<<<< HEAD
-          <p className="text-xs sm:text-sm md:text-md text-green-500 hover:text-green-700 transition duration-300">
-=======
           <p className="text-xs sm:text-sm md:text-md text-gfgsc-green hover:text-green-700 transition duration-300">
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
             {member.caption}
           </p>
         </div>
