@@ -13,6 +13,8 @@ import {
 } from "./Pages";
 import { ScrollToTop } from "./Utility";
 
+// https://www.youtube.com/watch?v=AHSOdHIsYR0
+// Follow the above YT tutorial to integrate Google Analytics with React
 ReactGA.initialize("G-P81845BYP3");
 
 const App = () => {

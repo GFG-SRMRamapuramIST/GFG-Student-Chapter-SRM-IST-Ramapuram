@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaArrowRightLong } from "react-icons/fa6";
@@ -51,14 +51,11 @@ const Navbar = () => {
     if (isMobileMenuOpen) setIsBlogsOpen(false);
   };
 
-<<<<<<< HEAD
-=======
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setIsBlogsOpen(false);
   };
 
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
   return (
     <header className="fixed top-6 left-1/2 w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] max-w-[160rem] -translate-x-1/2 z-50">
       <motion.nav
@@ -69,11 +66,11 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-<<<<<<< HEAD
-          <Link to="/" className="relative flex items-center p-0.5">
-=======
-          <Link to="/" className="relative flex items-center p-0.5" onClick={closeMobileMenu}>
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
+          <Link
+            to="/"
+            className="relative flex items-center p-0.5"
+            onClick={closeMobileMenu}
+          >
             <img
               src={logo}
               alt="GFG Logo"
@@ -188,18 +185,6 @@ const Navbar = () => {
             <ul className="flex items-center gap-6">
               {USER_NAV_LINKS.map((link) => (
                 <li key={link.path}>
-<<<<<<< HEAD
-                  <a
-                    href={link.path}
-                    target={link.isExternal ? "_blank" : undefined}
-                    className={`flex items-center gap-1 px-3 py-2 ${
-                      link.className || "text-[#434b52]"
-                    } rounded-full hover:bg-hover-gray hover:underline hover:underline-offset-8 transition-all duration-200`}
-                  >
-                    {link.title}
-                    {link.icon}
-                  </a>
-=======
                   {link.isExternal ? (
                     <a
                       href={link.path}
@@ -224,7 +209,6 @@ const Navbar = () => {
                       {link.icon}
                     </Link>
                   )}
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
                 </li>
               ))}
             </ul>
@@ -269,10 +253,7 @@ const Navbar = () => {
                               key={item.path}
                               to={item.path}
                               className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200"
-<<<<<<< HEAD
-=======
                               onClick={closeMobileMenu}
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
                             >
                               <div className="text-[#28323b] font-medium">
                                 {item.title}
@@ -285,10 +266,7 @@ const Navbar = () => {
                           <Link
                             to="/blogs"
                             className="block p-2 text-sm text-gfgsc-green hover:underline"
-<<<<<<< HEAD
-=======
                             onClick={closeMobileMenu}
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
                           >
                             See all blogs...
                           </Link>
@@ -302,10 +280,7 @@ const Navbar = () => {
                     <Link
                       to={link.path}
                       className="block px-3 py-2 text-[#4c555e] rounded-lg hover:bg-hover-gray"
-<<<<<<< HEAD
-=======
                       onClick={closeMobileMenu}
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
                     >
                       {link.title}
                     </Link>
@@ -315,18 +290,6 @@ const Navbar = () => {
               <ul className="space-y-2 py-3">
                 {USER_NAV_LINKS.map((link) => (
                   <li key={link.path}>
-<<<<<<< HEAD
-                    <a
-                      href={link.path}
-                      target={link.isExternal ? "_blank" : undefined}
-                      className={`flex items-center gap-1 px-3 py-2 ${
-                        link.className || "text-[#434b52]"
-                      } rounded-lg hover:bg-hover-gray`}
-                    >
-                      {link.title}
-                      {link.icon}
-                    </a>
-=======
                     {link.isExternal ? (
                       <a
                         href={link.path}
@@ -352,7 +315,6 @@ const Navbar = () => {
                         {link.icon}
                       </Link>
                     )}
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
                   </li>
                 ))}
               </ul>
@@ -364,8 +326,4 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar;
->>>>>>> 24ecc86c0e06a2f86c82c520a12881ba075f7718
