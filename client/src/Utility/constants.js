@@ -20,6 +20,9 @@ import {
   Sai_PrashanthPPic,
   Athulya_RaviPPic,
   B_HRITHIKAPPic,
+  Anuska_PanPPic,
+  Shamirul_HudaPPic,
+  AMISH_KUMARPPic,
 } from "../assets";
 
 export const roles = {
@@ -198,6 +201,33 @@ export const Members24 = [
     socials: {
       linkedin: "https://www.linkedin.com/in/b-hrithika/",
       codolio: "https://codolio.com/profile/Hrithika-2004",
+    },
+  },
+  {
+    name: "Anuska Pan",
+    caption: "CSE - Core, 2nd Year",
+    image:  Anuska_PanPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/anuska-pan-141b052a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      codolio: "https://codolio.com/profile/anuskapan",
+    },
+  },
+  {
+    name: "Shamirul Huda",
+    caption: "CSE - Core, 2nd Year",
+    image:  Shamirul_HudaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shamirul-huda/",
+      codolio: "https://codolio.com/profile/notacallforhelp",
+    },
+  },
+  {
+    name: "Amish Kumar",
+    caption: "CSE - Core, 1st Year",
+    image:  AMISH_KUMARPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/amishkumarofficial",
+      codolio: "https://codolio.com/profile/Amish",
     },
   },
 
