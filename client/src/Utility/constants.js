@@ -39,6 +39,9 @@ import {
   Sagarika_MishraPPic,
   Shubashis_MetePPic,
   Madhav_SinhaPPic,
+  SHARMADA_KRISHNAMOORTHIPPic,
+  AmishaPPic,
+  Rishi_Prakash_MohapatraPPic
 } from "../assets";
 
 export const roles = {
@@ -397,6 +400,36 @@ export const Members24 = [
       codolio: "https://codolio.com/profile/madhavsinha",
     },
   },
+  {
+    name: "Sharmada Krishnamoorthi",
+    caption: "CSE - Core, 2nd year",
+    image:  SHARMADA_KRISHNAMOORTHIPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sharmada-r-krishnamoorthi-0a3918320/",
+      codolio: "https://codolio.com/profile/Sharmada",
+    },
+  },
+
+  {
+    name: "Amisha Kumari",
+    caption: "CSE - AIML, 2nd year",
+    image:  AmishaPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/amisha-kumari-351ab9274/",
+      codolio: "https://codolio.com/profile/Amisha_11",
+    },
+  },
+
+  {
+    name: "Madhav Sinha",
+    caption: "CSE - Core, 1st year",
+    image:  Rishi_Prakash_MohapatraPPic,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/rishi-prakash-mohapatra-55b3a82b0/",
+      codolio: "https://codolio.com/profile/Rishi_06",
+    },
+  },
+
 
 ];
 

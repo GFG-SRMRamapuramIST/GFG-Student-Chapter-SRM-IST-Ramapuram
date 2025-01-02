@@ -67,6 +67,9 @@ import Jeyasurya_UR from './imgs/people/2024-25Members/Jeyasurya_UR.jpeg';
 import Sagarika_Mishra from './imgs/people/2024-25Members/Sagarika_Mishra.jpg';
 import Shubashis_Mete from './imgs/people/2024-25Members/Shubashis.jpg';
 import Madhav_Sinha from './imgs/people/2024-25Members/Madhav_Sinha.jpg';
+import SHARMADA_KRISHNAMOORTHI from './imgs/people/2024-25Members/SHARMADA_KRISHNAMOORTHI.jpg';
+import Amisha from './imgs/people/2024-25Members/Amisha.png';
+import Rishi_Prakash_Mohapatra from './imgs/people/2024-25Members/Rishi_prakash_Mohapatra.jpg';
 
 const JustinPic = {
   url: Justin,
@@ -266,6 +269,24 @@ const Madhav_SinhaPPic = {
   alt: "Madhav Sinha",
 };
 
+const SHARMADA_KRISHNAMOORTHIPPic = {
+  url: SHARMADA_KRISHNAMOORTHI,
+  hashCode: "LKH_Y_x_%zV@~WxvRkt6O@f5VYIU", 
+  alt: "Sharmada Krishnamoorthi",
+};
+
+const AmishaPPic = {
+  url: Amisha,
+  hashCode: "LgJRpzx]_Nt7-oRPIUt7oyf7IVV@", 
+  alt: "Amisha Kumari",
+};
+
+const Rishi_Prakash_MohapatraPPic = {
+  url: Rishi_Prakash_Mohapatra,
+  hashCode: "L6G8o:00^t0NQR~q5H-O00-;QmRQ", 
+  alt: "Rishi Prakash Mohapatra",
+};
+
 
 export {
   JustinPic,
@@ -301,6 +322,9 @@ export {
   Sagarika_MishraPPic,
   Shubashis_MetePPic,
   Madhav_SinhaPPic,
+  SHARMADA_KRISHNAMOORTHIPPic,
+  AmishaPPic,
+  Rishi_Prakash_MohapatraPPic
 };
 // *****************************************************************************
 
