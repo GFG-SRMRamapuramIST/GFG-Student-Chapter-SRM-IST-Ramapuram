@@ -59,6 +59,11 @@ import Nihar_Shah from './imgs/people/2024-25Members/Nihar_Shah.jpg';
 import Adisesh_Rao from './imgs/people/2024-25Members/Adisesh_Rao.png';
 import SHREYA_KANNAN from './imgs/people/2024-25Members/SHREYA_KANNAN.jpg';
 import Siddharth_Vijayakumar from './imgs/people/2024-25Members/Siddharth_Vijayakumar.jpg';
+import Samhitha_Jaldu from './imgs/people/2024-25Members/Samhitha_Jaldu.jpg';
+import Tharun_Kumar from './imgs/people/2024-25Members/Tharun_Kumar.jpg';
+import Ramnath_Surya from './imgs/people/2024-25Members/Ramnath_Surya.jpg';
+import Vansh_Gupta from './imgs/people/2024-25Members/Vansh_Gupta.jpg';
+import Jeyasurya_UR from './imgs/people/2024-25Members/Jeyasurya_UR.jpeg';
 
 const JustinPic = {
   url: Justin,
@@ -205,12 +210,42 @@ const SHREYA_KANNANPPIC = {
   alt: "Shreya Kannan",
 };
 
-
 const Siddharth_VijayakumarPPic = {
   url: Siddharth_Vijayakumar,
   hashCode: "LTKnMNj]uPfk0KofxEof?vWBxCax", 
   alt: "Siddharth Vijayakumar",
 };
+
+const Samhitha_JalduPPic = {
+  url: Samhitha_Jaldu,
+  hashCode: "LsH.4v-pWnWB_NkCS1W=%gRjoKkC", 
+  alt: "Samhitha Jaldu",
+};
+
+const Tharun_KumarPPic = {
+  url: Tharun_Kumar,
+  hashCode: "LUJHp-V@~pE2^*NGIAogbaRkRj%1", 
+  alt: "Tharun Kumar J",
+};
+
+const Ramnath_SuryaPPic = {
+  url: Ramnath_Surya,
+  hashCode: "LKDI|BJC%hj]_NtS%gofx]s:%Moz", 
+  alt: "Ramnath Surya V",
+};
+
+const Vansh_GuptaPPic = {
+  url: Vansh_Gupta,
+  hashCode: "LCA9+#WU01s:%MayM|of0Lj[~BWB", 
+  alt: "Vansh Gupta",
+};
+
+const Jeyasurya_URPPic = {
+  url: Jeyasurya_UR,
+  hashCode: "LHFiom9awHIU8wV?D$-:xv~q4.%2", 
+  alt: "Jeuasurya U R",
+};
+
 
 export {
   JustinPic,
@@ -238,6 +273,11 @@ export {
   Adisesh_RaoPPic,
   SHREYA_KANNANPPIC,
   Siddharth_VijayakumarPPic,
+  Samhitha_JalduPPic,
+  Tharun_KumarPPic,
+  Ramnath_SuryaPPic,
+  Vansh_GuptaPPic,
+  Jeyasurya_URPPic,
 };
 // *****************************************************************************
 
