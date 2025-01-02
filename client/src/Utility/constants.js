@@ -431,7 +431,7 @@ export const Members24 = [
   },
 
   {
-    name: "Madhav Sinha",
+    name: "Rishi Prakash Mohapatra",
     caption: "CSE - Core, 1st year",
     image:  Rishi_Prakash_MohapatraPPic,
     socials: {
