@@ -39,10 +39,8 @@ export const CoreTeam24 = {
     role: roles.President,
     image: AakashPic,
     socials: {
-      linkedin: "https://www.linkedin.com/in/aakash-kumar-yadav/",
-      codolio: "https://codolio.com/aakash_ky",
-      // twitter: "https://twitter.com/aakash_ky",
-      // instagram: "https://www.instagram.com/aakash_ky/",
+      linkedin: "https://www.linkedin.com/in/aakash-k-yadav/",
+      codolio: "https://codolio.com/profile/Aakash261204",
     },
   },
   [roles.VicePresident]: {
@@ -50,10 +48,8 @@ export const CoreTeam24 = {
     role: roles.VicePresident,
     image: SanjanaPic,
     socials: {
-      linkedin: "https://www.linkedin.com/in/sanjana-jaldu/",
-      codolio: "https://codolio.com/sanjana_jaldu",
-      // twitter: "https://twitter.com/sanjana_jaldu",
-      // instagram: "https://www.instagram.com/sanjana_jaldu/",
+      linkedin: "https://www.linkedin.com/in/sanjana-jaldu",
+      codolio: "https://codolio.com/profile/SanjanaJ",
     },
   },
   [roles.OpsHead]: {
@@ -62,9 +58,7 @@ export const CoreTeam24 = {
     image: RachitPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/rachit-dhaka/",
-      codolio: "https://codolio.com/rachit_dhaka",
-      // twitter: "https://twitter.com/rachit_dhaka",
-      // instagram: "https://www.instagram.com/rachit_dhaka/",
+      codolio: "https://codolio.com/profile/rachitdhaka",
     },
   },
   [roles.TechHead]: {
@@ -73,9 +67,7 @@ export const CoreTeam24 = {
     image: AbhishekPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/abhishek-newase/",
-      codolio: "https://codolio.com/abhishek_newase",
-      // twitter: "https://twitter.com/abhishek_newase",
-      // instagram: "https://www.instagram.com/abhishek_newase/",
+      codolio: "https://codolio.com/profile/callmeabhi",
     },
   },
 };

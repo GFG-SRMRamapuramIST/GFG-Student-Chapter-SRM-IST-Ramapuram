@@ -37,7 +37,7 @@ const ScrollToTop = () => {
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.2 }}
         >
-          <FaArrowUp className="text-green-500 w-5 h-5" />
+          <FaArrowUp className="text-gfgsc-green w-5 h-5" />
         </motion.button>
       )}
     </div>

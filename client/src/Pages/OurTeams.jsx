@@ -3,6 +3,7 @@ import { CoreTeam24, roles, Members24 } from "../Utility/constants";
 import { LeadCard, YearSelector } from "../Components/ui";
 import { MembersSection } from "../Components";
 import HeikiBackground from "../Components/ui/HeikiBackground";
+import { Link } from "react-router-dom";
 
 const OurTeams = () => {
   const [year, setYear] = useState(24);
@@ -95,9 +96,9 @@ const OurTeams = () => {
                 Join our team and shine brightly to be remembered forever. You
                 could be here next year!
               </p>
-              <button className="bg-white text-gfgsc-green font-bold py-2 px-4 rounded-full hover:shadow-2xl transition duration-300">
+              <Link to="https://forms.gle/YgJeDFs564iiY33L6" target="_blank" className="bg-white text-gfgsc-green font-bold py-2 px-4 rounded-full hover:shadow-2xl transition duration-300">
                 Join Us
-              </button>
+              </Link>
             </div>
           </div>
         )}

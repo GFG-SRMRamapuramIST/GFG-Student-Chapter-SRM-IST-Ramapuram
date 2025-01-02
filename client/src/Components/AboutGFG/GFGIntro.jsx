@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { BiRightArrowAlt } from "react-icons/bi"; // Added BiRightArrowAlt import
+import { motion } from "framer-motion"; // Added motion import
 import { abtGfg } from "../../assets";
 import { GridBackdropDiv2 } from "../ui";
 import { Link } from "react-router-dom";
@@ -21,18 +23,16 @@ const GFGIntro = () => {
     <div className="py-10 w-full flex justify-center px-0 sm:px-2 md:px-4 lg:px-12 bg-white">
       <GridBackdropDiv2 className="flex flex-col lg:flex-row justify-between w-full p-6 gap-6 lg:gap-12 shadow-sm rounded-lg border border-gray-200 min-h-full bg-white">
         <div className="md:w-1/2 md:py-12 md:px-16 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-          <p className="text-gray-700 text-base lg:text-l xl:text-xl font-medium leading-relaxed whitespace-normal break-words">
-            <span className="text-green-600">GeeksforGeeks</span> is a trusted
+          <p className="text-gray-700 text-base lg:text-lg xl:text-xl font-medium leading-relaxed whitespace-normal break-words">
+            <span className="text-gfgsc-green">GeeksforGeeks</span> is a trusted
             platform for coding enthusiasts, offering a wide range of resources,
             including tutorials, coding challenges, and interview preparation
             materials.
-            <span className="bg-green-300 rounded">
-              {" "}
-              With over 12 million users worldwide
-            </span>
-            , it provides courses and practice problems across various domains
-            to help programmers enhance their skills and achieve success in
-            their tech careers.{" "}
+            <span className="bg-gfgsc-green-200 rounded">
+              {" "} With over 12 million users worldwide
+            </span>, it provides courses and practice problems across various
+            domains to help programmers enhance their skills and achieve success
+            in their tech careers.
           </p>
           {!isSmallScreen && (
             <Link
@@ -40,13 +40,15 @@ const GFGIntro = () => {
               target="_blank"
               className="mt-5 text-left group relative"
             >
-              <p className="inline-flex items-center text-xl text-green-600 cursor-pointer transition-transform duration-300">
+              <motion.div
+                className="inline-flex items-center py-3 text-lg font-medium text-gfgsc-green transition duration-300 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 Explore the integrations
-                <FaArrowRight className="ml-2" />
-              </p>
-              {/* Green line under text */}
-              <span className="absolute bottom-0 left-0 h-0.5 bg-green-600 w-0 group-hover:w-full transition-all duration-300" />
-            </Link>
+                <BiRightArrowAlt className="ml-2 text-xl transform group-hover:translate-x-1 transition-transform" />
+              </motion.div>
+                    </Link>
           )}
         </div>
         <div className="flex md:w-1/2 bg-cover justify-center items-center">

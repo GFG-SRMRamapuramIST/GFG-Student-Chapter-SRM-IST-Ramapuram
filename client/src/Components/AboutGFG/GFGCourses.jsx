@@ -145,7 +145,7 @@ const GFGCourses = () => {
                   <img
                     src={course.image}
                     alt={course.title}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-4">

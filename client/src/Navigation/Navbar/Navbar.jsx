@@ -51,6 +51,11 @@ const Navbar = () => {
     if (isMobileMenuOpen) setIsBlogsOpen(false);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsBlogsOpen(false);
+  };
+
   return (
     <header className="fixed top-6 left-1/2 w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] max-w-[160rem] -translate-x-1/2 z-50">
       <motion.nav
@@ -61,7 +66,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="relative flex items-center p-0.5">
+          <Link to="/" className="relative flex items-center p-0.5" onClick={closeMobileMenu}>
             <img
               src={logo}
               alt="GFG Logo"
@@ -176,16 +181,30 @@ const Navbar = () => {
             <ul className="flex items-center gap-6">
               {USER_NAV_LINKS.map((link) => (
                 <li key={link.path}>
-                  <a
-                    href={link.path}
-                    target={link.isExternal ? "_blank" : undefined}
-                    className={`flex items-center gap-1 px-3 py-2 ${
-                      link.className || "text-[#434b52]"
-                    } rounded-full hover:bg-hover-gray hover:underline hover:underline-offset-8 transition-all duration-200`}
-                  >
-                    {link.title}
-                    {link.icon}
-                  </a>
+                  {link.isExternal ? (
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-1 px-3 py-2 ${
+                        link.className || "text-[#434b52]"
+                      } rounded-full hover:bg-hover-gray hover:underline hover:underline-offset-8 transition-all duration-200`}
+                    >
+                      {link.title}
+                      {link.icon}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className={`flex items-center gap-1 px-3 py-2 ${
+                        link.className || "text-[#434b52]"
+                      } rounded-full hover:bg-hover-gray hover:underline hover:underline-offset-8 transition-all duration-200`}
+                      onClick={closeMobileMenu}
+                    >
+                      {link.title}
+                      {link.icon}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -230,6 +249,7 @@ const Navbar = () => {
                               key={item.path}
                               to={item.path}
                               className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200"
+                              onClick={closeMobileMenu}
                             >
                               <div className="text-[#28323b] font-medium">
                                 {item.title}
@@ -242,6 +262,7 @@ const Navbar = () => {
                           <Link
                             to="/blogs"
                             className="block p-2 text-sm text-gfgsc-green hover:underline"
+                            onClick={closeMobileMenu}
                           >
                             See all blogs...
                           </Link>
@@ -255,6 +276,7 @@ const Navbar = () => {
                     <Link
                       to={link.path}
                       className="block px-3 py-2 text-[#4c555e] rounded-lg hover:bg-hover-gray"
+                      onClick={closeMobileMenu}
                     >
                       {link.title}
                     </Link>
@@ -264,16 +286,31 @@ const Navbar = () => {
               <ul className="space-y-2 py-3">
                 {USER_NAV_LINKS.map((link) => (
                   <li key={link.path}>
-                    <a
-                      href={link.path}
-                      target={link.isExternal ? "_blank" : undefined}
-                      className={`flex items-center gap-1 px-3 py-2 ${
-                        link.className || "text-[#434b52]"
-                      } rounded-lg hover:bg-hover-gray`}
-                    >
-                      {link.title}
-                      {link.icon}
-                    </a>
+                    {link.isExternal ? (
+                      <a
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-1 px-3 py-2 ${
+                          link.className || "text-[#434b52]"
+                        } rounded-lg hover:bg-hover-gray`}
+                        onClick={closeMobileMenu}
+                      >
+                        {link.title}
+                        {link.icon}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className={`flex items-center gap-1 px-3 py-2 ${
+                          link.className || "text-[#434b52]"
+                        } rounded-lg hover:bg-hover-gray`}
+                        onClick={closeMobileMenu}
+                      >
+                        {link.title}
+                        {link.icon}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
