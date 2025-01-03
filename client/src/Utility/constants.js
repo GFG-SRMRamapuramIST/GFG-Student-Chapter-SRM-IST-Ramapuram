@@ -464,29 +464,3 @@ export const courses = [
     image: FSD,
   },
 ];
-
-// ***** TESTIMONIALS *****
-export const testimonials = [
-  {
-    quote:
-      "As President of the GeeksforGeeks Student Chapter, I gained leadership skills and further cultivated my passion for competitive programming. Organizing contests and mentoring peers enhanced my problem-solving abilities while fostering a collaborative community of coders. This experience sharpened both my technical expertise and strategic thinking of mine.",
-    author: "Aakash Kumar Yadav",
-    position: "President 2024-25",
-    image: AakashPic,
-    highlightedPhrases: [
-      "gained leadership skills",
-      "enhanced my problem-solving abilities",
-    ],
-  },
-  {
-    quote:
-      "Being the Vice President of GeeksforGeeks Student Chapter has polished my leadership, team management and organizational skills. Regular opportunities to network, mentor others and develop my knowledge of coding and development.",
-    author: "Sanjana Jaldu",
-    position: "Vice-President 2024-25",
-    image: SanjanaPic,
-    highlightedPhrases: [
-      "leadership, team management and organizational skills",
-      "opportunities to network, mentor others",
-    ],
-  },
-];
