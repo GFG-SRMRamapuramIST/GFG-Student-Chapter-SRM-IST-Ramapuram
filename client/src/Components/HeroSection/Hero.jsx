@@ -73,9 +73,13 @@ const Hero = () => {
             variants={itemVariants}
             className="flex flex-wrap gap-2 sm:gap-4"
           >
-            <button className="px-4 sm:px-8 py-2.5 sm:py-3 bg-gfgsc-green text-white rounded-lg font-semibold shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition-all text-sm sm:text-base">
+            <a
+              href="https://forms.gle/YgJeDFs564iiY33L6"
+              target="_blank"
+              className="px-4 sm:px-8 py-2.5 sm:py-3 bg-gfgsc-green text-white rounded-lg font-semibold shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition-all text-sm sm:text-base"
+            >
               Join Chapter
-            </button>
+            </a>
             <button
               className="px-4 sm:px-8 py-2.5 sm:py-3 border-2 border-gfgsc-green text-gfgsc-green rounded-lg font-semibold hover:bg-green-50 transform hover:scale-105 transition-all text-sm sm:text-base"
               onClick={handleLearnMoreClick}
