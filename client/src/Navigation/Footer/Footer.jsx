@@ -1,36 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 //Importing icons
-import { FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaSpinner } from "react-icons/fa";
 
 //Importing APIs
-import {getAllFootercourses } from "../../APIs/APICall";
-
-
+import { getAllFootercourses } from "../../APIs/APICall";
 
 const Footer = () => {
-  const [Footercourses,setFootercourses ] = useState([]);
+  const [footerCourses, setFootercourses] = useState([]);
   const [loading, setLoading] = useState(true); // State to manage loading animation
   const [error, setError] = useState(false);
 
+  useEffect(() => {
+    const fetchFootercourses = async () => {
+      setLoading(true);
+      const data = await getAllFootercourses();
+      if (data.error) {
+        setError(true);
+      } else {
+        setFootercourses(data);
+        console.log(data);
+      }
+      setLoading(false);
+    };
 
-   useEffect(() => {
-      const fetchFootercourses = async () => {
-        setLoading(true);
-        const data = await getAllFootercourses();
-        if (data.error) {
-          setError(true);
-        } else {
-          setFootercourses(data);
-          console.log(data);
-        }
-        setLoading(false);
-      };
-  
-      fetchFootercourses();
-    }, []);
+    fetchFootercourses();
+  }, []);
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-8 py-12">
@@ -78,26 +76,25 @@ const Footer = () => {
             <div className="w-1/3 mb-6 max-md:text-center">
               <h2 className="text-md md:text-lg font-semibold">Courses</h2>
               {loading ? (
-                              <div className="flex justify-center items-center h-64">
-                                <FaSpinner className="spinner text-center text-sm sm:text-sm" />
-                              </div>
-                            ) :(<>
-                            <ul className="text-sm md:text-md mt-4 space-y-2">
-                          <li>
-                            <Link
-                              to={
-                                "https://www.geeksforgeeks.org/courses/category/dsa-placements"
-                              }
-                              className="text-gray-400 hover:text-white transition duration-300"
-                            >
-                              DSA/Placements
-                            </Link>
-                          </li>
-               
-                          </ul>
-                            </>)}
-
-              
+                <div className="flex justify-center items-center h-64">
+                  <FaSpinner className="spinner text-center text-sm sm:text-sm" />
+                </div>
+              ) : (
+                <>
+                  <ul className="text-sm md:text-md mt-4 space-y-2">
+                    {footerCourses.map((element, index) => (
+                      <li key={index}>
+                        <Link
+                          to={element.courseurl}
+                          className="text-gray-400 hover:text-white transition duration-300"
+                        >
+                          {element.coursetitle}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
             <div className="w-1/3 mb-6 max-md:text-center">
               <h2 className="text-md md:text-lg font-semibold">Developers</h2>
