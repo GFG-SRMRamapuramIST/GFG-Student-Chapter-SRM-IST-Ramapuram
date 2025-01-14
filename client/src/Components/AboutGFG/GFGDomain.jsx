@@ -1,50 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { BiCode, BiCodeBlock, BiRightArrowAlt } from "react-icons/bi";
-import { 
-  SiWebpack, 
-  SiTableau, 
-  SiTensorflow, 
-  SiFigma 
-} from "react-icons/si";
-
-const domains = [
-  {
-    name: "Competitive Programming",
-    icon: BiCodeBlock,
-    color: "text-blue-500",
-    bgColor: "bg-blue-50",
-    tags: ["DSA", "DP", "Problem Solving", "Algorithms"]
-  },
-  {
-    name: "Web Development",
-    icon: SiWebpack,
-    color: "text-green-500",
-    bgColor: "bg-green-50",
-    tags: ["Frontend", "Backend", "Full Stack", "DevOps"]
-  },
-  {
-    name: "Data Analytics",
-    icon: SiTableau,
-    color: "text-purple-500",
-    bgColor: "bg-purple-50",
-    tags: ["Statistics", "SQL", "Tableau", "Data Visualization"]
-  },
-  {
-    name: "Machine Learning",
-    icon: SiTensorflow,
-    color: "text-red-500",
-    bgColor: "bg-red-50",
-    tags: ["Deep Learning", "Neural Networks", "TensorFlow", "NLP"]
-  },
-  {
-    name: "Design",
-    icon: SiFigma,
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-50",
-    tags: ["UI/UX", "Graphic Design", "Figma", "Prototyping"]
-  }
-];
+import { ImageLoaderComponent } from "../../Utility";
+// Importing Icons
+import { BiRightArrowAlt } from "react-icons/bi";
+// Importing APIs
+import { getAllDomains } from "../../APIs/APICall";
+import { urlFor } from "../../APIs/APIConfiguration";
 
 const TextReveal = ({ children, delay = 0 }) => (
   <motion.span
@@ -58,6 +19,30 @@ const TextReveal = ({ children, delay = 0 }) => (
 );
 
 const GFGDomain = () => {
+  const [domains, setDomains] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchDomains = async () => {
+      setLoading(true);
+      try {
+        const data = await getAllDomains();
+        if (data?.error) {
+          setError(true);
+        } else {
+          setDomains(data || []);
+        }
+      } catch (err) {
+        setError(true);
+        console.error("Error fetching domains:", err);
+      }
+      setLoading(false);
+    };
+
+    fetchDomains();
+  }, []);
+
   return (
     <div className="py-6 sm:py-10 w-full flex justify-center px-4 sm:px-6 lg:px-12">
       <div className="flex flex-col lg:flex-row w-full sm:gap-12 rounded-xl border border-gray-100 shadow-lg bg-white overflow-hidden">
@@ -115,14 +100,13 @@ const GFGDomain = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div
-                className="inline-flex items-center py-3 text-lg font-medium text-gfgsc-green  transition duration-300 group"
-                whileHover={{ scale: 1.02, }}
+                className="inline-flex items-center py-3 text-lg font-medium text-gfgsc-green transition duration-300 group"
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Explore Domains
                 <BiRightArrowAlt className="ml-2 text-xl transform group-hover:translate-x-1 transition-transform" />
               </motion.div>
-              
             </motion.div>
           </div>
         </motion.div>
@@ -134,37 +118,54 @@ const GFGDomain = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid gap-6 h-full">
-            {domains.map((domain, index) => (
-              <motion.div
-                key={domain.name}
-                className={`p-6 rounded-xl ${domain.bgColor} backdrop-blur-sm transition-all duration-300 hover:shadow-md`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="flex items-center gap-4 mb-3">
-                  <domain.icon className={`text-2xl ${domain.color}`} />
-                  <h3 className="font-semibold text-lg">{domain.name}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {domain.tags.map((tag, tagIndex) => (
-                    <motion.span
-                      key={tag}
-                      className="px-3 py-1 text-sm rounded-full bg-white/80 text-gray-700"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {loading ? (
+            <div className="flex justify-center items-center h-52">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gfgsc-green"></div>
+            </div>
+          ) : error ? (
+            <div className="text-center text-red-500">
+              Failed to load domains. Please try again later.
+            </div>
+          ) : (
+            <div className="grid gap-6 h-full">
+              {domains.map((domain, index) => (
+                <motion.div
+                  key={domain.hashCode}
+                  className={`p-6 rounded-xl ${domain.cardbgColor} backdrop-blur-sm transition-all duration-300 hover:shadow-md`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-8 h-8">
+                      <ImageLoaderComponent
+                        url={urlFor(domain.domainlogo)}
+                        alt={domain.domaintitle}
+                        hashCode={domain.hashCode}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <h3 className="font-semibold text-lg">{domain.domaintitle}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {domain.domaintags.map((tag, tagIndex) => (
+                      <motion.span
+                        key={`${domain.hashCode}-${tagIndex}`}
+                        className="px-3 py-1 text-sm rounded-full bg-white/80 text-gray-700"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </motion.div>
       </div>
     </div>

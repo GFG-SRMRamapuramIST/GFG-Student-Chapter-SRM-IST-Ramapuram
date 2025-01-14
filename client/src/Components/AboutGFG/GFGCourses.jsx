@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { courses } from "../../Utility/constants";
+import { motion } from "framer-motion";
+import { ImageLoaderComponent } from "../../Utility";
+//Importing icons
 import {
   HiOutlineCodeBracket,
   HiOutlineAcademicCap,
@@ -9,10 +13,32 @@ import {
   HiOutlineStar,
   HiStar,
 } from "react-icons/hi2";
-import { motion } from "framer-motion";
-import { courses } from "../../Utility/constants";
+
+//Importing APIs
+import { getAllGFGCourses } from "../../APIs/APICall";
+import { urlFor } from "../../APIs/APIConfiguration";
 
 const GFGCourses = () => {
+  const [GFGcourses, setGFGCourses] = useState([]);
+  const [loading, setLoading] = useState(true); // State to manage loading animation
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchGFGcourses = async () => {
+      setLoading(true);
+      const data = await getAllGFGCourses();
+      if (data.error) {
+        setError(true);
+      } else {
+        setGFGCourses(data);
+        // console.log(data);
+      }
+      setLoading(false);
+    };
+
+    fetchGFGcourses();
+  }, []);
+
   // Content Arrays
   const whyChooseContent = [
     {
@@ -43,13 +69,13 @@ const GFGCourses = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % courses.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % GFGcourses.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [GFGcourses.length]);
 
   const getOrder = (index) => {
-    const diff = (index - currentIndex + courses.length) % courses.length;
+    const diff = (index - currentIndex + GFGcourses.length) % GFGcourses.length;
     return diff === 0 ? 1 : diff === 1 ? 2 : 0;
   };
 
@@ -129,32 +155,43 @@ const GFGCourses = () => {
 
           {/* Course Carousel */}
           <div className="relative w-full h-52 mb-8">
-            {courses.map((course, index) => (
-              <div
-                key={index}
-                className={`absolute left-1/2 transition-all duration-500 cursor-pointer bg-white rounded-lg shadow-xl 
-                ${
-                  getOrder(index) === 0
-                    ? "w-40 md:w-44 lg:w-48 top-2 -translate-x-full opacity-60 scale-85"
-                    : getOrder(index) === 1
-                    ? "w-56 md:w-60 lg:w-64 top-0 -translate-x-1/2 opacity-100 scale-100 z-20"
-                    : "w-40 md:w-44 lg:w-48 top-2 translate-x-0 opacity-60 scale-85"
-                }`}
-              >
-                <div className="relative w-full pb-[66.67%] overflow-hidden rounded-t-lg">
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="absolute top-0 left-0 w-full h-full object-contain"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-sm truncate">
-                    {course.title}
-                  </h3>
-                </div>
+            {loading ? (
+              <div className="flex justify-center items-center h-52">
+                <div className="spinner"></div> {/* Add your spinner styling */}
               </div>
-            ))}
+            ) : (
+              GFGcourses.slice(0, 3).map((course, index) => (
+                <div
+                  key={index}
+                  className={`absolute left-1/2 transition-all duration-500 cursor-pointer bg-white rounded-lg shadow-xl 
+                  ${
+                    getOrder(index) === 0
+                      ? "w-40 md:w-44 lg:w-48 top-2 -translate-x-full opacity-60 scale-85"
+                      : getOrder(index) === 1
+                      ? "w-56 md:w-60 lg:w-64 top-0 -translate-x-1/2 opacity-100 scale-100 z-20"
+                      : "w-40 md:w-44 lg:w-48 top-2 translate-x-0 opacity-60 scale-85"
+                  }
+                  `}
+                >
+                  <div className="relative w-full pb-[50%] overflow-hidden rounded-t-lg">
+                    <ImageLoaderComponent
+                      url={urlFor(course.courseImage)}
+                      alt={course.courseImage?.altText}
+                      hashCode={course.hashCode}
+                      className="object-cover w-full absolute top-0 left-0"
+                      blurWidth="400px"
+                      blurHeight="400px"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-sm truncate">
+                      {course.title}
+                    </h3>
+                  
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           {/* Course Details */}
