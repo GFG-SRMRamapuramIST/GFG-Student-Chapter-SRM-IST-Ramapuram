@@ -179,7 +179,7 @@ const GFGCourses = () => {
                     <ImageLoaderComponent
                       url={urlFor(course.courseImage)}
                       alt={course.courseImage.altText}
-                      hashCode={course.hashCode}
+                      hashCode={course.courseImage.hashCode}
                       className="object-cover w-full absolute top-0 left-0"
                       blurWidth="400px"
                       blurHeight="400px"
