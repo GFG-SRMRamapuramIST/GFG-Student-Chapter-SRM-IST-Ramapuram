@@ -145,7 +145,7 @@ const GFGDomain = () => {
                       <ImageLoaderComponent
                         url={urlFor(domain.domainlogo)}
                         alt={domain.domaintitle}
-                        hashCode={domain.hashCode}
+                        hashCode={domain.domainlogo.hashCode}
                         className="w-full h-full object-contain"
                       />
                     </div>
