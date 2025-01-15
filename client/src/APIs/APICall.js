@@ -79,13 +79,7 @@ export const getAllGFGCourses = async () => {
 // Fetching all Domains from Sanity backend
 export const getAllDomains = async () => {
   try {
-    const query = `*[_type == "gfgdomains"] {
-      domainlogo,
-      hashCode,
-      domaintitle,
-      domaintags,
-      cardbgColor
-    }`;
+    const query = '*[_type == "gfgdomains"]';
 
     const response = await client.fetch(query);
     return response;

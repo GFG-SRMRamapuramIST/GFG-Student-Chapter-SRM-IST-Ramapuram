@@ -5,6 +5,7 @@ import { ImageLoaderComponent } from "../../Utility";
 
 // Importing Icons
 import { BiRightArrowAlt } from "react-icons/bi";
+import { FaSpinner } from "react-icons/fa";
 
 // Importing APIs
 import { getAllDomains } from "../../APIs/APICall";
@@ -29,16 +30,12 @@ const GFGDomain = () => {
   useEffect(() => {
     const fetchDomains = async () => {
       setLoading(true);
-      try {
-        const data = await getAllDomains();
-        if (data?.error) {
-          setError(true);
-        } else {
-          setDomains(data || []);
-        }
-      } catch (err) {
+      const data = await getAllDomains();
+      if (data?.error) {
         setError(true);
-        console.error("Error fetching domains:", err);
+      } else {
+        setDomains(data);
+        //console.log(data);
       }
       setLoading(false);
     };
@@ -122,8 +119,8 @@ const GFGDomain = () => {
           transition={{ duration: 0.6 }}
         >
           {loading ? (
-            <div className="flex justify-center items-center h-52">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gfgsc-green"></div>
+            <div className="flex justify-center items-center h-64">
+              <FaSpinner className="spinner text-center text-sm sm:text-sm" />
             </div>
           ) : error ? (
             <div className="text-center text-red-500">
@@ -133,8 +130,8 @@ const GFGDomain = () => {
             <div className="grid gap-6 h-full">
               {domains.map((domain, index) => (
                 <motion.div
-                  key={domain.hashCode}
-                  className={`p-6 rounded-xl ${domain.cardbgColor} backdrop-blur-sm transition-all duration-300 hover:shadow-md`}
+                  key={index}
+                  className={`p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-md bg-${domain.cardbgColor}-100`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
