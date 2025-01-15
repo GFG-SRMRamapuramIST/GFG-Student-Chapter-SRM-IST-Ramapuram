@@ -2,11 +2,8 @@ import {
   AakashPic,
   AbhishekPic,
   DevaprabhaPic,
-  DSA,
-  FSD,
   JustinPic,
   Kiran_PPic,
-  MLDS,
   RachitPic,
   RevanPic,
   SanjanaPic,
@@ -42,7 +39,7 @@ import {
   Madhav_SinhaPPic,
   SHARMADA_KRISHNAMOORTHIPPic,
   AmishaPPic,
-  Rishi_Prakash_MohapatraPPic
+  Rishi_Prakash_MohapatraPPic,
 } from "../assets";
 
 export const roles = {
@@ -109,7 +106,7 @@ export const Members24 = [
     image: Yamini_ShankariPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/yamini-shankari-aj-8135842a4/",
-      codolio: "https://codolio.com/profile/Yams08y",
+      codolio: "https://codolio.com/profile/Yams08",
     },
   },
   {
@@ -386,7 +383,7 @@ export const Members24 = [
   {
     name: "Sagarika Mishra",
     caption: "AI, 1st year",
-    image:  Sagarika_MishraPPic,
+    image: Sagarika_MishraPPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/sagarika-mishra-12b982181/",
       codolio: "https://codolio.com/profile/sag.m07",
@@ -395,7 +392,7 @@ export const Members24 = [
   {
     name: "Shubashis Mete",
     caption: "CSE - Core, 2nd year",
-    image:  Shubashis_MetePPic,
+    image: Shubashis_MetePPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/shubashis-mete-909253231/",
       codolio: "https://codolio.com/profile/Suvo14979",
@@ -404,7 +401,7 @@ export const Members24 = [
   {
     name: "Madhav Sinha",
     caption: "CSE - Core, 2nd year",
-    image:  Madhav_SinhaPPic,
+    image: Madhav_SinhaPPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/madhav-sinha/",
       codolio: "https://codolio.com/profile/madhavsinha",
@@ -413,9 +410,10 @@ export const Members24 = [
   {
     name: "Sharmada Krishnamoorthi",
     caption: "CSE - Core, 2nd year",
-    image:  SHARMADA_KRISHNAMOORTHIPPic,
+    image: SHARMADA_KRISHNAMOORTHIPPic,
     socials: {
-      linkedin: "https://www.linkedin.com/in/sharmada-r-krishnamoorthi-0a3918320/",
+      linkedin:
+        "https://www.linkedin.com/in/sharmada-r-krishnamoorthi-0a3918320/",
       codolio: "https://codolio.com/profile/Sharmada",
     },
   },
@@ -423,7 +421,7 @@ export const Members24 = [
   {
     name: "Amisha Kumari",
     caption: "CSE - AIML, 2nd year",
-    image:  AmishaPPic,
+    image: AmishaPPic,
     socials: {
       linkedin: "https://www.linkedin.com/in/amisha-kumari-351ab9274/",
       codolio: "https://codolio.com/profile/Amisha_11",
@@ -433,34 +431,11 @@ export const Members24 = [
   {
     name: "Rishi Prakash Mohapatra",
     caption: "CSE - Core, 1st year",
-    image:  Rishi_Prakash_MohapatraPPic,
+    image: Rishi_Prakash_MohapatraPPic,
     socials: {
-      linkedin: "https://www.linkedin.com/in/rishi-prakash-mohapatra-55b3a82b0/",
+      linkedin:
+        "https://www.linkedin.com/in/rishi-prakash-mohapatra-55b3a82b0/",
       codolio: "https://codolio.com/profile/Rishi_06",
     },
-  },
-
-
-];
-
-// ***** COURSES *****
-export const courses = [
-  {
-    title: "Complete DSA Preparation",
-    rating: 4.7,
-    description: "Master Data Structures & Algorithms with hands-on practice",
-    image: DSA,
-  },
-  {
-    title: "ML / Data Science",
-    rating: 4.7,
-    description: "Learn to design scalable models and analyze data",
-    image: MLDS,
-  },
-  {
-    title: "Full Stack Development",
-    rating: 4.7,
-    description: "Become a full stack developer with MERN stack",
-    image: FSD,
   },
 ];

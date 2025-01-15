@@ -17,7 +17,7 @@ export const getAllTestimonials = async () => {
   }
 };
 
-// Fetching all Courses from Sanity backend
+// Fetching all Footer Courses from Sanity backend
 export const getAllFootercourses = async () => {
   const query = '*[_type == "footercourses"]';
   try {

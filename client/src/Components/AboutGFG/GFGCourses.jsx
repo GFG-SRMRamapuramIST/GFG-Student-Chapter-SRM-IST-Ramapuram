@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { courses } from "../../Utility/constants";
 import { motion } from "framer-motion";
+
 import { ImageLoaderComponent } from "../../Utility";
+
 //Importing icons
 import {
   HiOutlineCodeBracket,
@@ -13,6 +14,7 @@ import {
   HiOutlineStar,
   HiStar,
 } from "react-icons/hi2";
+import { FaSpinner } from "react-icons/fa";
 
 //Importing APIs
 import { getAllGFGCourses } from "../../APIs/APICall";
@@ -31,7 +33,7 @@ const GFGCourses = () => {
         setError(true);
       } else {
         setGFGCourses(data);
-        // console.log(data);
+        //console.log(data);
       }
       setLoading(false);
     };
@@ -130,7 +132,7 @@ const GFGCourses = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-6 text-center">
             Our Impact
           </h2>
-
+          {/* Our Impact */}
           <div className="grid grid-cols-3 gap-6 mb-8 w-fit">
             {impactStats.map((stat, index) => (
               <motion.div
@@ -156,11 +158,11 @@ const GFGCourses = () => {
           {/* Course Carousel */}
           <div className="relative w-full h-52 mb-8">
             {loading ? (
-              <div className="flex justify-center items-center h-52">
-                <div className="spinner"></div> {/* Add your spinner styling */}
+              <div className="flex justify-center items-center h-64">
+                <FaSpinner className="spinner text-center text-sm sm:text-sm" />
               </div>
             ) : (
-              GFGcourses.slice(0, 3).map((course, index) => (
+              GFGcourses.map((course, index) => (
                 <div
                   key={index}
                   className={`absolute left-1/2 transition-all duration-500 cursor-pointer bg-white rounded-lg shadow-xl 
@@ -176,7 +178,7 @@ const GFGCourses = () => {
                   <div className="relative w-full pb-[50%] overflow-hidden rounded-t-lg">
                     <ImageLoaderComponent
                       url={urlFor(course.courseImage)}
-                      alt={course.courseImage?.altText}
+                      alt={course.courseImage.altText}
                       hashCode={course.hashCode}
                       className="object-cover w-full absolute top-0 left-0"
                       blurWidth="400px"
@@ -187,7 +189,6 @@ const GFGCourses = () => {
                     <h3 className="font-semibold text-sm truncate">
                       {course.title}
                     </h3>
-                  
                   </div>
                 </div>
               ))
@@ -195,49 +196,57 @@ const GFGCourses = () => {
           </div>
 
           {/* Course Details */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
-              {courses[currentIndex].title}
-            </h3>
-            <div className="flex justify-center items-center space-x-1 mb-3">
-              {[...Array(5)].map((_, i) => {
-                const difference = courses[currentIndex].rating - i;
-
-                return (
-                  <div key={i} className="relative">
-                    {/* Empty star as background */}
-                    <HiOutlineStar className="w-5 h-5 text-gray-300" />
-
-                    {/* Filled star with width based on rating */}
-                    <div
-                      className="absolute top-0 left-0 overflow-hidden"
-                      style={{
-                        width:
-                          difference >= 1
-                            ? "100%"
-                            : difference > 0
-                            ? `${difference * 100}%`
-                            : "0%",
-                      }}
-                    >
-                      <HiStar className="w-5 h-5 text-yellow-400" />
-                    </div>
-                  </div>
-                );
-              })}
-              <span className="ml-2 text-gray-600">
-                {courses[currentIndex].rating}/5
-              </span>
+          {loading ? (
+            <div className="flex justify-center items-center h-64">
+              <FaSpinner className="spinner text-center text-sm sm:text-sm" />
             </div>
-            <p className="text-gray-600 max-w-md mx-auto">
-              {courses[currentIndex].description}
-            </p>
-          </motion.div>
+          ) : (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                  {GFGcourses[currentIndex].title}
+                </h3>
+                <div className="flex justify-center items-center space-x-1 mb-3">
+                  {[...Array(5)].map((_, i) => {
+                    const difference = GFGcourses[currentIndex].rating - i;
+
+                    return (
+                      <div key={i} className="relative">
+                        {/* Empty star as background */}
+                        <HiOutlineStar className="w-5 h-5 text-gray-300" />
+
+                        {/* Filled star with width based on rating */}
+                        <div
+                          className="absolute top-0 left-0 overflow-hidden"
+                          style={{
+                            width:
+                              difference >= 1
+                                ? "100%"
+                                : difference > 0
+                                ? `${difference * 100}%`
+                                : "0%",
+                          }}
+                        >
+                          <HiStar className="w-5 h-5 text-yellow-400" />
+                        </div>
+                      </div>
+                    );
+                  })}
+                  <span className="ml-2 text-gray-600">
+                    {GFGcourses[currentIndex].rating}/5
+                  </span>
+                </div>
+                <p className="text-gray-600 max-w-md mx-auto">
+                  {GFGcourses[currentIndex].description}
+                </p>
+              </motion.div>
+            </>
+          )}
         </div>
       </motion.div>
     </div>

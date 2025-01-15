@@ -383,10 +383,3 @@ import OnboardingMeetingPic from "./imgs/Blogs/OnboardingMeeting.jpg";
 
 export { templateImg, HalloweenHangoutPic, OnboardingMeetingPic };
 // ************************************************************
-
-// ******************** GFG Cources Img ************************
-import DSA from "./cources/DSA.webp";
-import FSD from "./cources/FSD.webp";
-import MLDS from "./cources/MLDS.webp";
-
-export { DSA, FSD, MLDS };

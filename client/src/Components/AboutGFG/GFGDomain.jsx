@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import { ImageLoaderComponent } from "../../Utility";
+
 // Importing Icons
 import { BiRightArrowAlt } from "react-icons/bi";
+
 // Importing APIs
 import { getAllDomains } from "../../APIs/APICall";
 import { urlFor } from "../../APIs/APIConfiguration";
@@ -47,7 +50,7 @@ const GFGDomain = () => {
     <div className="py-6 sm:py-10 w-full flex justify-center px-4 sm:px-6 lg:px-12">
       <div className="flex flex-col lg:flex-row w-full sm:gap-12 rounded-xl border border-gray-100 shadow-lg bg-white overflow-hidden">
         {/* Left Section */}
-        <motion.div 
+        <motion.div
           className="flex-1 p-8 lg:p-12 flex items-center"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -55,7 +58,7 @@ const GFGDomain = () => {
         >
           <div className="max-w-xl space-y-8">
             <div className="space-y-4">
-              <motion.div 
+              <motion.div
                 className="text-sm uppercase tracking-widest text-gfgsc-green font-medium"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -63,14 +66,14 @@ const GFGDomain = () => {
               >
                 The diversity of our club
               </motion.div>
-              
+
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
                 <TextReveal>Discover Your</TextReveal>{" "}
                 <div className="relative inline-block">
                   <TextReveal delay={0.3}>
                     <span className="text-gfgsc-green">Tech Path</span>
                   </TextReveal>
-                  <motion.div 
+                  <motion.div
                     className="absolute -bottom-1 left-0 h-1 bg-green-200 w-full"
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
@@ -80,16 +83,16 @@ const GFGDomain = () => {
               </h2>
             </div>
 
-            <motion.div 
+            <motion.div
               className="prose prose-lg text-gray-600"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
               <p className="leading-relaxed">
-                Join a vibrant community where innovation meets learning. 
-                Dive into multiple domains, collaborate with peers, and shape 
-                your technical journey with hands-on experience.
+                Join a vibrant community where innovation meets learning. Dive
+                into multiple domains, collaborate with peers, and shape your
+                technical journey with hands-on experience.
               </p>
             </motion.div>
 
@@ -112,7 +115,7 @@ const GFGDomain = () => {
         </motion.div>
 
         {/* Right Section */}
-        <motion.div 
+        <motion.div
           className="flex-1 p-8 lg:p-12 bg-gray-50"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -146,7 +149,9 @@ const GFGDomain = () => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className="font-semibold text-lg">{domain.domaintitle}</h3>
+                    <h3 className="font-semibold text-lg">
+                      {domain.domaintitle}
+                    </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {domain.domaintags.map((tag, tagIndex) => (

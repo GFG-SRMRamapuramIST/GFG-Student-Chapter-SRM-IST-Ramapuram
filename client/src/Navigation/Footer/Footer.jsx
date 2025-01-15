@@ -22,7 +22,7 @@ const Footer = () => {
         setError(true);
       } else {
         setFootercourses(data);
-        console.log(data);
+        //console.log(data);
       }
       setLoading(false);
     };
