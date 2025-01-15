@@ -4,9 +4,9 @@ export default {
     title: "Blog",
     fields: [
       {
-        name: "title",
+        name: "blogtitle",
         type: "string",
-        title: "Title",
+        title: "Blog Title",
         description: "Title of the blog.",
       },
       {
@@ -40,7 +40,7 @@ export default {
         rows: 3,
       },
       {
-        name: "image",
+        name: "blogimage",
         type: "image",
         title: "Blog Image",
         options: {
@@ -56,7 +56,7 @@ export default {
         ],
       },
       {
-        name: "hashCode",
+        name: "blogimghashCode",
         type: "string",
         title: "Hash Code",
         description: "Unique hash code for the blog image.",

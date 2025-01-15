@@ -14,8 +14,8 @@ export default {
         validation: (Rule) => Rule.required().error('Company logo is required'),
       },
       {
-        name: 'hashCode',
-        title: 'Hash Code',
+        name: 'companyLogohashCode',
+        title: 'HashCode',
         type: 'string',
         description: 'Unique hash code to identify the company logo.',
         validation: (Rule) =>

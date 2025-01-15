@@ -1,7 +1,7 @@
 export default {
-    name: "GFG_Course",
+    name: "gfgcourse",
     type: "document",
-    title: "GFG_Course",
+    title: "GFG Course",
     fields: [
       {
         name: "courseImage",

@@ -1,5 +1,5 @@
 export default {
-    name: 'footer_courses',
+    name: 'footercourses',
     title: 'Footer Courses',
     type: 'document',
     fields: [
