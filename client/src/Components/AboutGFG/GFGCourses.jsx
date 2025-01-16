@@ -162,8 +162,11 @@ const GFGCourses = () => {
                 <FaSpinner className="spinner text-center text-sm sm:text-sm" />
               </div>
             ) : error ? (
-              <div className="text-center text-red-500">
-                Failed to load domains. Please try again later.
+              <div className="flex justify-center items-center h-full text-red-500">
+                <div className="text-center">
+                  Failed to load this component!! <br /> Please try again
+                  later!!
+                </div>
               </div>
             ) : (
               GFGcourses.map((course, index) => (
@@ -205,8 +208,10 @@ const GFGCourses = () => {
               <FaSpinner className="spinner text-center text-sm sm:text-sm" />
             </div>
           ) : error ? (
-            <div className="text-center text-red-500">
-              Failed to load domains. Please try again later.
+            <div className="flex justify-center items-center h-full text-red-500">
+              <div className="text-center">
+                Failed to load this component!! <br /> Please try again later!!
+              </div>
             </div>
           ) : (
             <>

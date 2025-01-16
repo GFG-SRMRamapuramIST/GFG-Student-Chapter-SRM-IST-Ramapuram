@@ -123,19 +123,22 @@ const GFGDomain = () => {
               <FaSpinner className="spinner text-center text-sm sm:text-sm" />
             </div>
           ) : error ? (
-            <div className="text-center text-red-500">
-              Failed to load domains. Please try again later.
+            <div className="flex justify-center items-center h-full text-red-500">
+              <div className="text-center">
+                Failed to load this component!! <br /> Please try again later!!
+              </div>
             </div>
           ) : (
             <div className="grid gap-6 h-full">
               {domains.map((domain, index) => (
                 <motion.div
                   key={index}
-                  className={`p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-md bg-${domain.cardbgColor}-100`}
+                  className="p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
+                  style={{ backgroundColor: domain.cardbgColor }}
                 >
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-8 h-8">

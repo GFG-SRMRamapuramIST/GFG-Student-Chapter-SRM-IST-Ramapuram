@@ -79,6 +79,13 @@ const Footer = () => {
                 <div className="flex justify-center items-center h-64">
                   <FaSpinner className="spinner text-center text-sm sm:text-sm" />
                 </div>
+              ) : error ? (
+                <div className="flex justify-center mt-3 h-full text-red-500">
+                  <div>
+                    Failed to load this component!! <br /> Please try again
+                    later!!
+                  </div>
+                </div>
               ) : (
                 <>
                   <ul className="text-sm md:text-md mt-4 space-y-2">

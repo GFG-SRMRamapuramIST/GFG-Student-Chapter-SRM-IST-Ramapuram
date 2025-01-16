@@ -114,16 +114,23 @@ const Testimonials = () => {
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
             }}
-            className=" w-full"
+            className="w-full"
           >
             <div className="absolute top-4 left-4 text-gfgsc-green opacity-20">
               <BsQuote size={60} className="max-sm:max-w-8 max-sm:max-h-8" />
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-xl overflow-hidden  min-h-[200px]">
               {loading ? (
                 <div className="flex justify-center items-center h-64">
                   <FaSpinner className="spinner text-center text-sm sm:text-sm" />
+                </div>
+              ) : error ? (
+                <div className="flex justify-center items-center h-fit text-red-500">
+                  <div className="text-center">
+                    Failed to load this component!! <br /> Please try again
+                    later!!
+                  </div>
                 </div>
               ) : (
                 <>
