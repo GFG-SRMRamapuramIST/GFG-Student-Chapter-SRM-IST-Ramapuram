@@ -89,19 +89,4 @@ export const getAllDomains = async () => {
   }
 };
 
-// Fetching Navbar content from Sanity backend
-export const getNavbarContent = async () => {
-  const query = '*[_type == "navbar"]';
-  try {
-    const response = await client.fetch(query);
-    return response;
-  } catch (error) {
-    console.error("Error fetching navbar content: ", error);
-    return {
-      error:
-        "Failed to fetch navbar content. Please check the logs for more details.",
-    };
-  }
-};
-
 // *************************************************************************

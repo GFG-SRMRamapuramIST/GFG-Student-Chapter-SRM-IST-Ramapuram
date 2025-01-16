@@ -1,29 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Importing Icons
 import { FaChevronDown, FaArrowRightLong } from "react-icons/fa6";
 import { CiGlobe } from "react-icons/ci";
+import { FaSpinner } from "react-icons/fa";
+
+// GFG Student Chapter logo
 import { logo } from "../../assets/icons";
 
-// Navigation content
-const BLOG_ITEMS = [
-  {
-    title: "Website Launch",
-    date: "1st January 2025",
-    path: "/blogs/website-launch",
-  },
-  {
-    title: "Halloween Hangout",
-    date: "31st October 2024",
-    path: "/blogs/halloween-hangout",
-  },
-  {
-    title: "Onboarding Meet",
-    date: "19th October 2024",
-    path: "/blogs/onboarding-meet",
-  },
-];
+// API call
+import { getAllBlogs } from "../../APIs/APICall";
 
+// Navigation Content *****************************************
 const NAV_LINKS = [{ title: "Our Team", path: "/our-teams" }];
 
 const USER_NAV_LINKS = [
@@ -41,8 +31,50 @@ const USER_NAV_LINKS = [
     className: "text-gfgsc-green",
   },
 ];
+// ************************************************************
 
 const Navbar = () => {
+  const [blogsMetaData, setBlogsMetaData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  // Helper functions *****************
+  const formatDate = (dateStr) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  const generateSlug = (title) =>
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  // ***********************************
+
+  useEffect(() => {
+    const fetchAllBlogsMetaData = async () => {
+      setLoading(true);
+
+      const data = await getAllBlogs();
+      if (data?.error) {
+        setError(true);
+      } else {
+        const BLOG_ITEMS = data.map((blog) => ({
+          title: blog.blogtitle,
+          date: formatDate(blog.date),
+          path: `/blogs/${generateSlug(blog.blogtitle)}`,
+        }));
+        setBlogsMetaData(BLOG_ITEMS);
+        console.log(BLOG_ITEMS);
+      }
+
+      setLoading(false);
+    };
+
+    fetchAllBlogsMetaData();
+  }, []);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBlogsOpen, setIsBlogsOpen] = useState(false);
 
@@ -148,27 +180,43 @@ const Navbar = () => {
                         >
                           Blogs
                         </Link>
-                        {BLOG_ITEMS.map((item) => (
-                          <Link
-                            key={item.path}
-                            to={item.path}
-                            className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200 group/item"
-                          >
-                            <div className="flex items-center justify-between text-[#28323b] font-medium">
-                              {item.title}
-                              <FaArrowRightLong className="opacity-0 group-hover/item:opacity-100 transition-opacity duration-200 text-sm" />
+                        {loading ? (
+                          <div className="flex justify-center items-center h-64">
+                            <FaSpinner className="spinner text-center text-sm sm:text-sm" />
+                          </div>
+                        ) : error ? (
+                          <div className="flex justify-center items-center h-full text-red-500">
+                            <div className="text-center">
+                              Failed to load this component!! <br /> Please try
+                              again later!!
                             </div>
-                            <span className="text-sm text-[#4c555e]">
-                              {item.date}
-                            </span>
-                          </Link>
-                        ))}
+                          </div>
+                        ) : (
+                          <>
+                            {blogsMetaData.map((item) => (
+                              <Link
+                                key={item.path}
+                                to={item.path}
+                                className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200 group/item"
+                              >
+                                <div className="flex items-center justify-between text-[#28323b] font-medium">
+                                  {item.title}
+                                  <FaArrowRightLong className="opacity-0 group-hover/item:opacity-100 transition-opacity duration-200 text-sm" />
+                                </div>
+                                <span className="text-sm text-[#4c555e]">
+                                  {item.date}
+                                </span>
+                              </Link>
+                            ))}
+                          </>
+                        )}
                       </div>
                     </div>
                   </motion.div>
                 </AnimatePresence>
               </li>
 
+              {/* Nav Links: Our Team's page link only so far */}
               {NAV_LINKS.map((link) => (
                 <li key={link.path}>
                   <Link
@@ -181,7 +229,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            {/* User Navigation */}
+            {/* User Navigation: GFG Official website link, Join Us form link */}
             <ul className="flex items-center gap-6">
               {USER_NAV_LINKS.map((link) => (
                 <li key={link.path}>
@@ -240,38 +288,62 @@ const Navbar = () => {
                   </button>
                   <AnimatePresence>
                     {isBlogsOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-6 pr-3 py-2 space-y-2">
-                          {BLOG_ITEMS.map((item) => (
-                            <Link
-                              key={item.path}
-                              to={item.path}
-                              className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200"
-                              onClick={closeMobileMenu}
+                      <>
+                        {loading ? (
+                          <div className="flex justify-center items-center h-64">
+                            <FaSpinner className="spinner text-center text-sm sm:text-sm" />
+                          </div>
+                        ) : error ? (
+                          <div className="flex justify-center items-center h-full text-red-500">
+                            <div className="">
+                              Failed to load this component!! <br /> Please try
+                              again later!!
+                              <Link
+                                to="/blogs"
+                                className="block p-2 text-sm text-gfgsc-green hover:underline"
+                                onClick={closeMobileMenu}
+                              >
+                                See all blogs...
+                              </Link>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
                             >
-                              <div className="text-[#28323b] font-medium">
-                                {item.title}
+                              <div className="pl-6 pr-3 py-2 space-y-2">
+                                {blogsMetaData.map((item) => (
+                                  <Link
+                                    key={item.path}
+                                    to={item.path}
+                                    className="block p-2 rounded hover:bg-hover-gray transition-colors duration-200"
+                                    onClick={closeMobileMenu}
+                                  >
+                                    <div className="text-[#28323b] font-medium">
+                                      {item.title}
+                                    </div>
+                                    <span className="text-sm text-[#4c555e]">
+                                      {item.date}
+                                    </span>
+                                  </Link>
+                                ))}
+                                <Link
+                                  to="/blogs"
+                                  className="block p-2 text-sm text-gfgsc-green hover:underline"
+                                  onClick={closeMobileMenu}
+                                >
+                                  See all blogs...
+                                </Link>
                               </div>
-                              <span className="text-sm text-[#4c555e]">
-                                {item.date}
-                              </span>
-                            </Link>
-                          ))}
-                          <Link
-                            to="/blogs"
-                            className="block p-2 text-sm text-gfgsc-green hover:underline"
-                            onClick={closeMobileMenu}
-                          >
-                            See all blogs...
-                          </Link>
-                        </div>
-                      </motion.div>
+                            </motion.div>
+                          </>
+                        )}
+                      </>
                     )}
                   </AnimatePresence>
                 </li>
