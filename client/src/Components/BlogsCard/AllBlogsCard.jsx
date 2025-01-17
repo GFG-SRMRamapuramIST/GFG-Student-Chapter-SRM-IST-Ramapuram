@@ -22,7 +22,7 @@ function AllBlogsCard({ url, hashCode, title, date, about, details }) {
 
   return (
     <motion.div
-      className="bg-white p-[10px] pb-[16px] rounded-[16px] min-w-[300px] max-w-[350px]"
+      className="bg-white p-[10px] pb-[16px] rounded-[16px] min-w-[300px] max-w-[350px] min-h-[408px]"
       style={cardStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

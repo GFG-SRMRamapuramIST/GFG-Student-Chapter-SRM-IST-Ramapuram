@@ -66,7 +66,7 @@ const Navbar = () => {
           path: `/blogs/${generateSlug(blog.blogtitle)}`,
         }));
         setBlogsMetaData(BLOG_ITEMS);
-        console.log(BLOG_ITEMS);
+        //console.log(BLOG_ITEMS);
       }
 
       setLoading(false);

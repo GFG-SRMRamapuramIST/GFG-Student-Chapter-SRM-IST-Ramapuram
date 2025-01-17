@@ -4,17 +4,7 @@ import PageNotFound from "./PageNotFound";
 
 /********************** BLOGS *********************/
 import Blogs from "./Blogs/Blogs";
-import WebsiteLaunch from "./Blogs/WebsiteLaunch";
-import HalloweenHangout from "./Blogs/HalloweenHangout";
-import OnboardingMeet from "./Blogs/OnboardingMeet";
+import BlogTemplate from "./Blogs/BlogTemplate";
 /**************************************************/
 
-export {
-  Home,
-  OurTeams,
-  Blogs,
-  WebsiteLaunch,
-  HalloweenHangout,
-  OnboardingMeet,
-  PageNotFound,
-};
+export { Home, OurTeams, Blogs, BlogTemplate, PageNotFound };

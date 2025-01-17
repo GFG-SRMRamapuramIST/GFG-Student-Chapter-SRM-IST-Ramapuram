@@ -375,11 +375,3 @@ import boxBackdrop from "./box-backdrop.png";
 
 export { gridBackdrop, abtGfg, boxBackdrop };
 // ***************************************************
-
-// ******************** BLOGS Img *****************************
-import templateImg from "./imgs/Blogs/templateIMG.jpg";
-import HalloweenHangoutPic from "./imgs/Blogs/HalloweenHangout.jpg";
-import OnboardingMeetingPic from "./imgs/Blogs/OnboardingMeeting.jpg";
-
-export { templateImg, HalloweenHangoutPic, OnboardingMeetingPic };
-// ************************************************************
