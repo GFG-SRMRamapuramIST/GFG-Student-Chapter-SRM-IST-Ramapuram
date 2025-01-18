@@ -47,6 +47,21 @@ export const getAllAlumniCompanies = async () => {
   }
 };
 
+// Fetching all 2024 Members details from Sanity backend
+export const getAll2024Member = async () => {
+  const query = '*[_type == "members24"]';
+  try {
+    const response = await client.fetch(query);
+    return response;
+  } catch (error) {
+    console.error("Error fetching alumni companies: ", error);
+    return {
+      error:
+        "Failed to fetch alumni companies. Please check the logs for more details.",
+    };
+  }
+};
+
 // Fetching all Blogs from Sanity backend (ordered by date)
 export const getAllBlogs = async () => {
   const query = '*[_type == "blog"] | order(date desc)';

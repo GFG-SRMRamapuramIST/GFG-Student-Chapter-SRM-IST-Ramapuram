@@ -3,6 +3,7 @@ import Blogs from './Blogs'
 import Footer_Courses from './Footer_Courses'
 import GFGCourses from './GFGCourses'
 import GFGDomain from './GFGDomain'
+import Members24 from './Members24'
 import Testimonials from './Testimonials'
 
 export const schemaTypes = [
@@ -12,4 +13,5 @@ export const schemaTypes = [
   GFGDomain,
   GFGCourses,
   Blogs,
+  Members24,
 ]

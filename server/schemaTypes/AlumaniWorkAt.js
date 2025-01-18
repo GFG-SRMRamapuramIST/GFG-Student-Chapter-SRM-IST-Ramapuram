@@ -1,37 +1,36 @@
 export default {
-    name: 'alumaniCompany',
-    title: 'Alumni Companies',
-    type: 'document',
-    fields: [
-      {
-        name: 'companyLogo',
-        title: 'Company Logo',
-        type: 'image',
-        options: {
-          hotspot: true,
+  name: 'alumaniCompany',
+  title: 'Alumni Companies',
+  type: 'document',
+  fields: [
+    {
+      name: 'companyName',
+      title: 'Company Name',
+      type: 'string',
+    },
+    {
+      name: 'companyLogo',
+      type: 'image',
+      title: 'Compoany Logo',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required().error('Company logo is required'),
+      fields: [
+        {
+          name: 'altText',
+          type: 'string',
+          title: 'Alt Text',
+          description: 'Name of the company Eg: "{COMPANY_NAME} Logo"',
         },
-        description: 'Upload the logo of the company.',
-        validation: (Rule) => Rule.required().error('Company logo is required'),
-      },
-      {
-        name: 'companyLogohashCode',
-        title: 'HashCode',
-        type: 'string',
-        description: 'Unique hash code to identify the company logo.',
-        validation: (Rule) =>
-          Rule.required()
-            .min(4)
-            .max(64)
-            .error('Hash code must be between 4 and 64 characters'),
-      },
-      {
-        name: 'altText',
-        title: 'Alt Text',
-        type: 'string',
-        description: 'Alternative text for the logo image.',
-        validation: (Rule) =>
-          Rule.required().min(1).error('Alt text is required for accessibility'),
-      },
-    ],
-  };
+        {
+          name: 'companyLogoHashCode',
+          type: 'string',
+          title: 'Hash Code',
+          description: 'Unique hash code for the company logo.',
+        },
+      ],
+    },
+  ],
+}
   
