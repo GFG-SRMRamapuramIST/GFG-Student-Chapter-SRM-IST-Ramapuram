@@ -7,4 +7,8 @@ import Blogs from "./Blogs/Blogs";
 import BlogTemplate from "./Blogs/BlogTemplate";
 /**************************************************/
 
-export { Home, OurTeams, Blogs, BlogTemplate, PageNotFound };
+/********************** FORMS *********************/
+import ContactUs from "./ContactUs";
+/**************************************************/
+
+export { Home, OurTeams, Blogs, BlogTemplate, PageNotFound, ContactUs };

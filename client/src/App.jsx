@@ -2,7 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga4";
 
 import { Navbar, Footer } from "./Navigation";
-import { Blogs, BlogTemplate, Home, OurTeams, PageNotFound } from "./Pages";
+import {
+  Blogs,
+  BlogTemplate,
+  ContactUs,
+  Home,
+  OurTeams,
+  PageNotFound,
+} from "./Pages";
 import { ScrollToTop } from "./Utility";
 
 // https://www.youtube.com/watch?v=AHSOdHIsYR0
@@ -21,6 +28,10 @@ const App = () => {
         {/* ****************************BLOGS***************************** */}
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogTemplate />} />
+        {/* ************************************************************** */}
+
+        {/* ****************************FORMS***************************** */}
+        <Route path="/contact-us" element={ContactUs} />
         {/* ************************************************************** */}
 
         <Route path="/*" element={<PageNotFound />} />
