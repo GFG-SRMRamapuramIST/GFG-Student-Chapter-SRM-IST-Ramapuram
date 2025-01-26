@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 // Importing assets
 import contactImage from "../assets/imgs/contactusdino.png";
 import { boxBackdrop } from "../assets";
+
 // Importing Icons
 import { FaPaperPlane } from "react-icons/fa";
-import { Blurhash } from "react-blurhash"; 
+import { Blurhash } from "react-blurhash";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -83,12 +85,20 @@ const ContactUs = () => {
         <div className="flex flex-col justify-center">
           <form onSubmit={handleSubmit} className="space-y-4 p-8">
             <div>
-              <h2 className="text-4xl font-bold mb-4 text-green-800 text-center">Get in Touch</h2>
+              {/* 
+              <h2 className="text-4xl font-bold mb-4 text-green-800 text-center">
+                Contact Us
+              </h2>
               <p className="text-green-600 text-center mb-6 h-6">
                 {typingText}
                 <span className="animate-pulse">|</span>
               </p>
-              <label htmlFor="name" className="block mt-12 text-sm font-medium text-green-700 mb-2">
+              
+              */}
+              <label
+                htmlFor="name"
+                className="block mt-2 text-sm font-medium text-green-700 mb-2"
+              >
                 Name
               </label>
               <input
@@ -103,7 +113,10 @@ const ContactUs = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-green-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-green-700 mb-2"
+              >
                 Email
               </label>
               <input
@@ -118,8 +131,11 @@ const ContactUs = () => {
               />
             </div>
             <div>
-              <label htmlFor="domain" className="block text-sm font-medium text-green-700 mb-2">
-                Domain
+              <label
+                htmlFor="domain"
+                className="block text-sm font-medium text-green-700 mb-2"
+              >
+                Subject
               </label>
               <input
                 type="text"
@@ -127,12 +143,15 @@ const ContactUs = () => {
                 name="domain"
                 value={formData.domain}
                 onChange={handleChange}
-                placeholder="Your Company/Website"
+                placeholder="The reason for contacting us"
                 className="w-full px-3 py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-green-700 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-green-700 mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -154,67 +173,57 @@ const ContactUs = () => {
               <span>Send Message</span>
             </button>
             {formSubmitted && (
-              <p className="text-center text-green-600 mt-4 font-semibold">Form Submitted</p>
+              <p className="text-center text-green-600 mt-4 font-semibold">
+                Form Submitted
+              </p>
             )}
           </form>
         </div>
         <div className="flex flex-col">
           <div className="relative w-full h-50 overflow-hidden">
-            {!imageLoaded && (
-              <Blurhash
-                hash="LGN-J-^,}09saMt7-;M{#=RjSwR%"
-                width="100%"
-                height="100%"
-                resolutionX={32}
-                resolutionY={32}
-                punch={1}
-              />
-            )}
-            <img
-              src={contactImage}
-              alt="Contact"
-              className={`w-full object-cover transition-opacity duration-700 ${
-                imageLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              onLoad={() => setImageLoaded(true)}
+            <Blurhash
+              hash="LGN-J-^,}09saMt7-;M{#=RjSwR%"
+              width="100%"
+              height="100%"
+              resolutionX={32}
+              resolutionY={32}
+              punch={1}
             />
           </div>
           <div className="space-y-4 mt-4">
-            <div className="flex items-center space-x-4 text-green-700 px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span> 
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-            </div>
-            <div className="flex items-center space-x-4 text-green-700 px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span> 
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-            </div>
-            <div className="flex items-center space-x-4 text-green-700 px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span> 
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-            </div>
-            <div className="flex items-center space-x-4 text-green-700 px-4">
+            <div className="flex items-center space-x-4 text-black px-4">
               <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit</span>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              </span>
             </div>
-            <div className="flex items-center space-x-4 text-green-700 px-4">
+            <div className="flex items-center space-x-4 text-black px-4">
               <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit</span>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              </span>
+            </div>
+            <div className="flex items-center space-x-4 text-black px-4">
+              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit
+              </span>
+            </div>
+            <div className="flex items-center space-x-4 text-black px-4">
+              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
+              <span>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit
+              </span>
+            </div>
+            <div className="flex items-center space-x-4 text-black px-4">
+              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
+              <span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              </span>
             </div>
           </div>
         </div>
       </div>
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-          rotateZ: [0, 5, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-0 right-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-gfgsc-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-      />
     </div>
   );
 };

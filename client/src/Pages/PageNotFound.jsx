@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import DinoImage from "../assets/icons/gfg Dino.png";
 
