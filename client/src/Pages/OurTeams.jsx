@@ -2,42 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga4";
 
-//Importing icons
-import { FaSpinner } from "react-icons/fa";
+import { CoreTeam24, roles } from "../Utility/constants";
 
-//Importing APIs
-import { getAll2024Member } from "../APIs/APICall";
-
-import { CoreTeam24, roles, Members24 } from "../Utility/constants";
 import { LeadCard, YearSelector } from "../Components/ui";
 import { MembersSection } from "../Components";
 import HeikiBackground from "../Components/ui/HeikiBackground";
 
 const OurTeams = () => {
-  const [members24Data, setMembers24Data] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-      const fetchAllMembers24Data = async () => {
-        setLoading(true);
-  
-        const data = await getAll2024Member();
-        if (data?.error) {
-          setError(true);
-        } else {
-         //console.log(data);
-         setMembers24Data(data);
-         
-        }
-  
-        setLoading(false);
-      };
-  
-      fetchAllMembers24Data();
-    }, []);
-
-
   //Google Analytics
   useEffect(() => {
     ReactGA.send({
@@ -118,32 +89,14 @@ const OurTeams = () => {
             </div>
 
             {/* for Members */}
-        {loading ? (
-                          <div className="flex justify-center items-center h-64">
-                            <FaSpinner className="spinner text-center text-sm sm:text-sm" />
-                          </div>
-                        ): error ? (<div className="flex justify-center items-center h-full text-red-500">
-                          <div className="">
-                            Failed to load this component!! <br /> Please try
-                            again later!!
-                            <Link
-                              to="/blogs"
-                              className="block p-2 text-sm text-gfgsc-green hover:underline"
-                              onClick={closeMobileMenu}
-                            >
-                              See all blogs...
-                            </Link>
-                          </div>
-                        </div>
-                      ) : ( <MembersSection
-                        title="The Geek League"
-                        caption="Fueled by passion and powered by coffee"
-                        description="We’re not just a club; we’re a family of dreamers, doers, and
+
+            <MembersSection
+              title="The Geek League"
+              caption="Fueled by passion and powered by coffee"
+              description="We’re not just a club; we’re a family of dreamers, doers, and
                     game-changers."
-                        members={members24Data}
-                      />)
-                        }
-          
+              batch="2024"
+            />
           </div>
         ) : (
           <div className="flex justify-center items-center h-full m-4 md:m-8">
