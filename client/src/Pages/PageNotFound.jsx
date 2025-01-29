@@ -1,45 +1,45 @@
-import { useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import React from "react";
+import { ImageLoaderComponent } from "../Utility";
 import DinoImage from "../assets/icons/gfg Dino.png";
 
 const PageNotFound = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const  PageNotFound_Img= [
+    {
+      image: DinoImage,
+      imageAltText: "Cute dinosaur",
+      imageHashCode: "LGN-J-^,}09saMt7-;M{#=RjSwR%",
+    },
+  ];
+  const imgWidth = "500px";
+  const imgHeight = "300px";
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white p-4">
       <div className="text-center max-w-3xl w-full">
-        {/* Show loader until the image is loaded */}
-        {!imageLoaded && (
-          <div className="flex justify-center items-center h-64">
-            <FaSpinner className="spinner animate-spin text-center text-4xl text-gray-600" />
-          </div>
-        )}
+        <div>
+          <ImageLoaderComponent
+            url={PageNotFound_Img[0].image}
+            alt={PageNotFound_Img[0].imageAltText}
+            hashCode={PageNotFound_Img[0].imageHashCode}
+            className={`w-[${imgWidth}] h-[${imgHeight}] mx-auto my-6 transition-opacity duration-500`}
+            blurWidth={imgWidth}
+            blurHeight={imgHeight}
+          />
+        </div>
 
-        {/* Image element with onLoad to toggle the loader */}
-        <img
-          src={DinoImage}
-          alt="Cute dinosaur"
-          className={`w-[500px] h-[300px] mx-auto my-6 transition-opacity duration-500 ${
-            imageLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          onLoad={() => setImageLoaded(true)}
-        />
-
-        {imageLoaded && (
-          <>
-            <p className="text-gray-800 text-lg md:text-xl mb-8">
-              "Oh, it's you again... 😉"
-              <br />
-              Why are you back here? Shoo shoo, go fix it already!
-            </p>
-            <a
-              href="/"
-              className="bg-gfgsc-green text-white px-6 py-3 rounded inline-block text-base"
-            >
-              Go Home
-            </a>
-          </>
-        )}
+        <div>
+          <p className="text-gray-800 text-lg md:text-xl mb-8">
+            "Oh, it's you again... 😉"
+            <br />
+            Why are you back here? Shoo shoo, go fix it already!
+          </p>
+          <a
+            href="/"
+            className="bg-gfgsc-green text-white px-6 py-3 rounded inline-block text-base"
+          >
+            Go Home
+          </a>
+        </div>
       </div>
     </div>
   );

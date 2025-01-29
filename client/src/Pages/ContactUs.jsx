@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-// Importing assets
-import contactImage from "../assets/imgs/contactusdino.png";
-import { boxBackdrop } from "../assets";
-
-// Importing Icons
+//Importing icons
 import { FaPaperPlane } from "react-icons/fa";
-import { Blurhash } from "react-blurhash";
+//Importing assets
+import { boxBackdrop } from "../assets";
+import { ImageLoaderComponent } from "../Utility";
+import contactImage from "../assets/imgs/contactusdino.png";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +14,20 @@ const ContactUs = () => {
     domain: "",
     message: "",
   });
+  const contactUs = [
+    {
+      image: contactImage,
+      imageAltText: "Contact Image",
+      imageHashCode: "LGN-J-^,}09saMt7-;M{#=RjSwR%",
+    },
+  ];
 
   const [typingText, setTypingText] = useState("");
   const fullText = "We would love to hear from you!";
-  const [imageLoaded, setImageLoaded] = useState(false); // Image loading state
-  const [formSubmitted, setFormSubmitted] = useState(false); // Track form submission
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+ 
+  const currentIndex = 0;
 
   useEffect(() => {
     let timer;
@@ -46,7 +53,6 @@ const ContactUs = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
 
-    // Clear the form after submission
     setFormData({
       name: "",
       email: "",
@@ -54,7 +60,6 @@ const ContactUs = () => {
       message: "",
     });
 
-    // Show form submitted message
     setFormSubmitted(true);
   };
 
@@ -80,24 +85,66 @@ const ContactUs = () => {
         }}
         className="absolute top-0 left-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-gfgsc-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
       />
-      <div className="relative z-10 bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden max-w-6xl w-full grid md:grid-cols-2 gap-8 p-8">
-        {/* Left Side: Contact Form */}
-        <div className="flex flex-col justify-center">
-          <form onSubmit={handleSubmit} className="space-y-4 p-8">
-            <div>
-              {/* 
-              <h2 className="text-4xl font-bold mb-4 text-green-800 text-center">
+      <div className="relative z-10 bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden max-w-6xl w-full grid md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
+        {/* Left Side */}
+        <div className="flex flex-col space-y-4 sm:space-y-6 mt-2 sm:mt-4">
+          <div className="flex items-center flex-col sm:flex-row">
+            <div className="relative h-[80px] sm:h-[100px] flex-shrink-0">
+              <ImageLoaderComponent
+                url={contactUs[currentIndex].image}
+                alt={contactUs[currentIndex].imageAltText}
+                hashCode={contactUs[currentIndex].imageHashCode}
+                className="object-cover h-full bg-white"
+                blurWidth="100px"
+                blurHeight="100px"
+              />
+            </div>
+            <div className="ml-0 sm:ml-4 mt-4 sm:mt-0 flex flex-col min-w-0">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-4 text-green-800 text-center sm:text-left">
                 Contact Us
               </h2>
-              <p className="text-green-600 text-center mb-6 h-6">
+              <p className="text-green-600 mb-4 h-6 text-center sm:text-left">
                 {typingText}
                 <span className="animate-pulse">|</span>
               </p>
-              
-              */}
+            </div>
+          </div>
+
+          {/* Bullet Points */}
+          <div className="space-y-2 sm:space-y-4 py-4 sm:py-8 px-4 text-black pl-4">
+            <div className="flex items-center space-x-4">
+              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div className="flex flex-col justify-center mt-[-10px] sm:mt-[-20px]">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-3 sm:space-y-4 p-4 sm:p-2"
+          >
+            <div>
               <label
                 htmlFor="name"
-                className="block mt-2 text-sm font-medium text-green-700 mb-2"
+                className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
                 Name
               </label>
@@ -107,15 +154,15 @@ const ContactUs = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Your Full Name"
-                className="w-full px-3 py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Full Name"
+                className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-green-700 mb-2"
+                className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
                 Email
               </label>
@@ -126,16 +173,16 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full px-3 py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
             <div>
               <label
                 htmlFor="domain"
-                className="block text-sm font-medium text-green-700 mb-2"
+                className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Subject
+                Domain
               </label>
               <input
                 type="text"
@@ -143,14 +190,14 @@ const ContactUs = () => {
                 name="domain"
                 value={formData.domain}
                 onChange={handleChange}
-                placeholder="The reason for contacting us"
-                className="w-full px-3 py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Reason for contact"
+                className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-green-700 mb-2"
+                className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
                 Message
               </label>
@@ -161,67 +208,23 @@ const ContactUs = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Message"
-                className="w-full px-3 py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"
+              className="w-full bg-green-600 text-white py-2 sm:py-3 rounded-md hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"
             >
-              <FaPaperPlane className="w-5 h-5" />
+              <FaPaperPlane className="w-4 sm:w-5 h-4 sm:h-5" />
               <span>Send Message</span>
             </button>
             {formSubmitted && (
-              <p className="text-center text-green-600 mt-4 font-semibold">
+              <p className="text-center text-green-600 mt-2 sm:mt-4 font-semibold">
                 Form Submitted
               </p>
             )}
           </form>
-        </div>
-        <div className="flex flex-col">
-          <div className="relative w-full h-50 overflow-hidden">
-            <Blurhash
-              hash="LGN-J-^,}09saMt7-;M{#=RjSwR%"
-              width="100%"
-              height="100%"
-              resolutionX={32}
-              resolutionY={32}
-              punch={1}
-            />
-          </div>
-          <div className="space-y-4 mt-4">
-            <div className="flex items-center space-x-4 text-black px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              </span>
-            </div>
-            <div className="flex items-center space-x-4 text-black px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              </span>
-            </div>
-            <div className="flex items-center space-x-4 text-black px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
-              </span>
-            </div>
-            <div className="flex items-center space-x-4 text-black px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit
-              </span>
-            </div>
-            <div className="flex items-center space-x-4 text-black px-4">
-              <span className="w-2 h-2 rounded-full bg-green-700 mr-2"></span>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
