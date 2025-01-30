@@ -104,4 +104,34 @@ export const getAllDomains = async () => {
   }
 };
 
+// API to submit the contact form, ensuring the same email can't submit twice within a minute.
+export const submitContactForm = async ({ name, email, subject, message }) => {
+  try {
+    // Fetch all emails from existing contact form submissions
+    const query = '*[_type == "contactUs" && email == $email]{email}';
+    const params = { email };
+    const existingEmails = await client.fetch(query, params);
+
+    //console.log(existingEmails)
+    // Check if the email already exists
+    if (existingEmails.length > 0) {
+      return { error: true, message: "This email has already been used to submit the form." };
+    }
+
+    // Create new document if email is unique
+    const newContact = {
+      _type: "contactUs",
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    await client.create(newContact);
+    return { success: true, message: "Form submitted successfully." };
+  } catch (error) {
+    console.error("Error submitting contact form:", error);
+    return { error: true, message: "An error occurred while submitting the form." };
+  }
+};
 // *************************************************************************

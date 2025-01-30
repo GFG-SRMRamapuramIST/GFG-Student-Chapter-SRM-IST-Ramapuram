@@ -64,6 +64,14 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to={"/contact-us"}
+                    className="text-gray-400 hover:text-white transition duration-300"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
                   <a
                     href="https://forms.gle/YgJeDFs564iiY33L6"
                     className="text-gray-400 hover:text-white transition duration-300"
@@ -148,13 +156,13 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center mt-8">
           <div className="flex flex-col md:flex-row items-center md:items-start">
-          <div className="flex space-x-4 mt-4 md:mt-0 md:pr-4 md:border-r-2">
-          <Link to="/contact-us">
-            <p className="text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
-              Contact Us
-            </p>
-          </Link>
-        </div>
+            <div className="flex space-x-4 mt-4 md:mt-0 md:pr-4 md:border-r-2">
+              <Link to="/contact-us">
+                <p className="text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
+                  Contact Us
+                </p>
+              </Link>
+            </div>
             <div className="flex space-x-4 mt-4 md:mt-0 md:pl-4">
               <a
                 href="https://x.com/GFG_SRM_RMP"

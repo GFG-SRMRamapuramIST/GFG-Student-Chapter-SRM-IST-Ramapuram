@@ -1,19 +1,84 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //Importing icons
+import { FaSpinner } from "react-icons/fa";
 import { FaPaperPlane } from "react-icons/fa";
+
 //Importing assets
 import { boxBackdrop } from "../assets";
 import { ImageLoaderComponent } from "../Utility";
 import contactImage from "../assets/imgs/contactusdino.png";
 
+// API call
+import { submitContactForm } from "../APIs/APICall";
+
 const ContactUs = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    domain: "",
+    subject: "",
     message: "",
   });
+
+  const [lastSubmitted, setLastSubmitted] = useState(
+    sessionStorage.getItem("lastSubmitted") || null
+  );
+
+  useEffect(() => {
+    if (lastSubmitted) {
+      const timeElapsed = Date.now() - lastSubmitted;
+      if (timeElapsed >= 60000) {
+        sessionStorage.removeItem("lastSubmitted");
+        setLastSubmitted(null);
+      }
+    }
+  }, [lastSubmitted]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (lastSubmitted && Date.now() - lastSubmitted < 60000) {
+      toast.error("Please wait a minute before submitting again!");
+      return;
+    }
+
+    const { name, email, subject, message } = formData;
+    setLoading(true);
+
+    try {
+      const data = await submitContactForm({ name, email, subject, message });
+
+      if (data.error) {
+        toast.error(`Error: ${data.message || "Something went wrong"}`);
+        return;
+      }
+
+      toast.success("Form submitted successfully!");
+
+      // Set last submitted time
+      const currentTime = Date.now();
+      sessionStorage.setItem("lastSubmitted", currentTime);
+      setLastSubmitted(currentTime);
+    } catch (error) {
+      toast.error(`Error: ${error.message || "Network error"}`);
+    } finally {
+      setLoading(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
+  };
+
   const contactUs = [
     {
       image: contactImage,
@@ -21,12 +86,9 @@ const ContactUs = () => {
       imageHashCode: "LGN-J-^,}09saMt7-;M{#=RjSwR%",
     },
   ];
-
   const [typingText, setTypingText] = useState("");
   const fullText = "We would love to hear from you!";
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
- 
   const currentIndex = 0;
 
   useEffect(() => {
@@ -40,28 +102,6 @@ const ContactUs = () => {
     }
     return () => clearTimeout(timer);
   }, [typingText]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-
-    setFormData({
-      name: "",
-      email: "",
-      domain: "",
-      message: "",
-    });
-
-    setFormSubmitted(true);
-  };
 
   return (
     <div
@@ -114,23 +154,33 @@ const ContactUs = () => {
           <div className="space-y-2 sm:space-y-4 py-4 sm:py-8 px-4 text-black pl-4">
             <div className="flex items-center space-x-4">
               <span className="w-2 h-2 rounded-full bg-green-700"></span>
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+              <span>
+                Contact us for queries about upcoming events, collaborations, or
+                recruitment.
+              </span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="w-2 h-2 rounded-full bg-green-700"></span>
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+              <span>
+                Share your suggestions for events you'd like us to organize.
+              </span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="w-2 h-2 rounded-full bg-green-700"></span>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+              <span>
+                Send us your testimonials about our club and past events.
+              </span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="w-2 h-2 rounded-full bg-green-700"></span>
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit</span>
+              <span>Have an idea to improve our website? Let us know!</span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="w-2 h-2 rounded-full bg-green-700"></span>
-              <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit</span>
+              <span>
+                Multiple form submissions are not allowed; we will reach out to
+                you soon.
+              </span>
             </div>
           </div>
         </div>
@@ -179,18 +229,18 @@ const ContactUs = () => {
             </div>
             <div>
               <label
-                htmlFor="domain"
+                htmlFor="subject"
                 className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Domain
+                Subject
               </label>
               <input
                 type="text"
-                id="domain"
-                name="domain"
-                value={formData.domain}
+                id="subject"
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
-                placeholder="Reason for contact"
+                placeholder="Reason for contacting"
                 className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
@@ -207,23 +257,28 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                placeholder="Message"
+                placeholder="Type your message here"
                 className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
             <button
               type="submit"
+              disabled={loading}
               className="w-full bg-green-600 text-white py-2 sm:py-3 rounded-md hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"
             >
-              <FaPaperPlane className="w-4 sm:w-5 h-4 sm:h-5" />
-              <span>Send Message</span>
+              {loading ? (
+                <>
+                  <FaSpinner className="spinner text-center text-sm sm:text-sm" />
+                  <span>Loading</span>
+                </>
+              ) : (
+                <>
+                  <FaPaperPlane className="w-4 sm:w-5 h-4 sm:h-5" />
+                  <span>Send Message</span>
+                </>
+              )}
             </button>
-            {formSubmitted && (
-              <p className="text-center text-green-600 mt-2 sm:mt-4 font-semibold">
-                Form Submitted
-              </p>
-            )}
           </form>
         </div>
       </div>

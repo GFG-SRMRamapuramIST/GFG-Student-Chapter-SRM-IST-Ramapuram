@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga4";
+import { ToastContainer } from "react-toastify";
 
 import { Navbar, Footer } from "./Navigation";
 import {
@@ -19,6 +20,7 @@ ReactGA.initialize("G-P81845BYP3");
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -31,7 +33,7 @@ const App = () => {
         {/* ************************************************************** */}
 
         {/* ****************************FORMS***************************** */}
-        <Route path="/contact-us" element={<ContactUs/>} />
+        <Route path="/contact-us" element={<ContactUs />} />
         {/* ************************************************************** */}
 
         <Route path="/*" element={<PageNotFound />} />
