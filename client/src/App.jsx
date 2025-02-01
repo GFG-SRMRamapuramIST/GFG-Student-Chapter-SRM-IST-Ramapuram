@@ -8,9 +8,11 @@ import {
   BlogTemplate,
   ContactUs,
   Home,
+  JoinUs,
   OurTeams,
   PageNotFound,
 } from "./Pages";
+
 import { ScrollToTop } from "./Utility";
 
 // https://www.youtube.com/watch?v=AHSOdHIsYR0
@@ -34,6 +36,7 @@ const App = () => {
 
         {/* ****************************FORMS***************************** */}
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/join-us" element={<JoinUs />} />
         {/* ************************************************************** */}
 
         <Route path="/*" element={<PageNotFound />} />
