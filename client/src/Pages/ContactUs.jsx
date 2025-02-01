@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-//Importing icons
-import { FaSpinner } from "react-icons/fa";
-import { FaPaperPlane } from "react-icons/fa";
+// Importing icons
+import { FaSpinner, FaPaperPlane, FaCircle, FaAsterisk } from "react-icons/fa"; // Added FaAsterisk
 
-//Importing assets
+// Importing assets
 import { boxBackdrop } from "../assets";
 import { ImageLoaderComponent } from "../Utility";
 import contactImage from "../assets/imgs/contactusdino.png";
@@ -27,6 +26,10 @@ const ContactUs = () => {
   const [lastSubmitted, setLastSubmitted] = useState(
     sessionStorage.getItem("lastSubmitted") || null
   );
+  const [errors, setErrors] = useState({
+    subject: "",
+    message: "",
+  });
 
   useEffect(() => {
     if (lastSubmitted) {
@@ -44,10 +47,34 @@ const ContactUs = () => {
       ...prevState,
       [name]: value,
     }));
+    setErrors((prevState) => ({
+      ...prevState,
+      [name]: "", // Reset error message on change
+    }));
+  };
+
+  const validateForm = () => {
+    let formValid = true;
+    const newErrors = {};
+
+    if (formData.subject.length < 3) {
+      newErrors.subject = "Subject must be at least 3 characters long.";
+      formValid = false;
+    }
+
+    if (formData.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters long.";
+      formValid = false;
+    }
+
+    setErrors(newErrors);
+    return formValid;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
 
     if (lastSubmitted && Date.now() - lastSubmitted < 60000) {
       toast.error("Please wait a minute before submitting again!");
@@ -151,32 +178,32 @@ const ContactUs = () => {
           </div>
 
           {/* Bullet Points */}
-          <div className="space-y-2 sm:space-y-4 py-4 sm:py-8 px-4 text-black pl-4">
+          <div className="space-y-4 sm:space-y-6 py-4 sm:py-8 px-4 text-black">
             <div className="flex items-center space-x-4">
-              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <FaCircle className="w-3 h-3 flex-shrink-0 text-green-700 fill-green-700" /> {/* Reduced size */}
               <span>
                 Contact us for queries about upcoming events, collaborations, or
                 recruitment.
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <FaCircle className="w-3 h-3 flex-shrink-0 text-green-700 fill-green-700" /> {/* Reduced size */}
               <span>
                 Share your suggestions for events you'd like us to organize.
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <FaCircle className="w-3 h-3 flex-shrink-0 text-green-700 fill-green-700" /> {/* Reduced size */}
               <span>
                 Send us your testimonials about our club and past events.
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <FaCircle className="w-3 h-3 flex-shrink-0 text-green-700 fill-green-700" /> {/* Reduced size */}
               <span>Have an idea to improve our website? Let us know!</span>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="w-2 h-2 rounded-full bg-green-700"></span>
+              <FaCircle className="w-3 h-3 flex-shrink-0 text-green-700 fill-green-700" /> {/* Reduced size */}
               <span>
                 Multiple form submissions are not allowed; we will reach out to
                 you soon.
@@ -196,7 +223,7 @@ const ContactUs = () => {
                 htmlFor="name"
                 className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Name
+                Name <FaAsterisk className="inline text-red-500 ml-[2px] text-[6px]" /> {/* Added Asterisk */}
               </label>
               <input
                 type="text"
@@ -214,7 +241,7 @@ const ContactUs = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Email
+                Email <FaAsterisk className="inline text-red-500 ml-[2px] text-[6px]" /> {/* Added Asterisk */}
               </label>
               <input
                 type="email"
@@ -232,7 +259,7 @@ const ContactUs = () => {
                 htmlFor="subject"
                 className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Subject
+                Subject <FaAsterisk className="inline text-red-500 ml-[2px] text-[6px]" /> {/* Added Asterisk */}
               </label>
               <input
                 type="text"
@@ -243,13 +270,14 @@ const ContactUs = () => {
                 placeholder="Reason for contacting"
                 className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               />
+              {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
             </div>
             <div>
               <label
                 htmlFor="message"
                 className="block text-sm font-medium text-green-700 mb-1 sm:mb-2"
               >
-                Message
+                Message <FaAsterisk className="inline text-red-500 ml-[2px] text-[6px]" /> {/* Added Asterisk */}
               </label>
               <textarea
                 id="message"
@@ -261,24 +289,28 @@ const ContactUs = () => {
                 className="w-full px-2 sm:px-3 py-1 sm:py-2 bg-white/50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
+              {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
             </div>
-            <button
-              type="submit"
-              disabled={loading}
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                disabled={loading}
               className="w-full bg-green-600 text-white py-2 sm:py-3 rounded-md hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"
-            >
-              {loading ? (
+              >
+                {loading ? (
                 <>
                   <FaSpinner className="spinner text-center text-sm sm:text-sm" />
                   <span>Loading</span>
                 </>
-              ) : (
+                ) : (
                 <>
                   <FaPaperPlane className="w-4 sm:w-5 h-4 sm:h-5" />
                   <span>Send Message</span>
                 </>
-              )}
-            </button>
+                )}
+                
+              </button>
+            </div>
           </form>
         </div>
       </div>

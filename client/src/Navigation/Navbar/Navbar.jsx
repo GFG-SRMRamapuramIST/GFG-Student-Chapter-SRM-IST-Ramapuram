@@ -25,7 +25,7 @@ const USER_NAV_LINKS = [
   },
   {
     title: "Join Us",
-    path: "https://forms.gle/YgJeDFs564iiY33L6",
+    path: "/join-us",
     icon: <FaArrowRightLong />,
     isExternal: true,
     className: "text-gfgsc-green",
