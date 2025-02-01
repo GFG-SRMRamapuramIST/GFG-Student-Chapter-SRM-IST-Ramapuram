@@ -8,7 +8,7 @@ import { FaAsterisk, FaSpinner } from "react-icons/fa";
 import "./JoinUs.css";
 
 const JoinUs = () => {
-  const [recruiting, setRecruiting] = useState("Yes"); // either "Yes" or "No"
+  const [recruiting, setRecruiting] = useState("No"); // either "Yes" or "No"
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
