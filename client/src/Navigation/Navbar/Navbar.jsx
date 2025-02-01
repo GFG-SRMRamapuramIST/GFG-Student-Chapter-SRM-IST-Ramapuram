@@ -27,7 +27,7 @@ const USER_NAV_LINKS = [
     title: "Join Us",
     path: "/join-us",
     icon: <FaArrowRightLong />,
-    isExternal: true,
+    isExternal: false,
     className: "text-gfgsc-green",
   },
 ];

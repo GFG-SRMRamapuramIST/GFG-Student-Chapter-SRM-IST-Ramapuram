@@ -7,7 +7,7 @@
 
 
 .box {
-    @apply p-8 bg-white rounded-lg shadow-lg max-w-[90%] sm:max-w-[60%];
+    @apply p-4 bg-white rounded-lg shadow-lg max-w-[90%] sm:max-w-[60%];
 }
 
 .blur {
