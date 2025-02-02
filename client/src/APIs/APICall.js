@@ -134,4 +134,87 @@ export const submitContactForm = async ({ name, email, subject, message }) => {
     return { error: true, message: "An error occurred while submitting the form." };
   }
 };
+// API to submit the join us form, ensuring the same email can't submit twice within a minute.
+export const submitJoinUsForm = async ({
+  name,
+  regNo,
+  srmEmail,
+  phoneNo,
+  academicYear,
+  branch,
+  anyOtherClub,
+  clubNameYouAreAPartOf,
+  positionInThatClub,
+  additionalContribution,
+  linkedInProfile,
+  githubProfile,
+  leetcodeProfile,
+  codechefProfile,
+  codeForcesProfile,
+  programingLanguage,
+  introduceYourself,
+  whyJoin,
+  biggestAchievementTillDate,
+  describeAnyProject
+}) => {
+  try {
+    // Fetch all registrations from the 'joinUs' form to prevent duplicate registration numbers
+    const regNoQuery = '*[_type == "joinUs" && regNo == $regNo]{regNo}';
+    const params = { regNo };
+    const existingRegNos = await client.fetch(regNoQuery, params);
+
+    // Check if the registration number already exists
+    if (existingRegNos.length > 0) {
+      return { error: true, message: "This Registration Number has already been used to submit the form." };
+    }
+
+    // Fetch all submissions from the 'joinUs' form to prevent duplicate emails within the last 60 seconds
+    const emailQuery = '*[_type == "joinUs" && srmEmail == $srmEmail]{srmEmail, _createdAt}';
+    const emailParams = { srmEmail };
+    const existingEmails = await client.fetch(emailQuery, emailParams);
+
+    // Check if the email already exists
+    if (existingEmails.length > 0) {
+      const lastSubmissionTime = new Date(existingEmails[0]._createdAt);
+      const currentTime = new Date();
+      const timeDifference = (currentTime - lastSubmissionTime) / 1000; // difference in seconds
+
+      // If the last submission was less than 60 seconds ago, prevent submission
+      if (timeDifference < 60) {
+        return { error: true, message: "You can only submit the form once every minute." };
+      }
+    }
+
+    // Create new document if both regNo and email are unique
+    const newJoinUs = {
+      _type: "joinUs",
+      name,
+      regNo,
+      srmEmail,
+      phoneNo,
+      academicYear,
+      branch,
+      anyOtherClub,
+      clubNameYouAreAPartOf,
+      positionInThatClub,
+      additionalContribution,
+      linkedInProfile,
+      githubProfile,
+      leetcodeProfile,
+      codechefProfile,
+      codeForcesProfile,
+      programingLanguage,
+      introduceYourself,
+      whyJoin,
+      biggestAchievementTillDate,
+      describeAnyProject,
+    };
+
+    await client.create(newJoinUs);
+    return { success: true, message: "Form submitted successfully." };
+  } catch (error) {
+    console.error("Error submitting join us form:", error);
+    return { error: true, message: "An error occurred while submitting the form." };
+  }
+};
 // *************************************************************************
