@@ -12,6 +12,7 @@ import {
   OurTeams,
   PageNotFound,
 } from "./Pages";
+import { LoadingAnimation } from "./Components";
 
 import { ScrollToTop } from "./Utility";
 
@@ -26,7 +27,7 @@ const App = () => {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LoadingAnimation />} />
         <Route path="/our-teams" element={<OurTeams />} />
 
         {/* ****************************BLOGS***************************** */}
