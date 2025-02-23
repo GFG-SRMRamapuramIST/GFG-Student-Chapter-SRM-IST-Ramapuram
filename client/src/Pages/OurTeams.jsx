@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga4";
 
-import { CoreTeam24, roles, Members24 } from "../Utility/constants";
+import { CoreTeam24, roles } from "../Utility/constants";
+
 import { LeadCard, YearSelector } from "../Components/ui";
 import { MembersSection } from "../Components";
 import HeikiBackground from "../Components/ui/HeikiBackground";
 
 const OurTeams = () => {
+  //Google Analytics
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
@@ -92,8 +94,8 @@ const OurTeams = () => {
               title="The Geek League"
               caption="Fueled by passion and powered by coffee"
               description="We’re not just a club; we’re a family of dreamers, doers, and
-          game-changers."
-              members={Members24}
+                    game-changers."
+              batch="2024"
             />
           </div>
         ) : (

@@ -2,19 +2,21 @@ import PropTypes from "prop-types";
 import { FaLinkedin } from "react-icons/fa";
 import { codolioIcon } from "../../assets/icons";
 import { ImageLoaderComponent } from "../../Utility";
+import { urlFor } from "../../APIs/APIConfiguration";
 
 const MemberCard = ({ member, index, style }) => {
   return (
     <div
+      key={index}
       className="bg-white rounded-lg shadow-lg p-2 m-2 flex items-center"
       style={style}
     >
       <div className="flex items-center w-full pl-2 pr-2">
         <div className="flex items-center justify-center border-1 md:border-2 rounded-full w-2/12 md:w-[12%] mr-2 max-md:p-1">
           <ImageLoaderComponent
-            url={member.image.url}
-            hashCode={member.image.hashCode}
-            alt={member.image.alt}
+            url={urlFor(member.image)}
+            hashCode={member.image.imghashCode}
+            alt={member.image.altText}
             className="rounded-full bg-hover-gray aspect-square object-cover object-top"
             blurWidth={"32px"}
             blurHeight={"32px"}
@@ -65,9 +67,8 @@ MemberCard.propTypes = {
     name: PropTypes.string.isRequired,
     caption: PropTypes.string.isRequired,
     image: PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      hashCode: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
+      imghashCode: PropTypes.string.isRequired,
+      altText: PropTypes.string.isRequired,
     }).isRequired,
     socials: PropTypes.shape({
       linkedin: PropTypes.string,
