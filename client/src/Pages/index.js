@@ -9,6 +9,7 @@ import BlogTemplate from "./Blogs/BlogTemplate";
 
 /********************** FORMS *********************/
 import ContactUs from "./ContactUs";
+import JoinUs from "./JoinUs/JoinUs";
 /**************************************************/
 
-export { Home, OurTeams, Blogs, BlogTemplate, PageNotFound, ContactUs };
+export { Home, OurTeams, Blogs, BlogTemplate, PageNotFound, ContactUs, JoinUs };

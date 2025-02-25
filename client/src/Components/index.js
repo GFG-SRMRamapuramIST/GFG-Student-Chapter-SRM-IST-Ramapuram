@@ -7,6 +7,7 @@ import GFGIntro from "./AboutGFG/GFGIntro";
 import GFGDomain from "./AboutGFG/GFGDomain";
 import GFGCourses from "./AboutGFG/GFGCourses";
 import MembersSection from "./MembersSection/MembersSection";
+import LoadingAnimation from "./LoadingAnimation";
 
 export {
   Hero,
@@ -17,4 +18,5 @@ export {
   GFGDomain,
   GFGCourses,
   MembersSection,
+  LoadingAnimation,
 };

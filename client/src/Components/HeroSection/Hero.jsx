@@ -74,11 +74,11 @@ const Hero = () => {
             className="flex flex-wrap gap-2 sm:gap-4"
           >
             <a
-              href="https://forms.gle/YgJeDFs564iiY33L6"
+              href="https://gqr.sh/6eeB"
               target="_blank"
               className="px-4 sm:px-8 py-2.5 sm:py-3 bg-gfgsc-green text-white rounded-lg font-semibold shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition-all text-sm sm:text-base"
             >
-              Join Chapter
+              Join Community
             </a>
             <button
               className="px-4 sm:px-8 py-2.5 sm:py-3 border-2 border-gfgsc-green text-gfgsc-green rounded-lg font-semibold hover:bg-green-50 transform hover:scale-105 transition-all text-sm sm:text-base"

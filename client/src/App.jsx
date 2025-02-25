@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga4";
+import { ToastContainer } from "react-toastify";
 
 import { Navbar, Footer } from "./Navigation";
 import {
@@ -7,9 +8,12 @@ import {
   BlogTemplate,
   ContactUs,
   Home,
+  JoinUs,
   OurTeams,
   PageNotFound,
 } from "./Pages";
+import { LoadingAnimation } from "./Components";
+
 import { ScrollToTop } from "./Utility";
 
 // https://www.youtube.com/watch?v=AHSOdHIsYR0
@@ -19,10 +23,11 @@ ReactGA.initialize("G-P81845BYP3");
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LoadingAnimation />} />
         <Route path="/our-teams" element={<OurTeams />} />
 
         {/* ****************************BLOGS***************************** */}
@@ -31,7 +36,8 @@ const App = () => {
         {/* ************************************************************** */}
 
         {/* ****************************FORMS***************************** */}
-        <Route path="/contact-us" element={<ContactUs/>} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/join-us" element={<JoinUs />} />
         {/* ************************************************************** */}
 
         <Route path="/*" element={<PageNotFound />} />
